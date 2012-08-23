@@ -1,0 +1,7 @@
+<div class="nav">
+  <ul>
+    <% pages.each do |path, title| %>
+      <li><%= link_to_unless_current title, path %></li>
+    <% end %>
+  </ul>
+</div>

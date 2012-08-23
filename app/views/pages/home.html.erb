@@ -1,2 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="welcome" class="left" style="width:65%;">
+  <h2>Welkom bij de Supermanager</h2>
+  <p>Ook dit jaar kunt u weer deelnemen aan het superteam van Ajax B.
+    Na het grote aantal deelnemers in 2010 – 2011 hopen we ook dit jaar op een grote belangstelling. <br />
+    <br />
+    Na aftrek van het prijzengeld gaat de opbrengst naar de jeugd van<br />
+    Ajax B. Dit jaar willen we proberen de 100 deelnemers te halen en is het prijzenschema veranderd.
+    We hopen op een grote deelname, ook van de jeugdspelers van Ajax B.
+   </p>
+</div>
+<%= render 'sponsors/overview' %>
+
+<%= render 'announcements/list', num: 2 %>
+<div class="clear" style="padding-top: 5px 10px; overflow:hidden;">
+  <?php include('pages/mededelingen.php'); ?>
+  <p><a href="/mededelingen">Lees alle mededelingen.</a></p>
+</div>
+  

@@ -7,8 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="container">
+    <div class="top"></div>
+    <div id="main">
+      <div class="header">
+        <%= image_tag 'logos/ajaxb.png', alt: 'Ajax B logo' %>
+        <h1>Supermanager Ajax Breedenbroek 2011 - 2012</h1>
+      </div>
+      <%= render 'shared/nav', pages: {
+        root_path => 'Home',
+        sign_up_path => 'Meedoen',
+        announcements_path => 'Mededelingen',
+        players_path => 'Spelerslijst',
+        rules_path => 'Spelregels',
+        contact_path => 'Contact'
+      } %>
+      <div class="content">
+        <%= yield %>
+      </div>
+    </div>
+    <div class="bottom"></div>
+  </div>
 </body>
 </html>
