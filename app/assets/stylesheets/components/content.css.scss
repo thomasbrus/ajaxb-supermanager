@@ -1,0 +1,16 @@
+#main > .content {
+  margin: 15px 0 0 0;
+  padding: 20px 20px 10px 20px;
+  background-color: #FFF;
+  border: 1px #eeeeee solid;
+  overflow: hidden;
+
+  a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #79B10E;
+  }
+  a:hover {
+    text-decoration: underline; 
+  }
+}
