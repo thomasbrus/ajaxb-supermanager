@@ -1,11 +1,11 @@
 Supermanager::Application.routes.draw do
   
-  get "/sign_up" => "sign_up#contact_info", as: :sign_up
-  get "/announcements" => "pages#home", as: :announcements
-  get "/players" => "pages#home", as: :players
+  get "/sign_up" => "pages#rules", as: :sign_up
+  get "/announcements" => "pages#rules", as: :announcements
+  get "/players" => "pages#rules", as: :players
   get "/rules" => "pages#rules", as: :rules
   
-  get "/contact" => "pages#home", as: :contact
+  get "/contact" => "pages#rules", as: :contact
 
-  root :to => 'pages#home'
+  root :to => 'pages#rules'
 end
