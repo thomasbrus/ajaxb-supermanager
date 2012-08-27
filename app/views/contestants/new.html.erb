@@ -1,0 +1,37 @@
+<h2>Opgaveformulier</h2>
+<%= form_for @contestant do |f| %>
+  <% if @contestant.errors.any? %>
+    <div id="error_explanation">
+      <h3>Vul het formulier alstublieft correct in:</h3>
+      <ul>
+      <% @contestant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend>Contactgegevens</legend>
+    <%= f.label :name, 'Naam' %>
+    <%= f.text_field :name %>
+    <%= f.label :email, 'E-mailadres' %>
+    <%= f.text_field :email %>
+    <%= f.label :team do %>
+      Ploeg (<em>niet verplicht:</em> <%= link_to 'zie spelregels', rules_path(anchor: 'team_poule') %>)
+    <% end %>
+    <%= text_field_tag :team_name %>
+  </fieldset>
+
+  <div class="payment">
+    <h3>Betaling</h3>
+    <p>Gelieve te betalen via de bank of contant.</p>
+    <dl>
+      <dt>Rekeningnummer</dt>
+      <dd><strong>3104.53.372</strong> t.n.v. N. J. Huntink</dd>
+      <dt>Bedrag</dt>
+      <dd>€12,50 (voor jeugdlid: €7,00)</dd>
+    </dl>
+    <button type="submit" class="right cta" name="submit"><span>Team samenstellen »</span></button>
+  </div>
+<% end %>

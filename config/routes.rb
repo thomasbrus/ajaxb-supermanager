@@ -1,6 +1,8 @@
 Supermanager::Application.routes.draw do
   
-  get "/sign_up" => "pages#rules", as: :sign_up
+  resources :contestants
+  get "/sign_up" => "contestants#new", as: :sign_up
+
   get "/announcements" => "pages#rules", as: :announcements
   get "/players" => "pages#rules", as: :players
   get "/rules" => "pages#rules", as: :rules
