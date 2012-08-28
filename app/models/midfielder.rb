@@ -1,0 +1,2 @@
+class Midfielder < Player
+end

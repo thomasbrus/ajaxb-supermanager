@@ -11,11 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120827130849) do
+ActiveRecord::Schema.define(:version => 20120828110751) do
+
+  create_table "clubs", :force => true do |t|
+    t.string   "name"
+    t.string   "shorthand"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "coaches", :force => true do |t|
+    t.integer  "code"
+    t.string   "name"
+    t.integer  "club_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "coaches", ["club_id"], :name => "index_coaches_on_club_id"
 
   create_table "contestants", :force => true do |t|
     t.string   "name"
     t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "players", :force => true do |t|
+    t.integer  "code"
+    t.string   "name"
+    t.integer  "club_id"
+    t.string   "type"
+    t.integer  "value"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -1,0 +1,2 @@
+class Goalkeeper < Player
+end
