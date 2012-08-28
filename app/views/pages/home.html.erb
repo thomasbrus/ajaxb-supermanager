@@ -11,4 +11,10 @@
 
 <%= render 'sponsors/list', sponsors: @sponsors %>
 
+<div id="announcements">
+  <% if @announcements.count > 0 %>
+    <%= render 'announcements/list', announcements: @announcements %>  
+    <%= link_to 'Lees alle mededelingen', announcements_path %>
+  <% end %>
+</div>
   

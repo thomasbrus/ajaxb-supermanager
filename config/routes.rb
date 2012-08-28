@@ -1,5 +1,7 @@
 Supermanager::Application.routes.draw do
   
+  resources :announcements
+
   resources :contestants
   get "/sign_up" => "contestants#new", as: :sign_up
 
