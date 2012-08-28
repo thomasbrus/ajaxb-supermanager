@@ -10,7 +10,7 @@
 Club.create(name: 'ADO Den Haag', shorthand: 'ADO')
 Club.create(name: 'AFC Ajax', shorthand: 'aja')
 Club.create(name: 'AZ', shorthand: 'az')
-Club.create(name: 'Feyenoord', shorthand: 'Feyenoord')
+Club.create(name: 'Feyenoord', shorthand: 'fey')
 Club.create(name: 'FC Groningen', shorthand: 'gro')
 Club.create(name: 'sc Heerenveen', shorthand: 'hee')
 Club.create(name: 'Heracles Almelo', shorthand: 'Heracles')
