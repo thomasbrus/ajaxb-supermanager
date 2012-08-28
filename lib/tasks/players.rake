@@ -5,7 +5,7 @@ namespace :players do
   task :import => :environment do |t, args|
     file = Rails.root.join *%w(db data players.csv)
     CSV.foreach(file, col_sep: ';') do |code, name, club, position, value|
-      params = { code: code, name: name, club: Club.find_by_shorthand(club) }
+      params = { code: code.to_i, name: name, club: Club.find_by_shorthand(club), value: value.to_i }
       case position
       when 'a'
         Goalkeeper.create! params
