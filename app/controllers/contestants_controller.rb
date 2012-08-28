@@ -6,9 +6,11 @@ class ContestantsController < ApplicationController
 
   def create
     @contestant = Contestant.new(params[:contestant])
-    @contestant.team = Team.find_or_create_by_name(params[:contestant][:team_name])
+    if params[:contestant][:team_name].present?
+      @contestant.team = Team.find_or_initialize_by_name(params[:contestant][:team_name])
+    end
     if @contestant.save
-      redirect_to new_formation_path
+      redirect_to root_path
     else
       render action: "new"
     end

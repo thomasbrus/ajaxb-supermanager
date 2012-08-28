@@ -20,7 +20,8 @@
     <%= f.label :team do %>
       Ploeg (<em>niet verplicht:</em> <%= link_to 'zie spelregels', rules_path(anchor: 'team_poule') %>)
     <% end %>
-    <%= text_field_tag :team_name %>
+    <span>Bestaande: <%= f.collection_select :team_id, Team.all, :id, :name, prompt: true %> óf een nieuwe ploeg:</span>
+    <%= f.text_field :team_name %>
   </fieldset>
 
   <div class="payment">

@@ -32,7 +32,7 @@ form {
     }
 
 
-    label, input {
+    label, input, select, span {
       display: block;
       float: left;
       padding: 2px;
@@ -44,9 +44,25 @@ form {
       clear: left;
     }
 
-    input {
-      width: 250px;
-      clear: right;
+    #contestant_team_attributes_name {
+      margin-left: 265px;
+      width: 300px;
+      clear: both;
+    }
+
+    span {
+      padding: 0;
+
+      select {
+        padding: 0;
+        margin: 0;
+        float: none;
+        display: inline;
+      }
+    }
+
+    select {
+      min-width: 100px;
     }
   }
 }
