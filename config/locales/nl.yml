@@ -170,6 +170,13 @@ nl:
       even: "moet even zijn"
 
   activerecord:
+    models:
+      contestant: Contestant
+    attributes:
+      contestant:
+        name: "Naam"
+        email: "E-mailadres"
+
     errors:
       template:
         header:
