@@ -16,5 +16,5 @@ Supermanager::Application.routes.draw do
   
   get "/contact" => "pages#rules", as: :contact
 
-  root :to => 'pages#rules'
+  root :to => 'pages#home'
 end

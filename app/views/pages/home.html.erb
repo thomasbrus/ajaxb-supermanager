@@ -8,11 +8,7 @@
     We hopen op een grote deelname, ook van de jeugdspelers van Ajax B.
    </p>
 </div>
-<%= render 'sponsors/overview' %>
 
-<%= render 'announcements/list', num: 2 %>
-<div class="clear" style="padding-top: 5px 10px; overflow:hidden;">
-  <?php include('pages/mededelingen.php'); ?>
-  <p><a href="/mededelingen">Lees alle mededelingen.</a></p>
-</div>
+<%= render 'sponsors/list', sponsors: @sponsors %>
+
   

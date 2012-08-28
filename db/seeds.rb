@@ -25,3 +25,6 @@ Club.create(name: 'FC Utrecht', shorthand: 'utr')
 Club.create(name: 'Vitesse', shorthand: 'vit')
 Club.create(name: 'VVV-Venlo', shorthand: 'vvv')
 Club.create(name: 'Willem II', shorthand: 'Will')
+
+# Default sponsor
+Sponsor.create(name: 'Voorbeeldsponsor', url: '/', logo: 'example.jpg')
