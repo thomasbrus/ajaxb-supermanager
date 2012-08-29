@@ -15,7 +15,9 @@
     <legend>Contactgegevens</legend>
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <%= f.label :email %>
+    <%= f.label :email do %>
+      <%= t('activerecord.attributes.contestant.email') %> (<em>uniek per deelnemer</em>)
+    <% end %>
     <%= f.text_field :email %>
     <%= f.label :team do %>
       Ploeg (<em>niet verplicht:</em> <%= link_to 'zie spelregels', rules_path(anchor: 'team_poule') %>)

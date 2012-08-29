@@ -6,4 +6,8 @@ class PagesController < ApplicationController
 
   def rules
   end
+
+  def thank_you
+  end
+
 end

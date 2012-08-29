@@ -5,15 +5,13 @@ class ContestantsController < ApplicationController
   end
 
   def create
-    @contestant = Contestant.new(params[:contestant])
-    if params[:contestant][:team_name].present?
-      @contestant.team = Team.find_or_initialize_by_name(params[:contestant][:team_name])
-    end
-    if @contestant.save
-      redirect_to root_path
+    @contestant = Contestant.register(params[:contestant])
+    if @contestant
+      LoginKey.request(@contestant)
+      LoginKeyEmailer.deliver
+      redirect_to thank_you_path
     else
       render action: "new"
     end
   end
-
 end

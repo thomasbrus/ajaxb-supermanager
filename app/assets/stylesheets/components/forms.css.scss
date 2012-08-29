@@ -44,9 +44,13 @@ form {
       clear: left;
     }
 
-    #contestant_team_attributes_name {
+    input {
+      width: 40%;
+    }
+
+    #contestant_team_name {
       margin-left: 265px;
-      width: 300px;
+      width: 290px;
       clear: both;
     }
 
