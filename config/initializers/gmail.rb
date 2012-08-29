@@ -1,5 +1,5 @@
 if Rails.env.production?
-  ActionMailer::Base.default_url_options = { :host => 'supermanager.herokuapp.com' }
+  ActionMailer::Base.default_url_options = { :host => 'supermanager.thomasbrus.nl' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = false
