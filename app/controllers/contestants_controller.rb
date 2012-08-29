@@ -5,10 +5,10 @@ class ContestantsController < ApplicationController
   end
 
   def create
-    @contestant = Contestant.register(params[:contestant])
+    @contestant = Contestant.sign_up(params[:contestant])
     if @contestant
-      LoginKey.request(@contestant)
-      LoginKeyEmailer.deliver
+      #LoginKey.request(@contestant)
+      #LoginKeyEmailer.deliver
       redirect_to thank_you_path
     else
       render action: "new"
