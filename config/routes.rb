@@ -11,8 +11,7 @@ Supermanager::Application.routes.draw do
   get "/login/verify/:validation_key" => "login_requests#verify", as: :verify_login_request
 
   # post "/login" => "sessions#create"
-  # delete "/logout" => "sessions#destroy"
-  
+  delete "/logout" => "sessions#destroy"
 
   get "/announcements" => "pages#rules", as: :announcements
   get "/players" => "pages#rules", as: :players

@@ -35,6 +35,9 @@ Supermanager::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  # Turn off logging
+  config.assets.logger = nil
+
   # Set hostname
   config.action_mailer.default_url_options = { host: 'supermanager.dev' }
 end
