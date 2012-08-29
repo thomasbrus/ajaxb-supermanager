@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120828142608) do
+ActiveRecord::Schema.define(:version => 20120829150647) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(:version => 20120828142608) do
     t.datetime "updated_at", :null => false
     t.integer  "team_id"
   end
+
+  create_table "login_requests", :force => true do |t|
+    t.datetime "expires_at"
+    t.string   "validation_key"
+    t.integer  "contestant_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "login_requests", ["contestant_id"], :name => "index_login_requests_on_contestant_id"
 
   create_table "players", :force => true do |t|
     t.integer  "code"

@@ -1,7 +1,9 @@
 class ContestantMailer < ActionMailer::Base
-  default from: "Ajax-B Supermanager ajaxb.supermanager@gmail.com"
- 
-  def login_key(contestant)
-    mail(to: contestant.email, subject: "Lorem Ipsum")
+  default from: "Ajax-B Supermanager <ajaxb.supermanager@gmail.com>"
+
+  def welcome(contestant, login_request)
+    @contestant, @validation_key = contestant, login_request.validation_key
+    mail(to: contestant.email, subject: "Welkom bij de Supermanager!")      
   end
+
 end

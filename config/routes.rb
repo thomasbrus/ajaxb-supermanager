@@ -6,13 +6,12 @@ Supermanager::Application.routes.draw do
   get "/sign_up" => "contestants#new", as: :sign_up
   get "/thank_you" => "pages#thank_you", as: :thank_you
 
-  get "/login" => "login_keys#new", as: :login
-  # post "/login/request" => "login_keys#create", as: :request_login
-  # get "/login/verify/:key" => "login_keys#verify", as: :login
+  get "/login" => "login_requests#new", as: :login
+  # post "/login/request" => "login_requests#create", as: :request_login
+  get "/login/verify/:validation_key" => "login_requests#verify", as: :verify_login_request
 
   # post "/login" => "sessions#create"
   # delete "/logout" => "sessions#destroy"
-
   
 
   get "/announcements" => "pages#rules", as: :announcements

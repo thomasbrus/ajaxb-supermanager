@@ -4,12 +4,5 @@ class Contestant < ActiveRecord::Base
   validates_presence_of :email, :name
   validates_uniqueness_of :email
   belongs_to :team
-
-  def self.sign_up(params)
-    contestant = new(params) 
-    if params[:team_name].present?
-      contestant.team = Team.find_or_initialize_by_name(params[:team_name])
-    end
-    contestant.save
-  end
+  has_many :login_requests, dependent: :destroy
 end
