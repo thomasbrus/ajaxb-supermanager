@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120829165547) do
+ActiveRecord::Schema.define(:version => 20120829172626) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(:version => 20120829165547) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "players_superteams", :id => false, :force => true do |t|
+    t.integer "player_id"
+    t.integer "superteam_id"
+  end
+
+  add_index "players_superteams", ["player_id", "superteam_id"], :name => "index_players_superteams_on_player_id_and_superteam_id"
 
   create_table "sponsors", :force => true do |t|
     t.string   "name"
