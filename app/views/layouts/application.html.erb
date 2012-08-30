@@ -24,12 +24,13 @@
       </div>
       <%= render 'shared/nav', pages: [
         [root_path, 'Home'],
-        (logged_in? ? ['/edit_superteam_path', 'Mijn Superteam'] : [sign_up_path, 'Meedoen']),
+        (logged_in? ? [my_superteam_path, 'Mijn Superteam'] : [sign_up_path, 'Meedoen']),
         [announcements_path, 'Mededelingen'],
         [players_path, 'Spelerslijst'],
         [rules_path, 'Spelregels'],
         [contact_path, 'Contact']
       ] %>
+      <%= render 'shared/flashes' %>
       <div class="content">
         <%= yield %>
       </div>

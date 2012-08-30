@@ -1,9 +1,9 @@
 if Rails.env.production?
-  ActionMailer::Base.default_url_options = { :host => 'supermanager.thomasbrus.nl' }
+  ActionMailer::Base.default_url_options = { host: 'supermanager.thomasbrus.nl' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = false
-  ActionMailer::Base.default :charset => "utf-8"
+  ActionMailer::Base.default charset: "utf-8"
 
   ActionMailer::Base.smtp_settings = {
     address:              'smtp.gmail.com',

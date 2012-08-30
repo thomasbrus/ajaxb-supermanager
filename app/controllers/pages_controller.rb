@@ -10,4 +10,7 @@ class PagesController < ApplicationController
   def thank_you
   end
 
+  def login_link_confirmation
+  end
+
 end

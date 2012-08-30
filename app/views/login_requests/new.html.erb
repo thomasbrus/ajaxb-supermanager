@@ -1,3 +1,13 @@
-<h2>Inloggen</h2>
+<h2>Inloggen op uw account</h2>
 
-<p>...</p>
+<p>Om in te loggen op uw account heeft u een bevestigingslink nodig. Vul het e-mailadres in waarmee u op de site geregistreerd bent en druk vervolgens op de knop.</p>
+
+<%= form_for LoginRequest.new do |f| %>
+  <div class="field">
+    <%= label_tag :email, t('activerecord.attributes.contestant.email') %>
+    <%= text_field_tag :email %>
+  </div>
+  <div class="action">
+    <%= f.submit "Verzend link" %>
+  </div>
+<% end %>

@@ -1,13 +1,15 @@
 Supermanager::Application.routes.draw do
   
-  resources :announcements
+  get "/my_superteam" => "superteams#edit"
 
+  resources :announcements
   resources :contestants
+  resources :login_requests
+
   get "/sign_up" => "contestants#new", as: :sign_up
   get "/thank_you" => "pages#thank_you", as: :thank_you
 
   get "/login" => "login_requests#new", as: :login
-  # post "/login/request" => "login_requests#create", as: :request_login
   get "/login/verify/:validation_key" => "login_requests#verify", as: :verify_login_request
 
   # post "/login" => "sessions#create"

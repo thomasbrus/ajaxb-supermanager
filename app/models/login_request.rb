@@ -5,7 +5,7 @@ class LoginRequest < ActiveRecord::Base
     
   protected
     def set_validation_key
-      self.validation_key = SecureRandom.hex
+      self.validation_key = SecureRandom.hex.to_s
     end
     
     def set_expires_at
