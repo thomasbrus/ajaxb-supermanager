@@ -1,0 +1,37 @@
+<h2>Contact opnemen</h2>
+<p>Gebruik het onderstaande formulier voor vragen of opmerkingen.</p>
+<%= form_for @message do |f| %>
+  <fieldset>
+    <dl>
+      <dt>
+        <%= f.label :name %>
+      </dt>
+      <dd>
+        <%= f.text_field :name %>
+      </dd>
+      <dt>
+        <%= f.label :email %>
+      </dt>
+      <dd>
+        <%= f.text_field :email %>
+      </dd>
+      <dt>
+        <%= f.label :receipent %>
+      </dt>
+      <dd>
+        ...
+      </dd>
+      <dt>
+        <%= f.label :content %>
+      </dt>
+      <dd>
+        <%= f.text_area :content, size: "40x6" %>
+      </dd>
+    </dl>
+  </fieldset>
+  <p style="margin-left: 150px; padding: 0 0 0 10px;">
+    <button type="submit" class="cta" name="submit">
+      <span>Bericht verzenden</span>
+    </button>
+  </p>
+<% end %>

@@ -5,6 +5,7 @@ Supermanager::Application.routes.draw do
   resources :announcements
   resources :contestants
   resources :login_requests
+  resources :messages
 
   get "/sign_up" => "contestants#new", as: :sign_up
   get "/thank_you" => "pages#thank_you", as: :thank_you
@@ -18,7 +19,7 @@ Supermanager::Application.routes.draw do
   get "/players" => "pages#rules", as: :players
   get "/rules" => "pages#rules", as: :rules
   
-  get "/contact" => "pages#rules", as: :contact
+  get "/contact" => "messages#new", as: :contact
 
   root :to => 'pages#home'
 end
