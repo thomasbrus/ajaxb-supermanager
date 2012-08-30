@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   private
     def fetch_contestant
       begin
-        @contestant ||= Contestant.find(cookies.signed[:contestant_id]) if logged_in?
+        @current_contestant ||= Contestant.find(cookies.signed[:contestant_id]) if logged_in?
       rescue ActiveRecord::RecordNotFound
         logout
       end

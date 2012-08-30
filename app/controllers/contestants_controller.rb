@@ -1,5 +1,5 @@
 class ContestantsController < ApplicationController
-  skip_before_filter :login_required
+  skip_before_filter :login_required, only: [:new, :create]
 
   def new
     @contestant = Contestant.new
