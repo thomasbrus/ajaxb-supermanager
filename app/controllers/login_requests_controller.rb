@@ -1,37 +1,21 @@
 class LoginRequestsController < ApplicationController
-  def new
-    @contestant = Contestant.new
-  end
-
-  def create
-    @contestant = Contestant.new(params[:contestant])
-    if params[:contestant][:team_name].present?
-      @contestant.team = Team.find_or_initialize_by_name(params[:contestant][:team_name])
-    end
-    if @contestant.save
-      ContestantMailer.welcome(@contestant, @contestant.login_requests.create).deliver
-      redirect_to thank_you_path
-    else
-      render action: "new"
-    end
-  end
+  skip_before_filter :login_required, only: [:new, :create, :verify]
 
   def new
+    @login_request = LoginRequest.new
   end
 
   def create
     @contestant = Contestant.find_by_email(params[:email])
-
     if @contestant.nil?
-      @login_requests.errors.add_to_base "E-mailadres bestaat niet."
-    end
-
-    if @login_request.valid?
+      @login_request = LoginRequest.new
+      @login_request.errors[:base] << "E-mailadres bestaat niet."
+      @email = params[:email]
+      render action: "new"
+    else
       LoginRequestMailer.login_link(@contestant, @contestant.login_requests.create).deliver
       flash[:email] = @contestant.email
-      redirect_to login_link_sent_path
-    else
-      render action: "new"
+      redirect_to login_link_confirmation_path and return
     end
   end
 

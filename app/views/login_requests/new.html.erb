@@ -2,10 +2,20 @@
 
 <p>Om in te loggen op uw account heeft u een bevestigingslink nodig. Vul het e-mailadres in waarmee u op de site geregistreerd bent en druk vervolgens op de knop.</p>
 
-<%= form_for LoginRequest.new do |f| %>
+<%= form_for @login_request do |f| %>
+  <% if @login_request.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @login_request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= label_tag :email, t('activerecord.attributes.contestant.email') %>
-    <%= text_field_tag :email %>
+    <%= text_field_tag :email, @email %>
   </div>
   <div class="action">
     <%= f.submit "Verzend link" %>

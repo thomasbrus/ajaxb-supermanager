@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :fetch_contestant
+  before_filter :login_required
 
   def login(contestant)
     cookies.signed[:contestant_id] = { value: contestant.id, expires: 1.month.from_now }
@@ -19,5 +20,9 @@ class ApplicationController < ActionController::Base
   private
     def fetch_contestant
       @contestant ||= Contestant.find(cookies.signed[:contestant_id]) if logged_in?
+    end
+
+    def login_required
+      redirect_to(root_path, alert: "Om deze pagina te bekijken moet u ingelogd zijn.") unless logged_in?
     end
 end

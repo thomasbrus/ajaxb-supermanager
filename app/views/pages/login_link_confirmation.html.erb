@@ -1,4 +1,4 @@
 <h2>Bijna klaar!</h2>
-<p>U bent geregistreerd en doet mee aan het supermanager spel. Er is een email verzonden met een <strong>link waarmee u kunt inloggen</strong>. U kunt daarna uw superteam samenstellen. Deze kunt u wijzigen tot de sluitingsdatum: zaterdag 15 september 18.00 uur.</p>
+<p>Er is een email verzonden naar <strong><%= flash[:email] %></strong>. Daarin in vind u een link waarmee u wordt ingelogt op de Supermanager. </p>
 
-<p>Heeft u na vijf minuten nog geen email ontvangen? <%= link_to 'Neem dan contact op', contact_page %> met de beheerder, of <%= link_to 'probeer het opnieuw', login_path %> met een ander e-mailadres.</p>
+<p>Heeft u na vijf minuten nog geen email ontvangen? <%= link_to 'Neem dan contact op', contact_path %> met de beheerder, of <%= link_to 'probeer het opnieuw', login_path %> met een ander e-mailadres.</p>

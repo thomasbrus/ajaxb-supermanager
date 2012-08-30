@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#error_explanation ul {
+  padding-bottom: 5px !important;
+}
+
 .new_login_request {
   padding: 15px;
   margin: 5px 0;

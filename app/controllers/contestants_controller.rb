@@ -1,4 +1,6 @@
 class ContestantsController < ApplicationController
+  skip_before_filter :login_required
+
   def new
     @contestant = Contestant.new
   end

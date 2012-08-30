@@ -1,7 +1,9 @@
-<% if flash.any? %>
+<% if flash[:alert] || flash[:notice] %>
   <div class="flashes">
-    <% flash.each do |key, message| %>
-      <%= content_tag :div, message, class: key %>
+    <% [:alert, :notice].each do |key| %>
+      <% if flash[key] %>
+        <%= content_tag :div, flash[key], class: key %>
+      <% end %>
     <% end %>
   </div>
 <% end %>

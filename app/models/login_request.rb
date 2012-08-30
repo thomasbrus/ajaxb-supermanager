@@ -3,7 +3,7 @@ class LoginRequest < ActiveRecord::Base
   attr_accessible :expires_at, :validation_key
   before_create :set_validation_key, :set_expires_at
     
-  protected
+  private
     def set_validation_key
       self.validation_key = SecureRandom.hex.to_s
     end
