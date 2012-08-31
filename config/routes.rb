@@ -1,5 +1,9 @@
 Supermanager::Application.routes.draw do
   
+  resources :clubs do
+    resources :players
+  end
+
   get "/my_superteam" => "superteams#edit"
 
   resources :announcements
@@ -16,7 +20,7 @@ Supermanager::Application.routes.draw do
   delete "/logout" => "sessions#destroy"
 
   get "/announcements" => "pages#rules", as: :announcements
-  get "/players" => "pages#rules", as: :players
+  get "/players_list" => "clubs#index", as: :players_list
   get "/rules" => "pages#rules", as: :rules
   
   get "/contact" => "messages#new", as: :contact

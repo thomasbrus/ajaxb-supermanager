@@ -1,0 +1,6 @@
+<h2>Spelerslijst (2012 - 2013)</h2>
+<ul class="players_list">
+<% @clubs.each do |club| %>
+  <li><%= link_to club.name, club_players_path(club) %></li>
+<% end %>
+</ul>
