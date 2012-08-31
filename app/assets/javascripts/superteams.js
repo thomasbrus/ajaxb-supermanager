@@ -8,7 +8,7 @@ var enableSubmit = function() {
     }
     
     $('#status').attr('class', 'busy').html('<p>De opstelling wordt gecontroleerd..</p>').hide().slideDown('slow', function() {
-      $.post('/xhr/supermanager', Supermanager.exportData(), function(data) {
+      $.post('/superteams', Supermanager.exportData(), function(data) {
         if (data.status == 'error') {
           if (data.message.length == 1 || typeof data.message == 'string') {
             $('#status').attr('class', 'error').html('<p>' + data.message + '</p>');

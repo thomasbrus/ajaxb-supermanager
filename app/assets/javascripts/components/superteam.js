@@ -12,7 +12,7 @@ var Supermanager = (function() {
     
   return {
     loadPlayers: function(club, position, amount, selected) {
-      $.getJSON('/xhr/spelers', { club: club || 'ado', position: position || 'a', amount: amount || 5}, function(players) {
+      $.getJSON('/players', { club: club || 'ado', position: position || 'a', amount: amount || 5}, function(players) {
         HTMLHelper.populateSelect('#player', players);
         Supermanager.stopLoading($('#player'));
         $('#player').val(selected);
@@ -23,7 +23,7 @@ var Supermanager = (function() {
       $('#position').val(selected);
     },
     loadClubs: function(selected) {
-      $.getJSON('/xhr/clubs', function(clubs) {
+      $.getJSON('/clubs', function(clubs) {
         HTMLHelper.populateSelect('#club', clubs);
         Supermanager.stopLoading($('#club'));
         $('#club').val(selected);
