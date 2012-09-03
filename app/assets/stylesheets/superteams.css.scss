@@ -147,3 +147,52 @@
 #form_players > p > span > a:hover {
   text-decoration: underline;
 }
+
+/* ANNOUNCEMENTS --> */
+div.announcement {
+  padding: 10px;
+  margin: 15px 0 5px 0;
+  background-color: #F6F6F6;
+  border: 1px #ACACAC dotted;
+}
+div.announcement .meta {
+  color: #333;
+  font-size: 12px;
+}
+
+#status {
+  margin: 0 0 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+#status.busy {
+  border: 1px #0e73b0 solid;
+  background: image-url('loader.gif') #f5fcff no-repeat 20px 12px; 
+}
+#status.success {
+  border: 1px #1ab00e solid;
+  background: image-url('accept.png') #fafafa no-repeat 20px 12px;
+}
+#status.error {
+  border: 1px #b00d0e solid;
+  background: image-url('delete.png') #fff5f5 no-repeat 20px 12px;
+}
+#status > p, #status > ul {
+  font-weight: bold;
+  color: #383838; 
+}
+#status > p {
+  margin: 0 0 0 40px;
+  padding: 0 15px;
+  height: 40px;
+  line-height: 40px;
+}
+#status > ul {
+  margin: 0 0 0 0;
+  padding: 8px 0 6px 80px;
+}
+#status > ul > li {
+  margin: 0;
+  padding: 5px 0;
+}

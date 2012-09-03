@@ -23,7 +23,7 @@ Club.create(name: 'Roda JC', shorthand: 'rod')
 Club.create(name: 'FC Twente', shorthand: 'twe')
 Club.create(name: 'FC Utrecht', shorthand: 'utr')
 Club.create(name: 'Vitesse', shorthand: 'vit')
-Club.create(name: 'VVV-Venlo', shorthand: 'vvv')
+Club.create(name: 'VVV-Venlo', shorthand: 'VVV')
 Club.create(name: 'Willem II', shorthand: 'Will')
 
 # Default sponsor

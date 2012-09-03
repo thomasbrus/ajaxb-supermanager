@@ -25,5 +25,6 @@ namespace :players do
   desc "Remove all players from the database"
   task :clear => :environment do
     Player.destroy_all
+    Coach.destroy_all
   end
 end

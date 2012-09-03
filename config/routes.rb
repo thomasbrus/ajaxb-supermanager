@@ -1,8 +1,10 @@
 Supermanager::Application.routes.draw do
-  
-  resources :clubs do
-    resources :players
-  end
+
+  get "/players" => "players#index"
+  get "/clubs" => "clubs#index"
+  get "/coaches" => "coaches#index"
+
+  post "/update_superteam" => "superteams#update"
 
   get "/my_superteam" => "superteams#edit"
 

@@ -4,5 +4,6 @@ class Contestant < ActiveRecord::Base
   validates_presence_of :email, :name
   validates_uniqueness_of :email
   belongs_to :team
+  has_one :superteam
   has_many :login_requests, dependent: :destroy
 end

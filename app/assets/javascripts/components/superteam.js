@@ -9,7 +9,7 @@ var Supermanager = (function() {
     'coach': {},
     'bonusplayer': {}
   };
-    
+
   return {
     loadPlayers: function(club, position, amount, selected) {
       $.getJSON('/players', { club: club || 'ado', position: position || 'a', amount: amount || 5}, function(players) {
@@ -30,7 +30,7 @@ var Supermanager = (function() {
       });
     },
     loadCoaches: function(selected) {
-      $.getJSON('/xhr/coaches', function(coaches) {
+      $.getJSON('/coaches', function(coaches) {
         HTMLHelper.populateSelect('#coach', coaches);
         Supermanager.stopLoading($('#coach'));
         $('#coach').val(selected);
@@ -115,7 +115,7 @@ var Supermanager = (function() {
           opener.text(text ? text : storage[pos].emptyText);
           
           if ( ! type) {
-            opener.parent().css('backgroundImage', "url('/img/shirts/" + (club ? club : "no_sponsor") + ".png')");
+            opener.parent().css('backgroundImage', "url('/assets/shirts/" + (club ? club : "no_sponsor") + ".png')");
           }
         }
         
