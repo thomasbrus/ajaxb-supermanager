@@ -67,6 +67,11 @@ class SuperteamsController < ApplicationController
 
   def show
     superteam = @current_contestant.superteam
+
+    if superteam.nil?
+      render json: {} and return
+    end
+
     mapping = {
       bonus_player: 'bonusplayer',
       coach: 'coach',
