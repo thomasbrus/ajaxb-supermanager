@@ -1,28 +1,42 @@
 <h2>Contact opnemen</h2>
 <p>Gebruik het onderstaande formulier voor vragen of opmerkingen.</p>
 <%= form_for @message do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h3>Vul het formulier alstublieft correct in:</h3>
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <fieldset>
     <dl>
       <dt>
-        <%= f.label :name %>
+        <%= f.label :name, "Naam" %>
       </dt>
       <dd>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, style: "width: 200px;" %>
       </dd>
       <dt>
-        <%= f.label :email %>
+        <%= f.label :email, "E-mailadres", style: "width: auto;" %>
       </dt>
       <dd>
-        <%= f.text_field :email %>
+        <%= f.text_field :email, style: "width: 200px;" %>
       </dd>
       <dt>
-        <%= f.label :receipent %>
+        <%= f.label :receipent, "Ontvanger" %>
       </dt>
       <dd>
-        ...
+        <%= f.select :receipent, [
+          ["Thomas Brus (Technisch contact)", 1],
+          ["Nico Huntink (Algemeen contact)", 2]
+        ] %>
       </dd>
       <dt>
-        <%= f.label :content %>
+        <%= f.label :content, "Bericht" %>
       </dt>
       <dd>
         <%= f.text_area :content, size: "40x6" %>

@@ -4,11 +4,10 @@ class Message
   attribute :name
   attribute :email
   attribute :content
-  attribute :receiver
+  attribute :receipent
   
-  attr_accessible :name, :email, :content, :receiver
-  validates_presence_of :name, :email, :receiver, :content
+  attr_accessible :name, :email, :content, :receipent
+  validates_presence_of :name, :email, :receipent, :content
   validates_length_of :content, maximum: 700
-  #validates_inclusion_of :receiver, in: RECEIVERS.map(&:email)
 
 end

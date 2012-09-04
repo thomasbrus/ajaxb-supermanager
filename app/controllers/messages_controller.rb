@@ -5,6 +5,16 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
+  def create
+    @message = Message.new(params[:message])
+    if @message.valid?
+      AdminMailer.contact(@message).deliver
+      redirect_to root_path, notice: "E-mail is verzonden!"
+    else
+      render action: "new"
+    end
+  end
+
 end
 
 
