@@ -20,6 +20,10 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       format.json { render json: json }
+      format.html { 
+        @club = Club.find(params[:club_id])
+        @players = @club.players
+      }
     end
   end
 end

@@ -10,6 +10,7 @@ class ClubsController < ApplicationController
 
     respond_to do |format|
       format.json { render json: json }
+      format.html { @clubs = Club.order('name ASC') }
     end
   end
 end

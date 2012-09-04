@@ -1,4 +1,4 @@
-<?php
+<%#
 $spelers = mysql_query("
   SELECT `naam`, `positie`, `waarde`
   FROM `spelers`
@@ -22,42 +22,13 @@ $posities = array(
   'c' => 'Middenvelder',
   'd' => 'Aanvaller'
 );
-?>
-<h2><%= link_to players_list
-
-  <a href="/spelerslijst">Spelerslijst</a> &raquo; <?php echo $meta->club_naam; ?></h2>
+%>
+<h2><%= link_to 'Spelerslijst', players_list_path %> &raquo; <%= @club.name %></h2>
 <h3>Coach</h3>
-<p><?php echo $meta->coach; ?></p>
-<h3 class="clear">Spelers</h3>
-<table border="0" class="left">
-  <tbody>
-    <tr>
-      <th>Naam</th>
-      <th>Positie</th>
-      <th>Waarde &times;10<sup>6</sup></th>
-    </tr>
-    <?php $i = 0; while ($i < $aantal_spelers / 2 && ($row = mysql_fetch_object($spelers)) == TRUE): ?>
-    <tr<?php if ($i % 2 <> 1) echo ' class="odd"'; $i++; ?>>
-      <td><?php echo htmlentities($row->naam); ?></td>
-      <td><?php echo $posities[$row->positie]; ?></td>
-      <td>&euro;<?php echo $row->waarde; ?></td>
-    </tr>
-    <?php endwhile; ?>
-  </tbody>
-</table>
-<table border="0" class="right">
-  <tbody>
-    <tr>
-      <th>Naam</th>
-      <th>Positie</th>
-      <th>Waarde &times;10<sup>6</sup></th>
-    </tr>
-    <?php while (($row = mysql_fetch_object($spelers)) == TRUE): ?>
-    <tr<?php if ($i % 2 <> 1) echo ' class="odd"'; $i++; ?>>
-      <td><?php echo htmlentities($row->naam); ?></td>
-      <td><?php echo $posities[$row->positie]; ?></td>
-      <td>&euro;<?php echo $row->waarde; ?></td>
-    </tr>
-    <?php endwhile; ?>
-  </tbody>
-</table>
+<%= image_tag "shirts/#{@club.shorthand.downcase}.png", class: 'shirt' %>
+<p><%= @club.coach.name %></p>
+<%= render 'players', type: 'Middenvelders', players: @players.where(type: 'Midfielder') %>
+<%= render 'players', type: 'Aanvallers', players: @players.where(type: 'Forward') %>
+<div class="clear"></div>
+<%= render 'players', type: 'Verdedigers', players: @players.where(type: 'Defender') %>
+<%= render 'players', type: 'Doelmannen', players: @players.where(type: 'Goalkeeper') %>
