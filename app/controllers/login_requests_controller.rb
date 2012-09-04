@@ -26,7 +26,7 @@ class LoginRequestsController < ApplicationController
       redirect_to root_path, alert: "De loginlink is verlopen of bestaat niet meer. Probeer opnieuw in te loggen."
     else
       login(@login_request.contestant)      
-      redirect_to root_path, notice: "U bent succesvol ingelogd!"
+      redirect_to my_superteam_path, notice: "U bent succesvol ingelogd!"
     end
   end
 end

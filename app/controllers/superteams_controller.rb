@@ -3,9 +3,6 @@ class SuperteamsController < ApplicationController
   end
 
   def update
-    flash[:notice] = "Superteam is opgeslagen!"
-    render json: { status: 'success' } and return
-
     @errors = []
     positions = %w(player-a-1 player-b-1 player-b-2 player-b-3 player-b-4 player-c-1 player-c-2 player-c-3 player-d-1 player-d-2 player-d-3 coach bonusplayer)
     if (params.keys & positions) != positions 
@@ -35,7 +32,7 @@ class SuperteamsController < ApplicationController
     end
 
     if @errors.empty?
-      superteam = Superteam.new      
+      superteam =  @current_contestant.superteam || Superteam.new
       
       superteam.coach_id = params[:coach][:coach]
       superteam.bonus_player_id = params[:bonusplayer][:player]
@@ -63,7 +60,53 @@ class SuperteamsController < ApplicationController
     if @errors.any?
       render json: { status: 'error', message: @errors }  
     else
-      render json: { status: 'success' }, notice: "Superteam is opgeslagen!"
+      flash[:notice] = "Superteam is opgeslagen! Je kunt het team op elk moment tot de sluitingsdatum wijzigen."
+      render json: { status: 'success' }
     end
+  end
+
+  def show
+    superteam = @current_contestant.superteam
+    mapping = {
+      bonus_player: 'bonusplayer',
+      coach: 'coach',
+      goalkeeper: 'player-a-1',
+      defender_a: 'player-b-1',
+      defender_b: 'player-b-2',
+      defender_c: 'player-b-3',
+      defender_d: 'player-b-4',
+      midfielder_a: 'player-c-1',
+      midfielder_b: 'player-c-2',
+      midfielder_c: 'player-c-3',
+      forward_a: 'player-d-1',
+      forward_b: 'player-d-2',
+      forward_c: 'player-d-3'
+    }
+
+    positions_mapping = {
+      Goalkeeper: 'a',
+      Defender: 'b',
+      Midfielder: 'c',
+      Forward: 'd'
+    }
+
+    json = {}
+    mapping.each do |accessor, mapping|
+      pos = superteam.send(accessor)
+      next if pos.nil?
+      json[mapping] = {
+        club: pos.club.shorthand.downcase,
+        name: pos.name,
+        id: pos.id
+      }
+      unless pos.is_a? Coach
+        json[mapping] = json[mapping].merge({
+          position: positions_mapping[pos.type.to_sym],
+          value: pos.value
+        })
+      end
+    end
+
+    render json: json
   end
 end

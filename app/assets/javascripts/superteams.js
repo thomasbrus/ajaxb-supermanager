@@ -40,6 +40,8 @@ var disableSubmit = function() {
 $(document).ready(function() {
   enableSubmit();
 
+  Supermanager.initialize()
+
   $('#box_formation ul > li > a').click(function() {
     Supermanager.showModal($(this), $(this).text());
   });

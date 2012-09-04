@@ -36,7 +36,44 @@ var Supermanager = (function() {
         $('#coach').val(selected);
       });
     },
-    // Boxy.linkedTo()
+    initialize: function() {
+      $.getJSON('/superteam', function(superteam) {
+        for (pos in superteam) {
+          if (pos == 'coach' || pos == 'bonusplayer') {
+            var opener = $('#box_' + pos + " > p > a");
+            var type = pos;
+          } else {
+            var opener = $('#' + pos + " > a");
+            var type = null;
+          }
+          var club = superteam[pos].club;
+          var position = superteam[pos].position;
+          var person = superteam[pos].id;
+          var amount = parseInt(superteam[pos].value);
+          var text = superteam[pos].name;
+          Supermanager.display(pos, type, opener, club, position, person, amount, text);
+        }
+        Supermanager.calculateBudget();
+      });
+    },
+    display: function(pos, type, opener, club, position, person, amount, text) {
+      if (typeof(text) === 'undefined') text = storage[pos].emptyText;
+      storage[pos].club = club;
+      if (type == 'coach') {
+        storage[pos].coach = person;
+      } else {
+        storage[pos].position = position;
+        storage[pos].player = person;
+        if ( ! type) {
+          storage[pos].amount = amount; 
+        }
+      }
+      opener.text(text);
+      
+      if (!type) {
+        opener.parent().css('backgroundImage', "url('/assets/shirts/" + (club ? club : "no_sponsor") + ".png')");
+      }
+    },
     showModal: function(opener, title, type) {
       var pos = type || opener.parent().attr('id'),
         player = storage[pos].player,
@@ -100,35 +137,22 @@ var Supermanager = (function() {
       
       $('#buttonCancel, #buttonOK').bind('click', function() {
         $('#buttonCancel, #buttonOK, #club, #position').unbind();
-      
-        var ABC = function(club, position, person, amount, text) {
-          storage[pos].club = club;
-          if (type == 'coach') {
-            storage[pos].coach = person;
-          } else {
-            storage[pos].position = position;
-            storage[pos].player = person;
-            if ( ! type) {
-              storage[pos].amount = amount; 
-            }
-          }
-          opener.text(text ? text : storage[pos].emptyText);
-          
-          if ( ! type) {
-            opener.parent().css('backgroundImage', "url('/assets/shirts/" + (club ? club : "no_sponsor") + ".png')");
-          }
-        }
         
         if ($(this).attr('id') == 'buttonCancel') {
-          ABC();
+          Supermanager.display(pos, type, opener);
         }
         
         if ($(this).attr('id') == 'buttonOK') {
-          ABC($('#club').val(),
+          Supermanager.display(
+            pos,
+            type,
+            opener,
+            $('#club').val(),
             $('#position').val(),
             type == 'coach' ? $('#coach').val() : $('#player').val(),
             type == 'coach' || $('#player').val() == -1 ? null : $('#player :selected').parent().attr('label').substr(1, 1),
-            type == 'coach' ? $('#coach :selected').text() : $('#player :selected').text());
+            type == 'coach' ? $('#coach :selected').text() : $('#player :selected').text()
+          );
         }
         
         Supermanager.calculateBudget();
