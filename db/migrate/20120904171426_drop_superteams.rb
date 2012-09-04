@@ -1,5 +1,9 @@
-class CreateSuperteams < ActiveRecord::Migration
-  def change
+class DropSuperteams < ActiveRecord::Migration
+  def up
+    drop_table :superteams
+  end
+
+  def down
     create_table :superteams do |t|
       t.belongs_to :contestant
       t.belongs_to :coach
