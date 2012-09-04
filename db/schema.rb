@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120903190540) do
+ActiveRecord::Schema.define(:version => 20120829165547) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -73,8 +73,26 @@ ActiveRecord::Schema.define(:version => 20120903190540) do
     t.datetime "updated_at", :null => false
   end
 
-# Could not dump table "superteams" because of following StandardError
-#   Unknown type 'belongs_to' for column 'coach'
+  create_table "superteams", :force => true do |t|
+    t.integer  "contestant_id"
+    t.integer  "coach_id"
+    t.integer  "bonus_player_id"
+    t.integer  "goalkeeper_id"
+    t.integer  "defender_a_id"
+    t.integer  "defender_b_id"
+    t.integer  "defender_c_id"
+    t.integer  "defender_d_id"
+    t.integer  "midfielder_a_id"
+    t.integer  "midfielder_b_id"
+    t.integer  "midfielder_c_id"
+    t.integer  "forward_a_id"
+    t.integer  "forward_b_id"
+    t.integer  "forward_c_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "superteams", ["contestant_id"], :name => "index_superteams_on_contestant_id"
 
   create_table "teams", :force => true do |t|
     t.string   "name"

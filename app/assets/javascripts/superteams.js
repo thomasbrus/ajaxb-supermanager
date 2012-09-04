@@ -18,8 +18,7 @@ var enableSubmit = function() {
           enableSubmit();
         }
         else if (data.status == 'success') {
-          alert("Gelukt!");
-          // document.location.replace('/meedoen/bevestiging');
+          window.location.reload();
         }
       }, 'json')
     });

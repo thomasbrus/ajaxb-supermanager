@@ -3,6 +3,9 @@ class SuperteamsController < ApplicationController
   end
 
   def update
+    flash[:notice] = "Superteam is opgeslagen!"
+    render json: { status: 'success' } and return
+
     @errors = []
     positions = %w(player-a-1 player-b-1 player-b-2 player-b-3 player-b-4 player-c-1 player-c-2 player-c-3 player-d-1 player-d-2 player-d-3 coach bonusplayer)
     if (params.keys & positions) != positions 
@@ -32,7 +35,7 @@ class SuperteamsController < ApplicationController
     end
 
     if @errors.empty?
-      @current_contestant.superteam ||= Superteam.new      
+      superteam = Superteam.new      
       
       superteam.coach_id = params[:coach][:coach]
       superteam.bonus_player_id = params[:bonusplayer][:player]
@@ -47,24 +50,20 @@ class SuperteamsController < ApplicationController
       superteam.midfielder_a_id = params['player-c-1'][:player]
       superteam.midfielder_b_id = params['player-c-2'][:player]
       superteam.midfielder_c_id = params['player-c-3'][:player]
-      superteam.midfielder_d_id = params['player-c-4'][:player]
 
       superteam.forward_a_id = params['player-d-1'][:player]
       superteam.forward_b_id = params['player-d-2'][:player]
       superteam.forward_c_id = params['player-d-3'][:player]
 
-      @current_contestant.save!
+      superteam.contestant_id = @current_contestant.id
 
-      @errors << superteam.errors unless superteam.valid?
+      @errors << superteam.errors.inspect unless superteam.save
     end
 
     if @errors.any?
       render json: { status: 'error', message: @errors }  
     else
-      render json: { status: 'success' }
+      render json: { status: 'success' }, notice: "Superteam is opgeslagen!"
     end
-
-    # 'player-a-1', 'player-b-1', 'player-b-2', 'player-b-3', 'player-b-4', 'player-c-1', 'player-c-2', 'player-c-3', 'player-d-1', 'player-d-2', 'player-d-3', 'coach', 'bonusplayer')) {
-    # {"player-b-3"=> {"emptyText"=>"Centrale verdediger", "club"=>"ado", "position"=>"b", "player"=>"2126", "amount"=>"2"}, "player-b-4"=>{"emptyText"=>"Rechts back", "club"=>"ado", "position"=>"b", "player"=>"2127", "amount"=>"3"}
   end
 end
