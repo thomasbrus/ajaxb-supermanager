@@ -8,7 +8,7 @@ class AdminMailer < ActionMailer::Base
       1 => "Thomas Brus <thomas.brus@me.com>",
       2 => "N.Huntink <nhuntink@planet.nl>"
     }
-    mail(to: receipents[message.receipent.to_i], subject: subject, reply_to: message.email)
+    mail(to: (receipents[message.receipent.to_i] || receipents[1]), subject: subject, reply_to: message.email)
   end
 
 end
