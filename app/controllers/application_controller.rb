@@ -38,5 +38,7 @@ class ApplicationController < ActionController::Base
       redirect_to(root_path, alert: "Om deze pagina te bekijken moet u ingelogd zijn.") unless logged_in?
     end
 
-
+    def admin_rights_required
+      redirect_to(root_path, alert: "Om deze actie uit te voeren moet u administrator rechten hebben.") unless is_admin?
+    end
 end
