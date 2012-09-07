@@ -1,2 +1,7 @@
 <h2>Mededelingen</h2>
 <%= render 'list', announcements: @announcements %>
+<div style="padding-top: 10px;">
+  <% if is_admin? %>
+    <%= link_to 'Nieuwe mededeling', new_announcement_path %>
+  <% end %>
+</div>

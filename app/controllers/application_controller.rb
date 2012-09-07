@@ -23,7 +23,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :logged_in?, :is_admin?
+  helper_method :logged_in?
+  helper_method :is_admin?
 
   private
     def fetch_contestant
@@ -39,6 +40,6 @@ class ApplicationController < ActionController::Base
     end
 
     def admin_rights_required
-      redirect_to(root_path, alert: "Om deze actie uit te voeren moet u administrator rechten hebben.") unless is_admin?
+      redirect_to(root_path, alert: "Om deze actie uit te voeren moet u administratorrechten hebben.") unless is_admin?
     end
 end

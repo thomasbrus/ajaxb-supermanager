@@ -1,0 +1,25 @@
+<h2>Mededeling plaatsen</h2>
+<%= form_for @announcement do |f| %>
+  <% if @announcement.errors.any? %>
+    <div id="error_explanation">
+      <h3>Vul het formulier alstublieft correct in:</h3>
+      <ul>
+      <% @announcement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :content %>
+    <%= f.text_area :content, size: "40x10" %>
+  </fieldset>
+
+  <button type="submit" class="cta" name="submit">
+    <span>Mededeling plaatsen</span>
+  </button>
+
+<% end %>

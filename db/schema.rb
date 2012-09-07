@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120907172746) do
+ActiveRecord::Schema.define(:version => 20120907175020) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(:version => 20120907172746) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.integer  "team_id"
-    t.boolean  "admin",      :default => false
+    t.boolean  "is_admin",   :default => false
   end
 
   create_table "login_requests", :force => true do |t|
