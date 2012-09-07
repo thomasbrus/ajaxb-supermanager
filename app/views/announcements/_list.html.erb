@@ -2,6 +2,6 @@
   <div class="announcement">
     <h3><%= announcement.title %></h3>
     <%= simple_format(announcement.content) %>
-    <em>Door <%= announcement.author %> op <%=  announcement.created_at %></em>
+    <em>Door <%= announcement.author.name %> op <%=  announcement.created_at %></em>
   </div>
 <% end %>
