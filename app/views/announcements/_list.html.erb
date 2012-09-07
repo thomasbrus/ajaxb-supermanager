@@ -3,5 +3,9 @@
     <h3><%= announcement.title %></h3>
     <%= simple_format(announcement.content) %>
     <em>Door <%= announcement.author.name %> op <%=  announcement.created_at %></em>
+    <% if is_admin? %>
+      / <%= link_to "(Bewerken)", edit_announcement_path(announcement) %>
+      / <%= link_to "(Verwijder)", announcement_path(announcement), method: :delete %>
+    <% end %>
   </div>
 <% end %>

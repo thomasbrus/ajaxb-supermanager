@@ -10,6 +10,10 @@ class AnnouncementsController < ApplicationController
     @announcement = Announcement.new
   end
 
+  def edit
+    @announcement = Announcement.find(params[:id])
+  end
+
   def create
     @announcement = Announcement.new(params[:announcement])
     @announcement.author = @current_contestant
@@ -19,4 +23,20 @@ class AnnouncementsController < ApplicationController
       render action: "new"
     end
   end
+
+  def update
+    @announcement = Announcement.find(params[:id])
+    if @announcement.update_attributes(params[:announcement])
+      redirect_to announcements_path, notice: 'De mededeling is bijgewerkt.'
+    else
+      render action: "edit"
+    end
+  end
+
+  def destroy
+    @announcement = Announcement.find(params[:id])
+    @announcement.destroy
+    redirect_to announcements_path, notice: 'De mededeling is verwijderd.'
+  end
+
 end
