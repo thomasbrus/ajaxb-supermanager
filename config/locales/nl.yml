@@ -199,7 +199,12 @@ nl:
       <<: *errors
     models:
       contestant: Contestant
+      announcement: Announcement
     attributes:
       contestant:
         name: "Naam"
         email: "E-mailadres"
+      announcement:
+        content: "Inhoud"
+        title: "Titel"
+        author: "Auteur"
