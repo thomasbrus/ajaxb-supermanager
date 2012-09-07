@@ -15,7 +15,15 @@ class ApplicationController < ActionController::Base
     cookies.signed[:contestant_id].present?
   end
 
-  helper_method :logged_in?
+  def is_admin?
+    if logged_in?
+      fetch_contestant.is_admin
+    else
+      false
+    end
+  end
+
+  helper_method :logged_in?, :is_admin?
 
   private
     def fetch_contestant
@@ -29,4 +37,6 @@ class ApplicationController < ActionController::Base
     def login_required
       redirect_to(root_path, alert: "Om deze pagina te bekijken moet u ingelogd zijn.") unless logged_in?
     end
+
+
 end
