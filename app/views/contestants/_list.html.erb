@@ -1,0 +1,16 @@
+<table border="0" class="left">
+  <tbody>
+    <tr>
+      <th>Naam</th>
+      <th>E-mailadres</th>
+      <th>Ploeg</th>
+    </tr>
+  </tbody>
+  <% contestants.each do |contestant| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= contestant.name %></td>
+      <td><%= contestant.email %></td>
+      <td><%= contestant.team.try(:name) || '-' %></td>
+    </tr>
+  <% end %>
+</table>

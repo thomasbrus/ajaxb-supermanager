@@ -1,5 +1,10 @@
 class ContestantsController < ApplicationController
   skip_before_filter :login_required, only: [:new, :create]
+  before_filter :admin_rights_required, only: [:index]
+
+  def index
+    @contestants = Contestant.order("created_at ASC")
+  end
 
   def new
     @contestant = Contestant.new

@@ -1,5 +1,9 @@
 <h2>Mededelingen</h2>
-<%= render 'list', announcements: @announcements %>
+<% if @announcements.count > 0 %>
+  <%= render 'list', announcements: @announcements %>
+<% else %>
+  <p>Er zijn nog geen mededelingen geplaatst.</p>
+<% end %>
 <div style="padding-top: 10px;">
   <% if is_admin? %>
     <%= link_to 'Nieuwe mededeling', new_announcement_path %>

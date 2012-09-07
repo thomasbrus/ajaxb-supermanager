@@ -1,28 +1,3 @@
-<%#
-$spelers = mysql_query("
-  SELECT `naam`, `positie`, `waarde`
-  FROM `spelers`
-  WHERE `club_id` = '" . mysql_real_escape_string($_GET['club']) . "' AND NOT `waarde` IS NULL
-  ORDER BY `positie`, `waarde`, `naam`
-") or die(mysql_error());
-
-$aantal_spelers = mysql_num_rows($spelers);
-
-$meta = mysql_fetch_object(mysql_query("
-  SELECT `club_id`, `club_naam`, `naam` AS `coach`
-  FROM `spelers` 
-  WHERE `club_id` = '" . mysql_real_escape_string($_GET['club']) . "'
-  AND `positie` = 'Coach'
-  LIMIT 1
-"));
-
-$posities = array(
-  'a' => 'Doelman',
-  'b' => 'Verdediger',
-  'c' => 'Middenvelder',
-  'd' => 'Aanvaller'
-);
-%>
 <h2><%= link_to 'Spelerslijst', players_list_path %> &raquo; <%= @club.name %></h2>
 <h3>Coach</h3>
 <%= image_tag "shirts/#{@club.shorthand.downcase}.png", class: 'shirt' %>

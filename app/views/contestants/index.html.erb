@@ -1,0 +1,6 @@
+<h2>Aanmeldingen (<%= @contestants.count %>)</h2>
+<% if @contestants.count > 0 %>
+  <%= render 'list', contestants: @contestants %>
+<% else %>
+  <p>Er hebben zich nog geen mensen aangemeld.</p>
+<% end %>

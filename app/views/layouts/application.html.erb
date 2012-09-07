@@ -20,6 +20,9 @@
           <% else %>
             Welkom, gast. <%= link_to 'Doe ook mee', sign_up_path %> of <%= link_to 'log in', login_path %>.
           <% end %>
+          <% if is_admin? && !current_page?(contestants_path) %>
+            Bekijk <%= link_to 'alle aanmeldingen', contestants_path %>.
+          <% end %>
           </p>
       </div>
       <%= render 'shared/nav', pages: [
