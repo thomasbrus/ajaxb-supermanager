@@ -5,7 +5,7 @@ class SuperteamsController < ApplicationController
   def update
     @errors = []
     positions = %w(player-a-1 player-b-1 player-b-2 player-b-3 player-b-4 player-c-1 player-c-2 player-c-3 player-d-1 player-d-2 player-d-3 coach bonusplayer)
-    if (params.keys & positions) != positions 
+    if false && (params.keys & positions) != positions 
       @errors << 'Je hebt niet alle posities ingevuld' 
     else
       total_amount = 0
@@ -22,7 +22,7 @@ class SuperteamsController < ApplicationController
       params.each do |key, value|
         next if key == "coach" or !positions.include?(key) 
         total_amount += value[:amount].to_i unless key == "bonusplayer"
-        taken_clubs << value[:club]
+        taken_clubs << value[:club] unless key == "bonusplayer"
         taken_players << value[:player]
       end
 
@@ -32,8 +32,16 @@ class SuperteamsController < ApplicationController
 
       if taken_players.uniq.length < taken_players.length
         @errors << 'Je mag een speler maar &eacute;&eacute;n keer opstellen.'
+        @errors << 'De volgende speler(s) zijn vaker opgesteld:'
+        @errors << taken_players.keep_if { |id| taken_players.count(id) > 1 }.uniq.map { |player_id|
+          Player.find(player_id).name
+        }.join(', ')
       elsif taken_clubs.uniq.length < taken_clubs.length
         @errors << 'Je mag per club maar &eacute;&eacute;n speler gebruiken.'
+        @errors << 'De volgende club(s) zijn vaker gebruikt:'
+        @errors << taken_clubs.keep_if { |id| taken_clubs.count(id) > 1 }.uniq.map { |club_shorthand|
+          Club.where('lower(shorthand) = ?', club_shorthand.downcase).first.name
+        }.join(', ')
       end
     end
 
