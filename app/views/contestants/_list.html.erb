@@ -11,7 +11,7 @@
     <tr class="<%= cycle('odd', 'even') %>">
       <td><%= contestant.name %></td>
       <td><%= mail_to(contestant.email) %></td>
-      <td><% contestant.team.try(:name) || '-' %></td>
+      <td><%= contestant.team.try(:name) || '-' %></td>
       <% if contestant.superteam.nil? %>
         <td>Nog niet ingevuld.</td>
       <% elsif contestant.superteam.valid? %>
