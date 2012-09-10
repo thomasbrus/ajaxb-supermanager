@@ -5,14 +5,17 @@ class SuperteamsController < ApplicationController
   def update
     @errors = []
     positions = %w(player-a-1 player-b-1 player-b-2 player-b-3 player-b-4 player-c-1 player-c-2 player-c-3 player-d-1 player-d-2 player-d-3 coach bonusplayer)
-    if (params.keys & positions) != positions 
+    if false && (params.keys & positions) != positions 
       @errors << 'Je hebt niet alle posities ingevuld' 
     else
       total_amount = 0
       taken_clubs = []
       taken_players = []
 
-      if params[:bonusplayer].amount > 2
+      puts params.inspect
+      bonusplayer = Player.find(params[:bonusplayer][:player])
+
+      if bonusplayer.value > 2
         @errors << 'De bonusspeler is te duur, hij mag maximaal 2 miljoen kosten.'
       end
 
