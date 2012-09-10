@@ -12,6 +12,10 @@ class SuperteamsController < ApplicationController
       taken_clubs = []
       taken_players = []
 
+      if params[:bonusplayer].amount > 2
+        @errors << 'De bonusspeler is te duur, hij mag maximaal 2 miljoen kosten.'
+      end
+
       params.each do |key, value|
         next if %w(coach bonusplayer).include?(key) or !positions.include?(key) 
         Rails.logger.info [key, value].inspect
