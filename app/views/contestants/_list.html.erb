@@ -4,13 +4,21 @@
       <th>Naam</th>
       <th>E-mailadres</th>
       <th>Ploeg</th>
+      <th>Superteam</th>
     </tr>
   </tbody>
   <% contestants.each do |contestant| %>
     <tr class="<%= cycle('odd', 'even') %>">
       <td><%= contestant.name %></td>
-      <td><%= contestant.email %></td>
-      <td><%= contestant.team.try(:name) || '-' %></td>
+      <td><%= mail_to(contestant.email) %></td>
+      <td><% contestant.team.try(:name) || '-' %></td>
+      <% if contestant.superteam.nil? %>
+        <td>Nog niet ingevuld.</td>
+      <% elsif contestant.superteam.valid? %>
+        <td style="color: green;">Geldig!</td>
+      <% else %>
+        <td style="color: red;">Ongeldig!</td>
+      <% end %>
     </tr>
   <% end %>
 </table>
