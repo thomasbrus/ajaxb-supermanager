@@ -5,6 +5,7 @@
       <th>E-mailadres</th>
       <th>Ploeg</th>
       <th>Superteam</th>
+      <th>Aanmelddatum</th>
     </tr>
   </tbody>
   <% contestants.each do |contestant| %>
@@ -19,6 +20,7 @@
       <% else %>
         <td style="color: red;">Ongeldig!</td>
       <% end %>
+      <td><%= contestant.created_at.strftime("%d %B %Y") %></td>
     </tr>
   <% end %>
 </table>
