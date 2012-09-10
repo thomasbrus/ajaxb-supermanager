@@ -12,7 +12,6 @@ class SuperteamsController < ApplicationController
       taken_clubs = []
       taken_players = []
 
-      puts params.inspect
       bonusplayer = Player.find(params[:bonusplayer][:player])
 
       if bonusplayer.value > 2
