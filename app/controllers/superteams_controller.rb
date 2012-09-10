@@ -5,7 +5,7 @@ class SuperteamsController < ApplicationController
   def update
     @errors = []
     positions = %w(player-a-1 player-b-1 player-b-2 player-b-3 player-b-4 player-c-1 player-c-2 player-c-3 player-d-1 player-d-2 player-d-3 coach bonusplayer)
-    if false && (params.keys & positions) != positions 
+    if (params.keys & positions) != positions 
       @errors << 'Je hebt niet alle posities ingevuld' 
     else
       total_amount = 0
@@ -20,9 +20,8 @@ class SuperteamsController < ApplicationController
       end
 
       params.each do |key, value|
-        next if %w(coach bonusplayer).include?(key) or !positions.include?(key) 
-        Rails.logger.info [key, value].inspect
-        total_amount += value[:amount].to_i
+        next if key == "coach" or !positions.include?(key) 
+        total_amount += value[:amount].to_i unless key == "bonusplayer"
         taken_clubs << value[:club]
         taken_players << value[:player]
       end
