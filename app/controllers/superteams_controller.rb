@@ -21,7 +21,7 @@ class SuperteamsController < ApplicationController
       params.each do |key, value|
         next if key == "coach" or !positions.include?(key) 
         total_amount += value[:amount].to_i unless key == "bonusplayer"
-        taken_clubs << value[:club] unless key == "bonusplayer"
+        taken_clubs << value[:club]
         taken_players << value[:player]
       end
 
