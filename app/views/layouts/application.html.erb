@@ -16,7 +16,7 @@
         <h1>Supermanager Ajax Breedenbroek 2012 - 2013</h1>
         <p>
           <% if logged_in? %>
-            Welkom, <%= @current_contestant.name %>. <%= link_to 'Log uit', logout_path, method: :delete %>.
+            Welkom, <%= @current_contestant.name_with_team %>. <%= link_to 'Log uit', logout_path, method: :delete %>.
           <% else %>
             Welkom, gast. <%= link_to 'Doe ook mee', sign_up_path %> of <%= link_to 'log in', login_path %>.
           <% end %>

@@ -6,4 +6,12 @@ class Contestant < ActiveRecord::Base
   belongs_to :team
   has_one :superteam
   has_many :login_requests, dependent: :destroy
+
+  def name_with_team
+    if team.present?
+      "#{name} (#{team.name})"
+    else
+      name
+    end
+  end
 end
