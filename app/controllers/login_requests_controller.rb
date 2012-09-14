@@ -25,8 +25,12 @@ class LoginRequestsController < ApplicationController
     if @login_request.nil? or @login_request.expires_at < Time.now
       redirect_to root_path, alert: "De loginlink is verlopen of bestaat niet meer. Probeer opnieuw in te loggen."
     else
-      login(@login_request.contestant)      
-      redirect_to my_superteam_path, notice: "U bent succesvol ingelogd!"
+      if @login_request.contestant
+        login(@login_request.contestant)
+        redirect_to my_superteam_path, notice: "U bent succesvol ingelogd!"
+      else
+        redirect_to root_path, alert: "De loginlink is niet aan een account gekoppeld."
+      end
     end
   end
 end
