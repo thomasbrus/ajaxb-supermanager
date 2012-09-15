@@ -24,6 +24,6 @@ class ContestantsController < ApplicationController
   end
 
   def export
-    send_data Contestant.as_csv, type: "text/plain", filename: "deelnemers.csv", disposition: 'attachment'
+    send_data Contestant.as_csv, type: "text/csv", filename: "deelnemers.csv", disposition: 'attachment'
   end
 end
