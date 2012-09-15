@@ -22,9 +22,7 @@ class Contestant < ActiveRecord::Base
       csv << %w(Naam E-mailadres Ploeg Coach Bonusspeler Keeper Verdedigers - - - Middenvelders - - Aanvallers - -)
       self.order('created_at ASC').each do |contestant|
         columns = [contestant.name.strip, contestant.email.strip]
-        if contestant.team.present?
-          columns << contestant.team.name
-        end
+        columns << contestant.team.try(:name) || ' '
         if contestant.superteam.present? and contestant.superteam.valid?
           columns << contestant.superteam.coach.name
           columns << contestant.superteam.bonus_player.name
