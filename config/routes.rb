@@ -17,6 +17,8 @@ Supermanager::Application.routes.draw do
   resources :login_requests
   resources :messages
 
+  get "/export_contestants" => "contestants#export"
+
   get "/sign_up" => "contestants#new", as: :sign_up
   get "/thank_you" => "pages#thank_you", as: :thank_you
 

@@ -1,6 +1,9 @@
 <h2>Aanmeldingen (<%= @contestants.count %>)</h2>
 <% if @contestants.count > 0 %>
   <%= render 'list', contestants: @contestants %>
+  <div class="clear">
+    <%= link_to 'Download als CSV bestand', export_contestants_path %>
+  </div>
 <% else %>
   <p>Er hebben zich nog geen mensen aangemeld.</p>
 <% end %>
