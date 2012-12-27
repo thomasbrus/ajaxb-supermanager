@@ -16,3 +16,6 @@
 
 /config/database.yml
 .DS_Store
+
+# Hide secret token
+/config/secret_token
