@@ -8,6 +8,9 @@
         <li><%= msg %></li>
       <% end %>
       </ul>
+      <% if @contestant.errors[:email].present? && @contestant.email.present? %>
+        <p>Wilt u <%= link_to 'inloggen met uw bestaande account?', login_path(:email => @contestant.email) %></p>
+      <% end %>
     </div>
   <% end %>
 

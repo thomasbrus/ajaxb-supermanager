@@ -3,6 +3,7 @@ class LoginRequestsController < ApplicationController
 
   def new
     @login_request = LoginRequest.new
+    @email = params[:email] || nil
   end
 
   def create
