@@ -32,6 +32,16 @@
         }
       }
 
+      a.important {
+        color: #f75a18;
+        border-bottom: 1px #f75a18 dotted;
+      }
+
+      a.important:hover {
+        text-decoration: none;
+        border-bottom-style: solid;
+      }
+
     }
 
     li:first-child {
