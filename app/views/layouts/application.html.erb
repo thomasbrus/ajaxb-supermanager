@@ -25,14 +25,16 @@
           <% end %>
           </p>
       </div>
-      <%= render 'shared/nav', pages: [
-        [root_path, 'Home'],
-        (logged_in? ? [my_superteam_path, 'Mijn Superteam'] : [sign_up_path, 'Meedoen']),
-        [announcements_path, 'Mededelingen'],
-        [players_list_path, 'Spelerslijst'],
-        [rules_path, 'Spelregels'],
-        [contact_path, 'Contact']
-      ] %>
+      <%
+        pages = [[root_path, 'Home']]
+        pages << [my_superteam_path, 'Mijn Superteam'] if logged_in?
+        pages << [sign_up_path, 'Meedoen'] << [login_path, 'Login', true] unless logged_in?
+        pages << [announcements_path, 'Mededelingen']
+        pages << [players_list_path, 'Spelerslijst']
+        pages << [rules_path, 'Spelregels']
+        pages <<[contact_path, 'Contact']
+      %>
+      <%= render 'shared/nav', pages: pages %>
       <%= render 'shared/flashes' %>
       <div class="content">
         <%= yield %>
