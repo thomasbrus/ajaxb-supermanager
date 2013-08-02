@@ -99,7 +99,7 @@ var Supermanager = (function() {
           HTMLHelper.buildElement('p', '<span><a id="buttonCancel" href="#">Wissen</a></span>' + 
           HTMLHelper.buildElement('input', {type: 'button', value: 'Akkoord', 'id': 'buttonOK'}, true)) +
         '</form>';
-        this.modal = new Boxy(html, {title: title, modal: true, draggable: true, closeable: false});
+        this.modal = new Boxy(html, {title: title, modal: true, draggable: true, closeable: true});
       } else {
         this.modal.setTitle(storage[pos].emptyText);
         this.modal.center();
@@ -134,6 +134,8 @@ var Supermanager = (function() {
       $('#club, #position').bind('change', function() {
         Supermanager.loadPlayers($('#club').val(), $('#position').val(), amount);
       });
+
+      $('.boxy-modal-blackout').click(function() { Supermanager.modal.hide(); });
       
       $('#buttonCancel, #buttonOK').bind('click', function() {
         $('#buttonCancel, #buttonOK, #club, #position').unbind();
