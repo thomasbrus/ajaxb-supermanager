@@ -21,8 +21,8 @@
         <td style="color: red;">Ongeldig!</td>
       <% end %>
       <td>
-      <% if contestant.team.present? %>
-        <%= contestant.team.updated_at.strftime("%d-%m-%Y")  %>
+      <% if contestant.superteam.present? %>
+        <%= contestant.superteam.updated_at.strftime("%d-%m-%Y")  %>
       <% else %>
         -
       <% end %>

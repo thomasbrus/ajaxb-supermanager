@@ -4,3 +4,4 @@ class Player < ActiveRecord::Base
   validates_presence_of :club, :code, :name, :type, :value
   validates_uniqueness_of :code
 end
+
