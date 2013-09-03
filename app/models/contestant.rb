@@ -23,23 +23,22 @@ class Contestant < ActiveRecord::Base
       self.order('created_at ASC').each do |contestant|
         columns = [contestant.name.strip, contestant.email.strip]
         columns << contestant.team.try(:name) || ' '
-        if contestant.superteam.present? and contestant.superteam.valid?
-          columns << contestant.superteam.coach.name
-          columns << contestant.superteam.bonus_player.name
-          columns << contestant.superteam.goalkeeper.name
-          columns << contestant.superteam.defender_a.name
-          columns << contestant.superteam.defender_b.name
-          columns << contestant.superteam.defender_c.name
-          columns << contestant.superteam.defender_d.name
-          columns << contestant.superteam.midfielder_a.name
-          columns << contestant.superteam.midfielder_b.name
-          columns << contestant.superteam.midfielder_c.name
-          columns << contestant.superteam.forward_a.name
-          columns << contestant.superteam.forward_b.name
-          columns << contestant.superteam.forward_c.name
+        if contestant.superteam.present? && contestant.superteam.valid?
+          columns << contestant.superteam.coach.try(:name) || ' '
+          columns << contestant.superteam.bonus_player.try(:name) || ' '
+          columns << contestant.superteam.goalkeeper.try(:name) || ' '
+          columns << contestant.superteam.defender_a.try(:name) || ' '
+          columns << contestant.superteam.defender_b.try(:name) || ' '
+          columns << contestant.superteam.defender_c.try(:name) || ' '
+          columns << contestant.superteam.defender_d.try(:name) || ' '
+          columns << contestant.superteam.midfielder_a.try(:name) || ' '
+          columns << contestant.superteam.midfielder_b.try(:name) || ' '
+          columns << contestant.superteam.midfielder_c.try(:name) || ' '
+          columns << contestant.superteam.forward_a.try(:name) || ' '
+          columns << contestant.superteam.forward_b.try(:name) || ' '
+          columns << contestant.superteam.forward_c.try(:name) || ' '
         end
         csv.add_row(columns)
-
       end
     end
   end
