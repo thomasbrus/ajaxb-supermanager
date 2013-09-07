@@ -3,7 +3,13 @@ class ContestantsController < ApplicationController
   before_filter :admin_rights_required, only: [:index]
 
   def index
-    @contestants = Contestant.order("created_at ASC")
+    @contestants = Contestant.all.sort_by do |contestant|
+      if contestant.superteam.present?
+        - contestant.superteam.updated_at.to_i
+      else
+        0
+      end
+    end
   end
 
   def new

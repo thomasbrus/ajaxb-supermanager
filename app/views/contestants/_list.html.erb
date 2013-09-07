@@ -1,15 +1,17 @@
 <table border="0" class="left">
   <tbody>
     <tr>
+      <th></th>
       <th>Naam</th>
       <th>E-mailadres</th>
       <th>Ploeg</th>
       <th>Superteam</th>
-      <th>Laatste wijziging</th>
+      <th><i>Laatste wijziging</i></th>
     </tr>
   </tbody>
-  <% contestants.each do |contestant| %>
+  <% contestants.each_with_index do |contestant, index| %>
     <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= index + 1 %>.</td>
       <td><%= contestant.name %></td>
       <td><%= mail_to(contestant.email) %></td>
       <td><%= contestant.team.try(:name) || '-' %></td>
