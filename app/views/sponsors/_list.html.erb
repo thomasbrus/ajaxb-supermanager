@@ -1,5 +1,5 @@
 <% unless sponsors.empty? %>
-  <div id="sponsors" class="right" style="width:30%;">
+  <div id="sponsors" class="right" style="width:35%;">
   <% sponsors.each do |sponsor| %>
     <h3><%= link_to sponsor.name, sponsor.url %></h3>
     <p><%= link_to image_tag("sponsors/#{sponsor.logo}"), sponsor.url, alt: sponsor.name %></p>
