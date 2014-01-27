@@ -7,7 +7,7 @@ class LoginRequestsController < ApplicationController
   end
 
   def create
-    @contestant = Contestant.find_by_email(params[:email].squish)
+    @contestant = Contestant.find_by_email(params[:email].squish.downcase)
     if @contestant.nil?
       @login_request = LoginRequest.new
       @login_request.errors[:base] << "E-mailadres bestaat niet."
