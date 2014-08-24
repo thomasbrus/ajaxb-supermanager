@@ -38,14 +38,15 @@ var Supermanager = (function() {
     },
     initialize: function() {
       $.getJSON('/superteam', function(superteam) {
-        for (pos in superteam) {
+        for (var pos in superteam) {
+          var opener = $('#' + pos + " > a");
+          var type = null;
+
           if (pos == 'coach' || pos == 'bonusplayer') {
-            var opener = $('#box_' + pos + " > p > a");
-            var type = pos;
-          } else {
-            var opener = $('#' + pos + " > a");
-            var type = null;
+            opener = $('#box_' + pos + " > p > a");
+            type = pos;
           }
+
           var club = superteam[pos].club;
           var position = superteam[pos].position;
           var person = superteam[pos].id;
@@ -65,11 +66,11 @@ var Supermanager = (function() {
         storage[pos].position = position;
         storage[pos].player = person;
         if ( ! type) {
-          storage[pos].amount = amount; 
+          storage[pos].amount = amount;
         }
       }
       opener.text(text);
-      
+
       if (!type) {
         opener.parent().css('backgroundImage', "url('/assets/shirts/" + (club ? club : "no_sponsor") + ".png')");
       }
@@ -80,23 +81,24 @@ var Supermanager = (function() {
         club = storage[pos].club,
         position = (type ? storage[pos].position : pos.split('-')[1]),
         amount = (type == 'bonusplayer' ? 2 : null);
-        
+      var coach;
+
       if (type == 'coach') {
-        var coach = storage['coach'].coach  
+        coach = storage.coach.coach;
       }
-      
+
       if ( ! storage[pos].emptyText) {
         storage[pos].emptyText = title;
       }
 
       if ( ! this.modal) {
-        var html = 
-        '<form id="form_players">'+ 
+        var html =
+        '<form id="form_players">'+
           HTMLHelper.buildElement('p', HTMLHelper.buildElement('select', {id: 'club'})) +
           HTMLHelper.buildElement('p', HTMLHelper.buildElement('select', {id: 'position'})) +
-          HTMLHelper.buildElement('p', HTMLHelper.buildElement('select', {id: 'player'})) + 
-          HTMLHelper.buildElement('p', HTMLHelper.buildElement('select', {id: 'coach'})) +                
-          HTMLHelper.buildElement('p', '<span><a id="buttonCancel" href="#">Wissen</a></span>' + 
+          HTMLHelper.buildElement('p', HTMLHelper.buildElement('select', {id: 'player'})) +
+          HTMLHelper.buildElement('p', HTMLHelper.buildElement('select', {id: 'coach'})) +
+          HTMLHelper.buildElement('p', '<span><a id="buttonCancel" href="#">Wissen</a></span>' +
           HTMLHelper.buildElement('input', {type: 'button', value: 'Akkoord', 'id': 'buttonOK'}, true)) +
         '</form>';
         this.modal = new Boxy(html, {title: title, modal: true, draggable: true, closeable: true});
@@ -105,12 +107,12 @@ var Supermanager = (function() {
         this.modal.center();
         this.modal.show();
       }
-    
+
       $('#club').parent().show();
       $('#position').parent().hide();
       $('#player').parent().show();
       $('#coach').parent().hide();
-      
+
       switch (type) {
         case 'bonusplayer': $('#position').parent().show(); break;
         case 'coach': {
@@ -120,9 +122,9 @@ var Supermanager = (function() {
         }
         break;
       }
-      
+
       this.startLoading($('#club, #player, #coach'));
-            
+
       if (type !== 'coach') {
         this.loadClubs(club);
         this.loadPositions(position);
@@ -130,20 +132,20 @@ var Supermanager = (function() {
       } else {
         this.loadCoaches(coach);
       }
-              
+
       $('#club, #position').bind('change', function() {
         Supermanager.loadPlayers($('#club').val(), $('#position').val(), amount);
       });
 
       $('.boxy-modal-blackout').click(function() { Supermanager.modal.hide(); });
-      
+
       $('#buttonCancel, #buttonOK').bind('click', function() {
         $('#buttonCancel, #buttonOK, #club, #position').unbind();
-        
+
         if ($(this).attr('id') == 'buttonCancel') {
           Supermanager.display(pos, type, opener);
         }
-        
+
         if ($(this).attr('id') == 'buttonOK') {
           Supermanager.display(
             pos,
@@ -156,19 +158,19 @@ var Supermanager = (function() {
             type == 'coach' ? $('#coach :selected').text() : $('#player :selected').text()
           );
         }
-        
+
         Supermanager.calculateBudget();
         Supermanager.modal.hide();
-                
+
         return false;
       });
-      
+
 
     },
     calculateBudget: function() {
-      var budget = 36;      
-      for (i in storage) {
-        budget = storage[i].amount && i !== 'bonusplayer' ? budget - storage[i].amount : budget;  
+      var budget = 36;
+      for (var i in storage) {
+        budget = storage[i].amount && i !== 'bonusplayer' ? budget - storage[i].amount : budget;
       }
       $('#box_budget > p').html('&euro;' + budget + '.000.000').addClass(budget < 0 ? 'debt' : null);
     },
