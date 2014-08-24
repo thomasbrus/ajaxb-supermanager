@@ -6,7 +6,7 @@ namespace :players do
     file = Rails.root.join *%w(db data players.csv)
     CSV.foreach(file, col_sep: ';') do |code, name, club, position, value|
       next if name.blank? or club.blank? or position.blank?
-      club = Club.find_by_shorthand(club.strip)   
+      club = Club.find_by_shorthand(club.strip)
       params = { code: code.to_i, name: name.strip, club: club, value: value.to_i }
       case position.strip
       when 'a'
