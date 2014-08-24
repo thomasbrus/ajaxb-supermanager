@@ -1,30 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-# Set up clubs (season 2013 - 2014)
-Club.create(name: 'ADO Den Haag', shorthand: 'ado')
-Club.create(name: 'AFC Ajax', shorthand: 'aja')
-Club.create(name: 'AZ', shorthand: 'az')
-Club.create(name: 'FC Groningen', shorthand: 'gro')
-Club.create(name: 'FC Twente', shorthand: 'twe')
-Club.create(name: 'FC Utrecht', shorthand: 'utr')
-Club.create(name: 'Feyenoord', shorthand: 'fey')
-Club.create(name: 'Go Ahead Eagles', shorthand: 'gae')
-Club.create(name: 'Heracles Almelo', shorthand: 'her')
-Club.create(name: 'NAC Breda', shorthand: 'nac')
-Club.create(name: 'N.E.C.', shorthand: 'nec')
+# Set up clubs (season 2014 - 2015)
 Club.create(name: 'PEC Zwolle', shorthand: 'pec')
 Club.create(name: 'PSV', shorthand: 'psv')
-Club.create(name: 'RKC', shorthand: 'rkc')
-Club.create(name: 'Roda JC', shorthand: 'rod')
+Club.create(name: 'AFC Ajax', shorthand: 'aja')
+Club.create(name: 'FC Groningen', shorthand: 'gro')
 Club.create(name: 'SC Cambuur', shorthand: 'cam')
+Club.create(name: 'Excelsior', shorthand: 'exc')
 Club.create(name: 'sc Heerenveen', shorthand: 'hee')
+Club.create(name: 'Feyenoord', shorthand: 'fey')
+Club.create(name: 'FC Dordrecht', shorthand: 'dor')
+Club.create(name: 'Willem II', shorthand: 'wil')
+Club.create(name: 'AZ', shorthand: 'az')
+Club.create(name: 'FC Twente', shorthand: 'twe')
+Club.create(name: 'NAC Breda', shorthand: 'nac')
+Club.create(name: 'ADO Den Haag', shorthand: 'ado')
+Club.create(name: 'Go Ahead Eagles', shorthand: 'gae')
+Club.create(name: 'FC Utrecht', shorthand: 'utr')
+Club.create(name: 'Heracles Almelo', shorthand: 'her')
 Club.create(name: 'Vitesse', shorthand: 'vit')
 
-# Default sponsor
-Sponsor.create(name: 'Voorbeeldsponsor', url: '/', logo: 'example.jpg')
+# Sponsor
+Sponsor.create(name: 'Café Koenders', url: 'http://koenders-zalencentrum.nl', logo: 'koenders.jpg')
