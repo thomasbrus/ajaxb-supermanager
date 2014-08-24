@@ -1,12 +1,12 @@
 var enableSubmit = function() {
-  
+
   $('#box_submit').click(function() {
     disableSubmit();
-    
-    if ($('#status').length == 0) {
+
+    if ($('#status').length === 0) {
       $('.content').prepend('<div id="status"></status>');
     }
-    
+
     $('#status').attr('class', 'busy').html('<p>De opstelling wordt gecontroleerd..</p>').hide().slideDown('slow', function() {
       $.post('/update_superteam', Supermanager.exportData(), function(data) {
         if (data.status == 'error') {
@@ -20,7 +20,7 @@ var enableSubmit = function() {
         else if (data.status == 'success') {
           window.location.reload();
         }
-      }, 'json')
+      }, 'json');
     });
   });
 
@@ -29,32 +29,32 @@ var enableSubmit = function() {
   }).bind('mouseleave', function() {
     $(this).css('background', 'url(/assets/submit.jpg) no-repeat').css('cursor', 'default');
   });
-}
+};
 
 var disableSubmit = function() {
   $('#box_submit').unbind('mouseleave').unbind('click').bind('mouseenter', function() {
     $(this).css('cursor', 'default');
-  }); 
+  });
 }
 
 $(document).ready(function() {
   enableSubmit();
 
-  Supermanager.initialize()
+  Supermanager.initialize();
 
   $('#box_formation ul > li > a').click(function() {
     Supermanager.showModal($(this), $(this).text());
   });
-  
+
   $('#box_coach > p > a').click(function() {
     Supermanager.showModal($(this), 'Kies een coach', 'coach');
   });
-  
+
   $('#box_bonusplayer > p > a').click(function() {
     Supermanager.showModal($(this), 'Kies een bonusspeler', 'bonusplayer');
   });
-    
+
   $('.box a').click(function() {
-    return false; 
+    return false;
   });
 });
