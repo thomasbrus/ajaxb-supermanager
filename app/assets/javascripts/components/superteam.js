@@ -137,7 +137,7 @@ var Supermanager = (function() {
         Supermanager.loadPlayers($('#club').val(), $('#position').val(), amount);
       });
 
-      $('.boxy-modal-blackout').click(function() { Supermanager.modal.hide(); });
+      $('.boxy-modal-blackout').click(function() { Supermanager.hideModel(); });
 
       $('#buttonCancel, #buttonOK').bind('click', function() {
         $('#buttonCancel, #buttonOK, #club, #position').unbind();
@@ -160,12 +160,16 @@ var Supermanager = (function() {
         }
 
         Supermanager.calculateBudget();
-        Supermanager.modal.hide();
+        Supermanager.hideModel();
 
         return false;
       });
 
 
+    },
+    hideModel: function() {
+      $('#buttonCancel, #buttonOK').unbind('click');
+      Supermanager.modal.hide();
     },
     calculateBudget: function() {
       var budget = 36;
