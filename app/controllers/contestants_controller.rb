@@ -18,6 +18,7 @@ class ContestantsController < ApplicationController
 
   def create
     @contestant = Contestant.new(params[:contestant])
+    @contestant.email = @contestant.email.downcase
     if params[:contestant][:team_name].present?
       @contestant.team = Team.find_or_initialize_by_name(params[:contestant][:team_name])
     end
