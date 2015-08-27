@@ -36,10 +36,16 @@ class ApplicationController < ActionController::Base
     end
 
     def login_required
-      redirect_to(root_path, alert: "Om deze pagina te bekijken moet u ingelogd zijn.") unless logged_in?
+      unless logged_in?
+        flash[:alert] = "Om deze pagina te bekijken moet u ingelogd zijn."
+        redirect_to(root_path)
+      end
     end
 
     def admin_rights_required
-      redirect_to(root_path, alert: "Om deze actie uit te voeren moet u administratorrechten hebben.") unless is_admin?
+      unless is_admin?
+        flash[:alert] = "Om deze actie uit te voeren moet u administratorrechten hebben."
+        redirect_to(root_path)
+      end
     end
 end
