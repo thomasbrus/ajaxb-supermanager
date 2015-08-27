@@ -15,25 +15,25 @@ var Supermanager = (function() {
       $.getJSON('/players', { club: club || 'ado', position: position || 'a', amount: amount || 5}, function(players) {
         HTMLHelper.populateSelect('#player', players);
         Supermanager.stopLoading($('#player'));
-        $('#player').val(selected);
+        if (selected) { $('#player').val(selected); }
       });
     },
     loadPositions: function(selected) {
       HTMLHelper.populateSelect('#position', {a: 'Doelman', b: 'Verdediger', c: 'Middenvelder', d: 'Aanvaller'});
-      $('#position').val(selected);
+      if (selected) { $('#position').val(selected); }
     },
     loadClubs: function(selected) {
       $.getJSON('/clubs', function(clubs) {
         HTMLHelper.populateSelect('#club', clubs);
         Supermanager.stopLoading($('#club'));
-        $('#club').val(selected);
+        if (selected) { $('#club').val(selected); }
       });
     },
     loadCoaches: function(selected) {
       $.getJSON('/coaches', function(coaches) {
         HTMLHelper.populateSelect('#coach', coaches);
         Supermanager.stopLoading($('#coach'));
-        $('#coach').val(selected);
+        if (selected) { $('#coach').val(selected); }
       });
     },
     initialize: function() {
