@@ -1,5 +1,4 @@
-Supermanager::Application.routes.draw do
-
+Rails.application.routes.draw do
   resources :clubs do
     resources :players
   end
@@ -30,7 +29,7 @@ Supermanager::Application.routes.draw do
   get "/announcements" => "pages#rules", as: :announcements
   get "/players_list" => "clubs#index", as: :players_list
   get "/rules" => "pages#rules", as: :rules
-  
+
   get "/contact" => "messages#new", as: :contact
 
   root :to => 'pages#home'
