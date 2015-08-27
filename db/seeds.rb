@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# Set up clubs (season 2014 - 2015)
+# Set up clubs (season 2015 - 2016)
 Club.create(name: 'PEC Zwolle', shorthand: 'pec')
 Club.create(name: 'PSV', shorthand: 'psv')
 Club.create(name: 'AFC Ajax', shorthand: 'aja')
