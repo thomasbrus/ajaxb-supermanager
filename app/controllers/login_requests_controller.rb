@@ -11,7 +11,7 @@ class LoginRequestsController < ApplicationController
 
     if @contestant.nil?
       @login_request = LoginRequest.new
-      @login_request.errors[:base] << "E-mailadres bestaat niet."
+      @login_request.errors[:base] << "Geen account bekend met dit e-mailadres. Waarschijnlijk zul je je eerst moeten registreren."
       @email = params[:email]
       render action: "new"
     else
