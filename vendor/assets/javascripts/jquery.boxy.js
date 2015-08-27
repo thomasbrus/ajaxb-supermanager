@@ -135,7 +135,7 @@ jQuery.extend(Boxy, {
         hideShrink:             'vertical'
     },
     
-    IE6:                (jQuery.browser.msie && jQuery.browser.version < 7),
+    IE6:                false,
     DEFAULT_X:          50,
     DEFAULT_Y:          50,
     MODAL_OPACITY:      0.7,
@@ -286,7 +286,7 @@ jQuery.extend(Boxy, {
     _viewport: function() {
         var d = document.documentElement, b = document.body, w = window;
         return jQuery.extend(
-            jQuery.browser.msie ?
+            false ?
                 { left: b.scrollLeft || d.scrollLeft, top: b.scrollTop || d.scrollTop } :
                 { left: w.pageXOffset, top: w.pageYOffset },
             !Boxy._u(w.innerWidth) ?
