@@ -4,18 +4,4 @@
   fieldset {
     padding-top: 0;
   }
-
-  .payment {
-    padding: 5px;
-    position: relative;
-
-    button {
-      position: absolute;
-      right: 0;
-      bottom: 15px;
-    }
-    .payment dl > dt {
-      width: 90px;
-    }
-  }
 }
