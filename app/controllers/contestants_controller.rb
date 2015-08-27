@@ -17,11 +17,14 @@ class ContestantsController < ApplicationController
   end
 
   def create
-    @contestant = Contestant.new(params[:contestant])
+    @contestant = Contestant.new(contestant_params)
+
     @contestant.email = @contestant.email.downcase
-    if params[:contestant][:team_name].present?
-      @contestant.team = Team.find_or_initialize_by_name(params[:contestant][:team_name])
+
+    if contestant_params.has_key?(:team_name)
+      @contestant.team = Team.find_or_initialize_by_name(contestant_params[:team_name])
     end
+
     if @contestant.save
       ContestantMailer.welcome(@contestant, @contestant.login_requests.create).deliver
       redirect_to thank_you_path
@@ -32,5 +35,9 @@ class ContestantsController < ApplicationController
 
   def export
     send_data Contestant.as_csv, type: "text/csv", filename: "deelnemers.csv", disposition: 'attachment'
+  end
+
+  private def contestant_params
+    params.require(:contestant).permit(:email, :name, :team_name)
   end
 end

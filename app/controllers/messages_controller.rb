@@ -6,7 +6,8 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(params[:message])
+    @message = Message.new(message_params)
+
     if @message.valid?
       AdminMailer.contact(@message).deliver
       redirect_to root_path, notice: "E-mail is verzonden!"
@@ -15,6 +16,9 @@ class MessagesController < ApplicationController
     end
   end
 
+  private def message_params
+    params.require(:message).permit(:name, :email, :content, :receipent)
+  end
 end
 
 

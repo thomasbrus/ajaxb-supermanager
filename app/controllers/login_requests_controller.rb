@@ -8,6 +8,7 @@ class LoginRequestsController < ApplicationController
 
   def create
     @contestant = Contestant.find_by_email(params[:email].squish.downcase)
+
     if @contestant.nil?
       @login_request = LoginRequest.new
       @login_request.errors[:base] << "E-mailadres bestaat niet."
@@ -23,6 +24,7 @@ class LoginRequestsController < ApplicationController
   def verify
     @login_request = LoginRequest.find_by_validation_key(params[:validation_key])
     @login_request.try(:destroy)
+
     if @login_request.nil? or @login_request.expires_at < Time.now
       redirect_to root_path, alert: "De loginlink is verlopen of bestaat niet meer. Probeer opnieuw in te loggen."
     else

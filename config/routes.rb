@@ -26,7 +26,6 @@ Rails.application.routes.draw do
   get "/login_link_confirmation" => "pages#login_link_confirmation"
   delete "/logout" => "sessions#destroy"
 
-  get "/announcements" => "pages#rules", as: :announcements
   get "/players_list" => "clubs#index", as: :players_list
   get "/rules" => "pages#rules", as: :rules
 

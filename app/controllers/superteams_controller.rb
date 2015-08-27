@@ -6,7 +6,7 @@ class SuperteamsController < ApplicationController
     @errors = []
     positions = %w(player-a-1 player-b-1 player-b-2 player-b-3 player-b-4 player-c-1 player-c-2 player-c-3 player-d-1 player-d-2 player-d-3 coach bonusplayer)
     if (params.keys & positions) != positions
-      @errors << 'Je hebt niet alle posities ingevuld' 
+      @errors << 'Je hebt niet alle posities ingevuld'
     else
       total_amount = 0
       taken_clubs = []
@@ -19,7 +19,7 @@ class SuperteamsController < ApplicationController
       end
 
       params.each do |key, value|
-        next if key == "coach" or !positions.include?(key) 
+        next if key == "coach" or !positions.include?(key)
         total_amount += value[:amount].to_i unless key == "bonusplayer"
         taken_clubs << value[:club]
         taken_players << value[:player]
@@ -46,10 +46,10 @@ class SuperteamsController < ApplicationController
 
     if @errors.empty?
       superteam =  @current_contestant.superteam || Superteam.new
-      
+
       superteam.coach_id = params[:coach][:coach]
       superteam.bonus_player_id = params[:bonusplayer][:player]
-      
+
       superteam.goalkeeper_id = params['player-a-1'][:player]
 
       superteam.defender_a_id = params['player-b-1'][:player]
@@ -71,7 +71,7 @@ class SuperteamsController < ApplicationController
     end
 
     if @errors.any?
-      render json: { status: 'error', message: @errors }  
+      render json: { status: 'error', message: @errors }
     else
       flash[:notice] = "Superteam is opgeslagen! Je kunt het team op elk moment tot de sluitingsdatum wijzigen."
       render json: { status: 'success' }

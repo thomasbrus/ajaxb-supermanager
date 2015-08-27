@@ -15,8 +15,9 @@ class AnnouncementsController < ApplicationController
   end
 
   def create
-    @announcement = Announcement.new(params[:announcement])
+    @announcement = Announcement.new(announcement_params)
     @announcement.author = @current_contestant
+
     if @announcement.save
       redirect_to root_path, notice: 'De nieuwe mededeling is toegevoegd!'
     else
@@ -26,7 +27,8 @@ class AnnouncementsController < ApplicationController
 
   def update
     @announcement = Announcement.find(params[:id])
-    if @announcement.update_attributes(params[:announcement])
+
+    if @announcement.update_attributes(announcement_params)
       redirect_to announcements_path, notice: 'De mededeling is bijgewerkt.'
     else
       render action: "edit"
@@ -39,4 +41,7 @@ class AnnouncementsController < ApplicationController
     redirect_to announcements_path, notice: 'De mededeling is verwijderd.'
   end
 
+  private def announcement_params
+    params.require(:announcement).permit(:content, :title)
+  end
 end
