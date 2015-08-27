@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
 
     def login_required
       unless logged_in?
-        flash[:alert] = "Om deze pagina te bekijken moet u ingelogd zijn."
+        flash[:alert] = "Om deze pagina te bekijken moet u ingelogd zijn."
         redirect_to(root_path)
       end
     end
