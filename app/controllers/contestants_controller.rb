@@ -18,11 +18,10 @@ class ContestantsController < ApplicationController
 
   def create
     @contestant = Contestant.new(contestant_params)
-
     @contestant.email = @contestant.email.downcase
 
     if contestant_params.has_key?(:team_name)
-      @contestant.team = Team.find_or_initialize_by_name(contestant_params[:team_name])
+      @contestant.team = Team.find_or_initialize_by(name: contestant_params[:team_name])
     end
 
     if @contestant.save
