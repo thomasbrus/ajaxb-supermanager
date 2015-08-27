@@ -23,12 +23,6 @@ var enableSubmit = function() {
       }, 'json');
     });
   });
-
-  $('#box_submit').bind('mouseenter', function() {
-    $(this).css('background', 'url(/assets/submit_hover.jpg) no-repeat').css('cursor', 'pointer');
-  }).bind('mouseleave', function() {
-    $(this).css('background', 'url(/assets/submit.jpg) no-repeat').css('cursor', 'default');
-  });
 };
 
 var disableSubmit = function() {

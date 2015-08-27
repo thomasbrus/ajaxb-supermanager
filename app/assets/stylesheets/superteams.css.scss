@@ -29,7 +29,7 @@
   left: 500px;
   top: 100px;
   width: 220px;
-  height: 80px; 
+  height: 80px;
 }
 #box_budget {
   left: 500px;
@@ -45,17 +45,22 @@
   background: image-url('submit.jpg') no-repeat;
   cursor: pointer;
 }
+
+#box_submit:hover {
+  background: image-url('submit_hover.jpg') no-repeat;
+}
+
 #supermanager a:hover {
-  text-decoration: underline !important;  
+  text-decoration: underline !important;
 }
 #supermanager .box > ul > li {
   display: block;
-  text-align: center; 
+  text-align: center;
   float: left;
   background: image-url('shirts/no_sponsor.png') no-repeat center -15px;
   height: 100px;
   margin: 0;
-  padding: 0 0 5px 0; 
+  padding: 0 0 5px 0;
 }
 #supermanager .box > ul > li > a {
   display: block;
@@ -104,7 +109,7 @@
   padding: 0 0 0 10px !important;
 }
 #supermanager .box > p.debt {
-  color: #b00d0e !important;  
+  color: #b00d0e !important;
 }
 #supermanager .box > p > a {
   text-decoration: none;
@@ -117,11 +122,11 @@
 #form_players > p {
   overflow: hidden;
   margin: 0;
-  padding: 5px 10px;  
+  padding: 5px 10px;
   clear: both;
 }
 #form_players > p.loading {
-  background: image-url('loader.gif') no-repeat 20px center; 
+  background: image-url('loader.gif') no-repeat 20px center;
 }
 #form_players > p > label, #form_players > p > select, #form_players > p > span, #form_players > p > input {
   display: block;
@@ -136,7 +141,7 @@
 }
 #form_players > p > select {
   width: 300px;
-  clear: both;  
+  clear: both;
 }
 #form_players > p > span > a {
   line-height: 24px;
@@ -168,7 +173,7 @@ div.announcement .meta {
 }
 #status.busy {
   border: 1px #0e73b0 solid;
-  background: image-url('loader.gif') #f5fcff no-repeat 20px 12px; 
+  background: image-url('loader.gif') #f5fcff no-repeat 20px 12px;
 }
 #status.success {
   border: 1px #1ab00e solid;
@@ -180,7 +185,7 @@ div.announcement .meta {
 }
 #status > p, #status > ul {
   font-weight: bold;
-  color: #383838; 
+  color: #383838;
 }
 #status > p {
   margin: 0 0 0 40px;
