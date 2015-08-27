@@ -13,7 +13,7 @@
 
 <div id="announcements">
   <% if @announcements.count > 0 %>
-    <%= render 'announcements/list', announcements: @announcements %>  
+    <%= render 'announcements/list', announcements: @announcements %>
     <div style="margin-top: 20px;">
       <%= link_to 'Lees alle mededelingen', announcements_path %>
       <% if is_admin? %>
@@ -22,4 +22,3 @@
     </div>
   <% end %>
 </div>
-  
