@@ -72,7 +72,7 @@ var Supermanager = (function() {
       opener.text(text);
 
       if (!type) {
-        opener.parent().css('backgroundImage', "url('/assets/shirts/" + (club ? club : "no_sponsor") + ".png')");
+        opener.parent().css('backgroundImage', "url('" + this.lookupShirtUrl(club) + "')");
       }
     },
     showModal: function(opener, title, type) {
@@ -188,6 +188,17 @@ var Supermanager = (function() {
     },
     exportData: function() {
       return storage;
-    }
+    },
+    lookupShirtUrl: function(club) {
+      switch(club) {
+        <% Club.find_each do |club| %>
+        case '<%= club.shorthand %>':
+          return '<%= image_url("shirts/#{club.shorthand}.png") %>';
+          break;
+        <% end %>
+        default:
+          return '<%= image_url('shirts/no_sponsor.png') %>';
+      };
+    },
   }
 })();
