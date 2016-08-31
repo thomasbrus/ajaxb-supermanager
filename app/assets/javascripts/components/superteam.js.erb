@@ -22,12 +22,13 @@ var Supermanager = (function() {
       HTMLHelper.populateSelect('#position', {a: 'Doelman', b: 'Verdediger', c: 'Middenvelder', d: 'Aanvaller'});
       if (selected) { $('#position').val(selected); }
     },
-    loadClubs: function(selected) {
+    loadClubs: function(selected, blacklist) {
       $.getJSON('/clubs', function(clubs) {
+        for (var index in this) { delete clubs[this[index]]; }
         HTMLHelper.populateSelect('#club', clubs);
         Supermanager.stopLoading($('#club'));
         if (selected) { $('#club').val(selected); }
-      });
+      }.bind(blacklist));
     },
     loadCoaches: function(selected) {
       $.getJSON('/coaches', function(coaches) {
@@ -126,7 +127,7 @@ var Supermanager = (function() {
       this.startLoading($('#club, #player, #coach'));
 
       if (type !== 'coach') {
-        this.loadClubs(club);
+        this.loadClubs(club, type === 'bonusplayer' ? ['aja', 'psv', 'fey'] : []);
         this.loadPositions(position);
         this.loadPlayers(club, type ? storage[pos].position : position, amount, player);
       } else {
