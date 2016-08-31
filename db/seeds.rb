@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# Set up clubs (season 2015 - 2016)
+# Set up clubs (season 2016 - 2017)
 Club.create!(name: 'ADO Den Haag', shorthand: 'ado')
 Club.create!(name: 'AFC Ajax', shorthand: 'aja')
 Club.create!(name: 'AZ', shorthand: 'az')
