@@ -3,23 +3,26 @@ require 'csv'
 namespace :players do
   desc "Import players from db/data/players.csv"
   task :import => :environment do
-    file = Rails.root.join *%w(db data players.csv)
-    CSV.foreach(file, col_sep: ';') do |code, name, club, position, value|
-      next if name.blank? or club.blank? or position.blank?
-      club = Club.find_by_shorthand(club.strip)
-      params = { code: code.to_i, name: name.strip, club: club, value: value.to_i }
-      case position.strip
-      when 'a'
-        Goalkeeper.create params
-      when 'b'
-        Defender.create params
-      when 'c'
-        Midfielder.create params
-      when 'd'
-        Forward.create params
-      when /coach/i
-        params.delete :value
-        Coach.create params
+    file = Rails.root.join('db', 'data', 'players.csv')
+
+    ActiveRecord::Base.transaction do
+      CSV.foreach(file, col_sep: ';') do |code, name, club, position, value|
+        next if name.blank? or club.blank? or position.blank?
+        club = Club.find_by_shorthand(club.strip.downcase) || Club.find_by_name(club.strip)
+        attributes = { code: code.to_i, name: name.strip, club: club, value: value.to_i }
+        case position.strip
+        when 'a'
+          Goalkeeper.create!(attributes)
+        when 'b'
+          Defender.create!(attributes)
+        when 'c'
+          Midfielder.create!(attributes)
+        when 'd'
+          Forward.create!(attributes)
+        when /coach/i
+          attributes.delete :value
+          Coach.create!(attributes)
+        end
       end
     end
   end
