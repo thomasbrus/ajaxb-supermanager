@@ -25,7 +25,7 @@ class Contestant < ActiveRecord::Base
         superteam = contestant.superteam
 
         # Thomas Brus thomas.brus@me.com
-        csv.add_row([contestant.name.strip, contestant.email.strip])
+        csv.add_row([contestant.name.strip, contestant.email.strip, contestant.team.try(:name)])
 
         # Code  Naam  Club  Pos
         csv.add_row(%w(Code Naam Club Pos))
