@@ -2,42 +2,82 @@ require 'csv'
 
 class Contestant < ActiveRecord::Base
   attr_accessor :team_name
+
   validates_presence_of :email, :name
   validates_uniqueness_of :email
+
   belongs_to :team
+
   has_one :superteam
   has_many :login_requests, dependent: :destroy
 
+  scope :sorted, -> { order(created_at: :asc) }
+
   def name_with_team
-    if team.present?
-      "#{name} (#{team.name})"
-    else
-      name
-    end
+    team.present? ? "#{name} (#{team.name})" : name
   end
 
   def self.as_csv
     CSV.generate(col_sep: ';') do |csv|
-      csv << %w(Naam E-mailadres Ploeg Coach Bonusspeler Keeper Verdedigers - - - Middenvelders - - Aanvallers - -)
-      self.order('created_at ASC').each do |contestant|
-        columns = [contestant.name.strip, contestant.email.strip]
-        columns << contestant.team.try(:name) || ' '
-        if contestant.superteam.present? && contestant.superteam.valid?
-          columns << contestant.superteam.coach.try(:name) || ' '
-          columns << contestant.superteam.bonus_player.try(:name) || ' '
-          columns << contestant.superteam.goalkeeper.try(:name) || ' '
-          columns << contestant.superteam.defender_a.try(:name) || ' '
-          columns << contestant.superteam.defender_b.try(:name) || ' '
-          columns << contestant.superteam.defender_c.try(:name) || ' '
-          columns << contestant.superteam.defender_d.try(:name) || ' '
-          columns << contestant.superteam.midfielder_a.try(:name) || ' '
-          columns << contestant.superteam.midfielder_b.try(:name) || ' '
-          columns << contestant.superteam.midfielder_c.try(:name) || ' '
-          columns << contestant.superteam.forward_a.try(:name) || ' '
-          columns << contestant.superteam.forward_b.try(:name) || ' '
-          columns << contestant.superteam.forward_c.try(:name) || ' '
-        end
-        csv.add_row(columns)
+      sorted.find_each do |contestant|
+        next unless contestant.superteam.present? && contestant.superteam.valid?
+
+        superteam = contestant.superteam
+
+        # Thomas Brus thomas.brus@me.com
+        csv.add_row([contestant.name.strip, contestant.email.strip])
+
+        # Code  Naam  Club  Pos
+        csv.add_row(%w(Code Naam Club Pos))
+
+        # 1 Jeroen Zoet PSV a
+        csv.add_row(superteam.goalkeeper.to_csv)
+
+        # ... ...
+        csv.add_row(superteam.defender_a.to_csv)
+
+        # ... ...
+        csv.add_row(superteam.defender_b.to_csv)
+
+        # ... ...
+        csv.add_row(superteam.defender_c.to_csv)
+
+        # ... ...
+        csv.add_row(superteam.defender_d.to_csv)
+
+        # ... ...
+        csv.add_row(superteam.midfielder_a.to_csv)
+
+        # ... ...
+        csv.add_row(superteam.midfielder_b.to_csv)
+
+        # ... ...
+        csv.add_row(superteam.midfielder_c.to_csv)
+
+        # ... ...
+        csv.add_row(superteam.forward_a.to_csv)
+
+        # ... ...
+        csv.add_row(superteam.forward_b.to_csv)
+
+        # ... ...
+        csv.add_row(superteam.forward_c.to_csv)
+
+        # Bonus
+        csv.add_row(%w(Bonus))
+
+        # 9 Aaron Meijers ado b
+        csv.add_row(superteam.bonus_player.to_csv)
+
+        # Coach
+        csv.add_row(%w(Coach))
+
+        # 25 Zelkjo Petrovic ado coach
+        csv.add_row(superteam.coach.to_csv)
+
+        # ...
+        csv.add_row(%w())
+        csv.add_row(%w())
       end
     end
   end
