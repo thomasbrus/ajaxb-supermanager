@@ -12,6 +12,11 @@ class Contestant < ActiveRecord::Base
   has_many :login_requests, dependent: :destroy
 
   scope :sorted, -> { order(created_at: :asc) }
+  scope :sorted_alphabetically, ->{ order(name: :asc) }
+
+  def self.has_superteam
+    all.reject { |contestant| contestant.superteam.nil? }
+  end
 
   def name_with_team
     team.present? ? "#{name} (#{team.name})" : name
