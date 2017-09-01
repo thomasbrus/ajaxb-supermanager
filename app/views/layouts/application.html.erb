@@ -33,7 +33,7 @@
       </div>
       <%
         pages = [[root_path, 'Home']]
-        pages << [my_superteam_path, 'Mijn Superteam'] if logged_in?
+        pages << [my_superteam_path, 'Mijn Superteam', true] if logged_in?
         pages << [sign_up_path, 'Meedoen', true] << [login_path, 'Login'] unless logged_in?
         pages << [announcements_path, 'Mededelingen']
         pages << [players_list_path, 'Spelerslijst']
