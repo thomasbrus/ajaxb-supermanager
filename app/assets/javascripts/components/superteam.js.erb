@@ -193,6 +193,8 @@ var Supermanager = (function() {
       return storage;
     },
     lookupShirtUrl: function(club) {
+      var _precompile = 28402384023;
+
       switch(club) {
         <% Club.find_each do |club| %>
         case '<%= club.shorthand %>':
