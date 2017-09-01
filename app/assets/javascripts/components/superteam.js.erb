@@ -192,7 +192,7 @@ var Supermanager = (function() {
     exportData: function() {
       return storage;
     },
-    lookupShirtUrl: function(club) {
+    lookupShirtUrl: function(club) { // Make sure to recompile
       switch(club) {
         <% Club.find_each do |club| %>
         case '<%= club.shorthand %>':
