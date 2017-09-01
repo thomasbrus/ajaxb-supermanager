@@ -12,7 +12,7 @@ namespace :players do
           next
         end
 
-        club = Club.find_by_shorthand(club.strip.downcase) || Club.find_by_name(club.strip)
+        club = Club.find_by_shorthand(club.strip.downcase[0..2]) || Club.find_by_name(club.strip)
         attributes = { code: code.to_i, name: name.strip, club: club, value: value.to_i }
         case position.strip
         when 'a'
