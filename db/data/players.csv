@@ -21,7 +21,7 @@ Code;Naam;Club;Pos;W
 21;Elson Hooi;ado;d;2
 22;Mevyn Lorenzen ;ado;d;2
 23;Delanod Ladan ;ado;d;2
-25;Fons Groenendijk ;;Coach;
+25;Fons Groenendijk ;ado;Coach;
 26;André Onana;aja ;a;4
 27;Benjamin van Leer;aja ;a;3
 28;Davinson Sánchez;aja ;b;4
@@ -191,7 +191,7 @@ Code;Naam;Club;Pos;W
 219;Paolo Fernades;nac;d;2
 220;Thomas Agyepong;nac;d;2
 221;Giovanni Korte;nac;d;2
-225;Stijn Vreven;nac;;
+225;Stijn Vreven;nac;Coach;
 226;Diederik Boer;pec;a;3
 227;Mickey van der Hart;pec;a;3
 228;Bart Schenkelveld;pec;b;3
@@ -275,7 +275,7 @@ Code;Naam;Club;Pos;W
 320;Graig Goodwin;spa;d;3
 321;Dalibor Volas;spa;d;2
 322;Mathias  Pogba;spa;d;3
-325;Alex Pastoors;;Coach;
+325;Alex Pastoors;spa;Coach;
 326;Jorn Brondeel;twe;a;3
 327;Joël Drommel;twe;a;3
 328;Hidde ter Avest;twe;b;3
@@ -298,7 +298,7 @@ Code;Naam;Club;Pos;W
 345;Isaac Buckley-Ricketts;twe;d;3
 346;Jari Oosterwijk;twe;d;2
 347;Oussama Assaidi;twe;d;3
-350;René Hake;;;
+350;René Hake;twe;Coach;
 351;David Jensen ;utr;a;3
 352;Nick Marsman ;utr;a;3
 353;Mark van der Maarel;utr;b;3
@@ -347,29 +347,29 @@ Code;Naam;Club;Pos;W
 397;Mtichell van Bergen ;vit;d;3
 398;Luc Castaignos;vit;d;3
 400;Henk Fräser;vit;Coach;
-401;Lars Unnerstall;vvv;;2
-403;Moreno Rutten;vvv;;2
-404;Jerold Promes;vvv;;2
-405;Roel Janssen;vvv;;2
-406;Leroy Labylle;vvv;;2
-407;Roy Gielen ;vvv;;2
-408;Tristan Dekker;vvv;;2
-409;Jeffrey Rijkers;vvv;;2
-410;Danny Post;vvv;;2
-411;Vito van Crooy;vvv;;2
-412;Clint Leemans;vvv;;2
-413;Terry Antonis;vvv;;2
-414;Nils Röseler;vvv;;2
-416;Ralf Seuntjens;vvv;;2
-417;Johnatan Opoku;vvv;;2
-418;Lennart Thy;vvv;;2
-419;Rarik Tisosudali;vvv;;2
-420;Torino Hunte;vvv;;2
-421;Juul Respen;vvv;;2
-422;Lugman Bezzat;vvv;;2
+401;Lars Unnerstall;vvv;a;2
+403;Moreno Rutten;vvv;b;2
+404;Jerold Promes;vvv;b;2
+405;Roel Janssen;vvv;b;2
+406;Leroy Labylle;vvv;b;2
+407;Roy Gielen ;vvv;c;2
+408;Tristan Dekker;vvv;b;2
+409;Jeffrey Rijkers;vvv;d;2
+410;Danny Post;vvv;c;2
+411;Vito van Crooy;vvv;d;2
+412;Clint Leemans;vvv;c;2
+413;Terry Antonis;vvv;c;2
+414;Nils Röseler;vvv;b;2
+416;Ralf Seuntjens;vvv;d;2
+417;Johnatan Opoku;vvv;d;2
+418;Lennart Thy;vvv;d;2
+419;Tarik Tisosudali;vvv;d;2
+420;Torino Hunte;vvv;d;2
+421;Juul Respen;vvv;d;2
+422;Lugman Bezzat;vvv;d;2
 423;;vvv;;
 424;;vvv;;
-425;Maurice Steijn;vvv;;
+425;Maurice Steijn;vvv;Coach;
 426;Timon Wellenreuther;wil;a;3
 427;Mattijs Branderhorst;wil;a;2
 428;Freek Heerkens;wil;b;2

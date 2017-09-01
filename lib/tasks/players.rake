@@ -7,7 +7,11 @@ namespace :players do
 
     ActiveRecord::Base.transaction do
       CSV.foreach(file, col_sep: ';') do |code, name, club, position, value|
-        next if name.blank? or club.blank? or position.blank?
+        if name.blank? or club.blank? or position.blank?
+          Logger.new(STDOUT).warn("Skipping line: #{code};#{name};#{club};#{position};#{value}")
+          next
+        end
+
         club = Club.find_by_shorthand(club.strip.downcase) || Club.find_by_name(club.strip)
         attributes = { code: code.to_i, name: name.strip, club: club, value: value.to_i }
         case position.strip
