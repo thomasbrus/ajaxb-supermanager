@@ -3,6 +3,12 @@ a {
   font-weight: bold;
   color: #79B10E;
 }
+
+a.image {
+  text-decoration: none;
+  display: block;
+}
+
 a:hover {
-  text-decoration: underline; 
+  text-decoration: underline;
 }

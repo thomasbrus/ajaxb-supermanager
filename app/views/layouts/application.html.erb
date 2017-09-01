@@ -16,7 +16,9 @@
     <div class="top"></div>
     <div id="main">
       <div class="header">
-        <%= image_tag 'logos/ajaxb.png', alt: 'Ajax B logo' %>
+        <%= link_to :root, class: "image" do %>
+          <%= image_tag 'logos/ajaxb.png', alt: 'Ajax B logo' %>
+        <% end %>
         <h1>Supermanager Ajax Breedenbroek 2017 - 2018</h1>
         <p>
           <% if logged_in? %>
