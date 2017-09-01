@@ -1,450 +1,394 @@
-1;Erestas Setkus;ADO;a;3
-2;Robert Zwinkels;ADO;a;3
-3;José San Roman;ADO;b;2
-4;Tyronne Ebuehi;ADO;b;2
-5;Wilfried Kanon;ADO;b;3
-6;Trevor David;ADO;b;3
-7;Mohamed Haddachi;ADO;b;3
-8;Dion Malone;ADO;b;3
-9;Aaron Meijers;ADO;b;2
-10;Thomas Meissner;ADO;b;3
-11;Tom Beugelsdijk ;ADO;b;3
-12;Hector Hevel;ADO;c;3
-13;Danny Bakker;ADO;c;3
-14;Tom Trybull;ADO;c;3
-15;Kevin Jansen;ADO;c;2
-16;Aschraf El Mahdioui;ADO;c;2
-17;Ruben Schaken ;ADO;d;3
-18;Luciano Marengo;ADO;d;3
-19;Eduart Duplan ;ADO;d;3
-20;Dennis van der Heijden;ADO;d;3
-21;Jordy Schouten;ADO;d;3
-22;Mike Havenaar;ADO;d;4
-23;Gervane Kasteneer;ADO;d;2
-24;;;;
-25;Zelkjo Petrovic;ADO;Coach;
-26;Tim Krul ;aja;a;5
-27;André Onana;aja;a;4
-28;Davinson Sánchez;aja;b;4
-29;Jairo Riedewald;aja;b;4
-30;Kenny Tete;aja;b;4
-31;Nick Viergever;aja;b;4
-32;Heiko Westermann;aja;b;4
-33;Mitchell Dijks ;aja;b;4
-34;Joël Veltman ;aja;b;4
-35;Riechedly Bazoer;aja;c;4
-36;Lasse Schöne;aja;c;4
-37;Donny van Beek ;aja;c;4
-38;Davy Klaassen;aja;c;5
-39;Daley Sinkgraven ;aja;c;4
-40;Nemanja Gudelj;aja;c;4
-41;Frenky de Jong;aja;c;4
-42;Hakim Ziyech;aja;c;5
-43;Vaclav Cerny;aja;c;4
-44;Armin Younes;aja;d;5
-45;Mateo Cassierra;aja;d;4
-46;Kasper Dolberg;aja;d;4
-47;Bertrand Traoré ;aja;d;5
-48;Anwar El Ghazi;aja;d;4
-49;;;;
-50;Peter Bosz;aja;Coach;
-51;Sergio Rochet;az;a;3
+Code;Naam;Club;Pos;W
+1;Robert Zwinkels;ado;a;3
+2;Tim Coremans;ado;a;2
+3;Nick Kuipers;ado;b;2
+4;Tyronne Ebuehi;ado;b;2
+5;Wilfried Kanon;ado;b;3
+6;Mohamed Haddachi;ado;b;2
+7;Bas Kuipers;ado;b;2
+8;Aaron Meijers;ado;b;3
+9;Thomas Meissner;ado;b;3
+10;Tom Beugelsdijk ;ado;b;3
+11;Trevor David;ado;b;2
+12;Donny Gorter;ado;c;3
+13;Danny Bakker;ado;c;3
+14;Lex Immers;ado;c;4
+15;Hennos Asmelash;ado;c;2
+17;Sheraldo Bekker;ado;d;3
+18;Ludcinio Marengo;ado;d;3
+19;Eduart Duplan ;ado;d;2
+20;Dennis van der Heijden;ado;d;2
+21;Elson Hooi;ado;d;2
+22;Mevyn Lorenzen ;ado;d;2
+23;Delanod Ladan ;ado;d;2
+25;Fons Groenendijk ;;Coach;
+26;André Onana;aja ;a;4
+27;Benjamin van Leer;aja ;a;3
+28;Davinson Sánchez;aja ;b;4
+29;Joël Veltman ;aja ;b;4
+30;Matthijs de Ligt;aja ;b;4
+31;Nick Viergever;aja ;b;4
+32;Mitchell Dijks;aja ;b;4
+33;Daley Sinkgraven ;aja ;b;3
+34;Luis Orejuala;aja ;b;4
+35;Mateo Barac;aja ;b;4
+36;Lasse Schöne;aja ;c;4
+37;Donny van Beek ;aja ;c;4
+38;Frenky de Jong;aja ;c;4
+39;Hakim Ziyech;aja ;c;5
+40;;aja ;c;
+41;;aja ;c;4
+42;Klaas Jan Huntelaar;aja ;d;4
+44;Armin Younes;aja ;d;4
+45;Mateo Cassierra;aja ;d;4
+46;Kasper Dolberg;aja ;d;4
+48;Justin Kluivert;aja ;d;4
+49;David Neres;aja ;d;4
+50;Marcel Keizer;aja ;Coach ;
+51;Marco Bizot;az;a;3
 52;Gino Countinho;az;a;3
-53;Derrick Lukassen ;az;b;3
+53;Pantelis Hatzidiakos;az;b;3
 54;Ron Vlaar;az;b;3
-55;Ridgeciano Haps;az;b;3
-56;Job van der Linden ;az;b;2
+55;Levi Opdam ;az;b;3
+56;Job van der Linden ;az;b;3
 57;Rens van Eijden ;az;b;3
-58;Jan Wuytens;az;b;3
-59;Mattias Johansson;az;b;3
-60;Rajko Brezancic;az;b;3
-61;Fernando Lewis;az;b;2
+58;Jonas Svensson;az;b ;2
+59;Owen Wijndal ;az;b;3
+60;Thomas Ouwejan;az;c;3
+61;Marko Vejinovic;az;c;3
 62;Joris van Overeem;az;c;3
 63;Ben Rienstra;az;c;3
 64;Stijn Wuytens;az;c;3
-65;Markus Hendriksen ;az;c;4
-66;Ilias Bel Hassani;az;c;3
-67;Levi Garcia;az;d;3
-68;Mamer Tancovic;az;d;3
-69;Dabney dos Santos;az;d;3
-70;Robert Muhren ;az;d;3
-71;Fred Friday;az;d;3
-72;Alireza Jahanbakhsh;az;d;3
-73;Wout Weghorst;az;d;3
-74;Mats Seuntjens;az;d;2
-75;John van den Brom ;az;Coach ;
-76;Filip Kurto;exc;a;3
-77;Tom Muyters;exc;a;3
-78;Elso Brito;exc;b;2
-79;Henrico Drost;exc;b;2
-80;Leeroy Owusu;exc;b;2
-81;Khalid Karami;exc;b;2
-82;Jurgen Mattheij;exc;b;2
-83;Bas Kuipers;exc;b;2
-84;Arghus Bordignon;exc;b;2
-85;Kevin Vermeulen;exc;c;3
-86;Jeffrey Fortes;exc;c;3
-87;Luigi Bruins;exc;c;3
-88;Ryan Koolwijk;exc;c;3
-89;Hicham Faik ;exc;c;2
-90;Anouar Hadouir;exc;c;3
-91;Danilo Pantic;exc;c;2
-92;Dogucan Haspolat ;exc;c;2
-93;Nigel Hasselbaink;exc;d;2
-94;Cedric Badjeck;exc;d;2
-95;Terell Ondaan;exc;d;2
-96;Carlo de Reuver;exc;d;2
-97;Fredy Ribeiro;exc;d;2
-98;Stanley Elbers;exc;d;3
-99;Mike van Duinen;exc;d;3
+65;Guus Til ;az;c;3
+66;Mats Seuntjens;az;c;3
+67;Jeremy Helmer;az;c;2
+68;Myron Boadu;az;d;2
+69;Levi Garcia;az;d;3
+70;Mamer Tancovic;az;d;3
+71;Dabney dos Santos;az;d;3
+72;Fred Friday;az;d;3
+73;Alireza Jahanbakhsh;az;d;3
+74;Wout Weghorst;az;d;3
+75;John van den Brom ;az;Coach;
+76;Alessandro Damen;exc;a;3
+77;Mike Havekotte;exc;a;2
+78;Wout Faes;exc;b;2
+79;Milan Massop;exc;b;2
+80;Jurgen Mattheij;exc;b;2
+81;Lorezo Burnet;exc;b;2
+85;Jeffrey Fortes;exc;c;3
+86;Luigi Bruins;exc;c;3
+87;Ryan Koolwijk;exc;c;3
+88;Hicham Faik ;exc;c;3
+89;Anouar Hadouir;exc;c;2
+90;Dogucan Haspolat ;exc;c;3
+93;Zakaria El Azouzi;exc;d;2
+94;Ali Messaoud;exc;d;2
+95;Stanley Elbers;exc;d;2
+96;Mike van Duinen;exc;d;2
+97;Kevin Vermeulen ;exc;d;2
 100;Mitchell van der Gaag;exc;Coach;
 101;Kenneth Vermeer;fey;a;4
 102;Brad Jones;fey;a;4
 103;Sven van Beek ;fey;b;3
 104;Miquel Nelom;fey;b;3
-105;Terence Kongolo;fey;b;4
+105;Kevin Diks ;fey;b;4
 106;Jan-Arie v.d. Heijden;fey;b;4
 107;Eric Botteghin;fey;b;4
-108;Rick Karsdorp;fey;b;4
-109;Lucas Woudenberg ;fey;b;4
-110;Bart Nieuwkoop ;fey;c;3
+108;Bart Nieuwkoop ;fey;b;4
+109;Jeremiah St. Juste;fey;b;4
+110;Ridgeciano Haps;fey;b;4
 111;Karim El Ahmadi;fey;c;4
-112;Renato Tapia;fey;c;4
-113;Marko Vejinovic;fey;c;4
-114;Simon Gustafson ;fey;c;4
-115;Jens Toonstra;fey;c;4
-116;Tonny Vilhena;fey;c;5
-117;Dirk Kuyt;fey;d;5
+112;Sofyan Amrabat;fey;c;4
+113;Jens Toonstra;fey;c;4
+114;Tonny Vilhena;fey;c;4
+115;Renato Tapia ;fey;c;4
+116;Jari Schuurman ;fey;c;3
 118;Bilal Basacikoglu;fey;d;3
-119;Eljero Elia;fey;d;4
+119;Steven Berghuis;fey;d;4
 120;Michel Kramer ;fey;d;3
 121;Nicolai Jorgensen;fey;d;4
-122;Steven Berghuis ;fey;d;4
-123;;;;
-124;;;;
-125;Giovanni van Bronckhorst ;fey ;Coach ;
-126;Erik Cummings;gae;a;3
-127;Theo Zwarthoed;gae;a;3
-128;Sander Fischer;gae;b;2
-129;Rochi Achenteh;gae;b;3
-130;Lars Lambooij;gae;b;2
-131;Noricio Nieveld;gae;b;2
-132;Xandro Schenk;gae;b;2
-133;Kenny Teijsse;gae;b;2
-134;Sebastien Locigno ;gae;d;2
-135;Kevin Brands;gae;c;2
-136;Tom Daemen;gae;c;2
-137;Chris David;gae;c;2
-138;Thijs Dekker;gae;c;2
-139;Sander Duits;gae;c;3
-140;Marcel Ritzmaier;gae;c;3
-141;Jerry van Ewijk;gae;c;2
-142;Joey Suk;gae;c;2
-143;Sam Hendriks;gae;d;2
-144;Leon de Kogel;gae;d;3
-145;Darren Maatsen;gae;d;2
-146;Patrick Maneschijn;gae;d;2
-147;Randy Wolters;gae;d;2
-148;SinanBytyqi;gae;d;2
-149;;;;
-150;Hans de Koning ;gae;Coach ;
-151;Sergio Padt;gro;a;3
-152;Samir Memisevic;gro;b;3
-153;Etiënne Reijnen ;gro;b;3
-154;Hans Hateboer;gro;b;3
-155;Martijn van der Laan ;gro;b;3
-156;Desevio Payne;gro;b;2
-157;Kasper Larsen ;gro;b;2
-158;Tom Hiariej;gro;c;2
-159;Yoëll van Nieff;gro;c;3
-160;Ruben Y. Jenssen ;gro;c;2
-161;Hedwiges Maduro;gro;c;3
-162;Simon Tibbling;gro;c;3
-163;Albert Rusnak;gro;c;3
-164;Juninho Bacuna;gro;c;2
-165;Jesper Drost;gro;c;2
-166;Oussama Idrissi;gro;d;3
-167;Danny Hoesen;gro;d;3
-168;Nicolo Pozzebon;gro;d;3
-169;Mimoun Mahi;gro;d;2
-170;Bryan Linssen;gro ;d;3
-171;Alewxander Sorloth;gro;d;3
-172;Tom van Weert;gro;d;3
-173;;;;
-174;;;;
-175;Ernest Faber;gro;Coach ;
-176;Erwin Mulder;hee;a;3
-177;Wieger Sietsma;hee;a;3
-178;Stefano Marzo;hee;b;3
-179;Doke Schmidt;hee;b;3
-180;Lucas Bijker;hee;b;2
-181;Joost van Aken ;hee;b;3
-182;Jeremiah St. Juste;hee;b;2
-183;Caner Cavlan;hee;b;3
-184;Rannick Schoop;hee;b;2
-185;Pelle van Amersfoort;hee;c;2
-186;Morten Thorsby;hee;c;3
-187;Stijn Schaars;hee;c;4
-188;Youness Namli;hee;c;3
-189;Simon Thern;hee;c;3
-190;Yuki Kobayashi;hee;c;2
-191;Luca Zahovic ;hee;d;2
-192;Luciano Slagveer;hee;d;3
-193;Henk Veerman ;hee;d;3
-194;Reza Choochannenejhad;hee;d;2
-195;Michel Te Vrede;hee;d;3
-196;Sam Larsson;hee;d;3
-197;Arber Zeneli;hee;d;3
-198;;;;
-199;;;;
-200;Jurgen Streppel;hee;Coach;
-201;Bram Castro;her;a;3
-202;Renze Fiji;her;a;2
-203;Justin Hoogma;her;b;3
-204;Ramon Zomer;her;b;3
-205;Robin Pröpper;her;b;2
-206;Tim Breukers;her;b;3
-207;Mike te Wierik;her;b;3
-208;Tim van de Berg;her;b;3
-209;Wout Droste;her;b;3
-210;Thomas Bruns;her;b;3
-211;Robin Gosens;her;b;3
-212;Mark-Jan Fledderus;her;b;3
-213;Dario Vujicevic;her;c;2
-214;Peter van Ooijen;her;c;2
-215;Sander Thomas;her;c;2
-216;Joey Pelupessy;her;c;3
-217;Lerin Duarte ;her;c;3
-218;Jaroslav Navratil;her;d;3
-219;Tarik Kada;her;d;3
-220;Brandley Kuwas;her;d;2
-221;Brahim Darri;her;d;3
-222;Daryl van Mieghem;her;d;3
-223;Vincent Vermeij;her;d;2
-224;;;;
-225;John Stegeman ;her;Coach;
-226;Delle;NEC;a;3
-227;Marco van Duin;NEC;a;3
-228;Dario Dumic;NEC;b;2
-229;Robin Buwalda;NEC;b;2
-230;Wojciech Golla;NEC;b;2
-231;Michael Heinloth;NEC;b;2
-232;Mikael Dyrestam;NEC;b;2
-233;Jeffrey Leiwakabessy;NEC;b;2
-234;FabianGmeiner ;NEC;b;2
-235;Stefan Mauk;NEC;c;2
-236;Julian von Haacke;NEC;c;2
-237;Gregor Breinburg;NEC;c;3
-238;Janio Bikel;NEC;c;2
-239;Mohamed Rayhi;NEC;d;3
-240;Reagy Ofosu;NEC;d;3
-241;Sam Lundholm ;NEC;d;2
-242;Mihai Roman ;NEC;d;3
-243;Quincy Owusu-Abeyie;NEC;d;2
-244;Joey Sleegers;NEC;d;2
-245;Jay-Roy Grot;NEC;d;2
-246;Taiwo Awoniyi;NEC;d;2
-247;Kevin Mayi ;NEC;d;2
-248;;;;
-249;;;;
-250;Peter Hyballa;NEC;Coach;
-251;Kevin Begois;PEC;a;3
-252;Mickey van der Hart;PEC;a;3
-253;Bart Schenkelveld;PEC;b;3
-254;Ted van der Pavert;PEC;b;3
-255;Calvin Verdonk;PEC;b;2
-256;Django Warmerdam ;PEC;b;2
-257;Bram van Polen;PEC;b;3
-258;Dirk Marcellis;PEC;b;3
-259;Phillippe Sandler ;PEC;b;2
-260;Wout Brama ;PEC;c;3
-261;Rick Dekker;PEC;c;2
-262;Gustavo Hebling;PEC;c;2
-263;Mustafa Saymak;PEC;c;3
-264;Anass Achahbar;PEC;d;3
-265;Kingsley Ehizibue;PEC;d;3
-266;Thanasis Karagounis;PEC;d;3
-267;Youness Mokhtar;PEC;d;3
-268;Stef Nijland;PEC;d;3
-269;Ryan Thomas;PEC;d;3
-270;Hachim Mastour ;PEC;d;2
-271;Queensy Menig;PEC;d;3
-272;Nicolai Brock-Madsen ;PEC;d;2
-273;;;;
-274;;;;
-275;Ron Jans ;PEC;Coach;
-276;Jeroen Zoet ;psv;a;5
-277;Remko Pasveer;psv;a;3
-278;Nicolas Isimat-Mirin;psv;b;4
-279;Simon Poulsen;psv;b;4
-280;Daniël Schwaab;psv;b;4
-281;Santiago Arias;psv;b;4
-282;Joshua Brenet;psv;b;4
-283;Jetro Willems;psv;b;4
-284;Jorrit Hendrix;psv;b;4
-285;Hector Moreno;psv;c;4
-286;Siem de Jong ;psv;c;4
-287;Davy Pröpper;psv;c;4
-288;Bart Ramselaar;psv;c;3
-289;Andrés Guardado;psv;c;5
-290;Luciano Narsingh;psv;d;3
-291;Gaston Pereiro;psv;d;4
-292;Luuk de Jong ;psv;d;4
-293;Florian Jozefzoon;psv;d;4
-294;Jurgen Locadia;psv;d;4
-295;Steven Bergwijn ;psv;d;3
-296;Oleksandr Zinchenko ;psv;d;4
-297;;;;
-298;;;;
-299;;;;
-300;Philip Cocu ;psv;Coach ;
-301;Benjamin van Leer;rod;a;3
-302;Yves de Winter;rod;a;3
-303;Daryl Walker;rod;b;2
-304;Ard van Peppen;rod;b;2
-305;Roel Brouwers;rod;b;2
-306;Christian Kum ;rod;b;3
-307;Frediric Ananou;rod;b;2
-308;Martin Milec;rod;b;3
-309;Mitchel Paulissen;rod;c;2
-310;Tom van Hyfte;rod;c;3
-311;Nathan Rutjes;rod;c;2
-312;Adil Auassar;rod;c;3
-313;Daniel De Silva;rod;c;2
-314;Jens van Son;rod;c;2
-315;Farshad Noor;rod;c;2
-316;Abdul Ajagun;rod;c;2
-317;Nestoras Mytides;rod;d;2
-318;Mikhail Rosheuvel;rod;d;2
-319;Santiago Palacios;rod;d;2
-320;Tim Blättler;rod;d;2
-321;Dani Schadin;rod;d;2
-322;David Boysen;rod;d;2
-323;Simon Church;rod;d;2
-324;;;;
-325;Yannis Anastasiou;rod;Coach ;
-326;Roy Kortsmit;spa;a;3
-327;Ricardo Kiemboom;spa;a;3
-328;Abdul Bai Kamara;spa;b;2
-329;Michel Breuer;spa;b;2
-330;Kenneth Dougall;spa;b;2
-331;Rick van Drongelen;spa;b;2
-332;Denzel Dumfries;spa;b;2
-333;Florian Pinteaux;spa;b;2
-334;Bart Vriends;spa;b;3
-335;Stijn Spierings;spa;c;2
-336;Mart Dijkstra;spa;c;2
-337;Paco van Moorsel;spa;c;3
-338;Robert Klaasen;spa;c;2
-339;Ryan Sanusi;spa;c;2
-340;Zakaria El Azouzi;spa;d;3
-341;Roland Bergkamp;spa;d;2
-342;Loris Brogno;spa;d;2
-343;Ivan Calero;spa;d;2
-344;Thomas Verhaar;spa;d;2
-345;Graig Goodwin;spa;d;2
-346;Akram Salhi;spa;d;2
-347;Mathias  Pogba;spa;d;2
-348;;;;
-349;;;;
-350;Alex Pastoors;spa;Coach;
-351;Nick Marsman ;twe;a;3
-352;Sonny Stevens ;twe;a;3
-353;Hidde ter Avest;twe;b;3
-354;Joachim Anderson;twe;b;3
-355;Jeroen van der Lely;twe;b;2
-356;Peet Bijen;twe;b;3
-357;Stefan Thesker;twe;b;3
-358;Dejan Trajkovski;twe;b;2
-359;Jelle van der Heyden;twe;c;2
-360;Chinedu Ede;twe;c;3
-361;Mateusz Klich ;twe;c;3
-362;Tim Hölscher;twe;c;3
-363;Kamohelo Mokotjo;twe;c;3
-364;Kyle Ebecilio;twe;c;3
-365;Bersant Celina ;twe;c;2
-366;Alessio Da Cruz;twe;d;2
-367;Dylan Seys;twe;d;3
-368;Yaw Yeboah;twe;d;3
-369;Torgier Borven;twe;d;3
-370;Enes Unal;twe;d;3
-371;Jari Oosterwijk;twe;d;2
-372;;;;
-373;;;;
-374;;;;
-375;René Hake;twe;Coach ;
-376;Robbin de Ruiter;utr;a;3
-377;Robin van der Meer;utr;b;2
-378;Mark van der Maarel;utr;b;3
-379;Ramon Leeuwin;utr;b;3
-380;Sean Klaiber;utr;b;3
-381;Kevin Conboy;utr;b;2
-382;Giovanni Troupée;utr;b;2
-383;Timo Letschert;utr;b;3
-384;Willem Janssen;utr;b;3
-385;Menno Koch;utr;b;3
-386;Edson Braafheid;utr;c;3
-387;Sofyan Amrabat;utr;c;3
-388;Yassin Ayoub;utr;c;3
-389;Andreas Ludwig;utr;c;3
-390;Rico Strieder;utr;c;3
-391;Rodney Sneijder ;utr;c;2
-392;Nacer Barazite;utr;d;3
-393;Issa Kallon;utr;d;2
-394;Rubio Mendez Rubin ;utr;d;2
-395;Sebastien Haller;utr;d;4
-396;Kristoffer Peterson;utr;d;3
-397;Patrick Joosten ;utr;d;2
-398;Gyrano Kerk ;utr;d;3
-399;Richairo Zivkovic ;utr;d;3
-400;Erik ten Hag ;utr;Coach;
-401;Eloy Room;vit;a;4
-402;Jeroen Houwen;vit;a;3
-403;Thomas Oude Kotte;vit;b;3
-404;Gyram Kashia;vit;b;4
-405;Kelvin Leerdam ;vit;b;3
-406;Kosuke Ota;vit;b;3
-407;Arnold Kruiswijk;vit;b;3
-408;Maikel van der Werff;vit;b;3
-409;Julian Lelieveld;vit;b;3
-410;Lewis Baker;vit;c;3
-411;Navarone Foor;vit;c;2
-412;Shiran Yeini;vit;c;3
-413;Marvelous Nakamba;vit;c;3
-414;Mohammed Osman ;vit;c;3
-415;Abiola Douda;vit;d;3
-416;Yuning Zhang;vit;d;2
-417;Nathan Allan de Souza;vit;d;3
-418;Arshak Kryan;vit;d;3
-419;Ricky van Wolswinkel;vit;d;4
-420;Milot Rashica;vit;d;3
-421;Mitchell van Bergen ;vit;d;2
-422;Adnane Tighadouini ;vit;d;3
-423;;;;
-424;;;;
-425;Henk Fräser;vit;Coach;
-426;Kostas Lamprou;Willem II;a;3
-427;Nigel Betrams;Willem II;a;3
-428;Dico Koppers;Willem II;b;3
-429;Freek Heerkens;Willem II;b;2
-430;Jordens Peters;Willem II;b;3
-431;Pele van Anholt;Willem II;b;2
-432;Dries Wuytens;Willem II;b;3
-433;Guus Joppen ;Willem II;b;2
-434;Darryl Lachman;Willem II;b;3
-435;Elmo Lieftink ;Willem II;c;2
-436;Erik Falkenburg;Willem II;c;3
-437;Funso Ojo;Willem II;c;2
-438;Anouar Kali;Willem II;c;2
-439;Jari Schuurman;Willem II;c;2
-440;Bram van der Boomen ;Willem II;c;3
-441;Tom Haye;Willem II;c;2
-442;Bruno Andrade;Willem II;d;3
-443;Asumah Abubakar;Willem II;d;2
-444;Andreas Calcan;Willem II;d;2
-445;Fran Sol;Willem II;d;3
-446;Bartolomew Ogbeche;Willem II;d;3
-447;;;;
-448;;;;
-449;;;;
-450;Erwin van der Looi;Willem II;Coach;
+122;Jean-Paul Boëtius;fey;d;4
+123;Dylan Vente ;fey;d;4
+125;Giovanni van Bronckhorst ;fey;Coach ;
+126;Sergio Padt;gro;a;3
+127;Kevin Begois;gro;a;3
+128;Samir Memisevic;gro;b;3
+129;Etiënne Reijnen ;gro;b;3
+130;Django Warmerdam ;gro;b;3
+131;Mike te Wierik;gro;b;2
+132;Kasper Larsen ;gro;b;2
+133;Jesper Drost;gro;c;3
+134;Yoëll van Nieff;gro;c;2
+135;Ruben Y. Jenssen ;gro;c;2
+136;Ajdin Hrustic;gro;c;3
+137;Ritsu Doan ;gro;c;3
+138;Juninho Bacuna;gro;c;3
+141;Oussama Idrissi;gro;d;3
+142;Lars Veldwijk ;gro;d;3
+143;Tom van Weert;gro;d;3
+144;Mimoun Mahi;gro;d;3
+150;Ernest Faber;gro;Coach ;
+151;Warner Hahn;hee;a;3
+152;Wouter van der Steen;hee;a;2
+153;Daniël Haegh;hee;b;2
+154;Doke Schmidt;hee;b;3
+155;Kik Pierie;hee;b;2
+156;Joost van Aken ;hee;b;3
+157;Martin Odegaard;hee;b;2
+158;Michel Vlap;hee;b;3
+160;Pelle van Amersfoort;hee;c;2
+161;Morten Thorsby;hee;c;3
+162;Stijn Schaars;hee;c;3
+163;Yuki Kobayashi;hee;c;3
+164;Jordy Bruin;hee;c;3
+165;Ivan Rako;hee;c;2
+166;Henk Veerman ;hee;d;3
+167;Reza Choochannenejhad;hee;d;3
+168;Sam Larsson;hee;d;3
+169;Arber Zeneli;hee;d;2
+170;Dennis Johnsen ;hee;d;2
+175;Jurgen Streppel ;hee;Coach;
+176;Bram Castro;her;a;3
+177;Harm Zeinstra;her;a;3
+178;Michel Brouwer;her;b;2
+179;Dries Wuytens;her;b;3
+180;Robin Pröpper;her;b;2
+181;Tim Breukers;her;b;3
+182;Bart van Hintum;her;b;3
+183;Tim van de Berg;her;c;2
+184;Wout Droste;her;b;3
+185;Jeff Hardeveld;her;c;2
+186;Joey Pelupessy;her;c;3
+187;Peter van Ooijen;her;c;2
+188;Jamiro Monteiro;her;c;2
+189;Reuven Niemeijer;her;c;2
+190;Gor Agbaljan ;her;c;2
+192;Paul Glandon;her;d;3
+193;Jaroslav Navratil;her;d;3
+194;Tarik Kada;her;d;2
+195;Brandley Kuwas;her;d;3
+196;Brahim Darri;her;d;3
+197;Christoffer Peterson;her;d;2
+198;Vincent Vermeij;her;d;2
+199;Samuel Armenteros ;her;d;3
+200;John Stegeman ;her;Coach;
+201;Andries Noppert;nac;a;3
+202;Sven van der Maaten ;nac;a;2
+203;Fabian Sporkslede;nac;b;2
+204;Menno Koch;nac;b;2
+205;Chiro Ntoko;nac;b;2
+206;Pablo Mari;nac;b;2
+207;Bart Meijers;nac;b;2
+208;Angelino ;nac;b;2
+210;Arno Verschueren;nac;c;2
+211;Karol Mets;nac;c;2
+212;Mounir El Allouchi;nac;c;2
+213;Jeff Stans;nac;c;2
+214;Rai Vloet;nac;c;3
+217;Manu Garcia;nac;d;2
+218;Thierry Ambrose;nac;d;2
+219;Paolo Fernades;nac;d;2
+220;Thomas Agyepong;nac;d;2
+221;Giovanni Korte;nac;d;2
+225;Stijn Vreven;nac;;
+226;Diederik Boer;pec;a;3
+227;Mickey van der Hart;pec;a;3
+228;Bart Schenkelveld;pec;b;3
+229;Dico Koppers;pec;b;2
+230;Josef Kvida;pec;b;2
+231;Bram van Polen;pec;b;3
+232;Dirk Marcellis;pec;b;3
+233;Phillippe Sandler ;pec;b;2
+234;Erik Israelsson;pec;c;2
+235;Bas van Wijnen;pec;c;2
+236;Rick Dekker;pec;c;2
+237;Youness Namli;pec;c;3
+238;Mustafa Saymak;pec;c;3
+239;Erik Bakker;pec;c;3
+240;Piotr Parzyszek;pec;d;2
+241;Youness Mokhtar;pec;d;3
+242;Stef Nijland;pec;d;3
+243;Ryan Thomas;pec;d;3
+244;Kingsley Ehizibue;pec;d;3
+250;John Van het Schip ;pec;Coach;
+251;Jeroen Zoet ;psv;a;4
+252;Luuk Koopmans;psv;a;3
+253;Nicolas Isimat-Mirin;psv;b;4
+254;Jordy de Wijs;psv;b;4
+255;Daniël Schwaab;psv;b;4
+256;Santiago Arias;psv;b;4
+257;Joshua Brenet;psv;b;4
+258;Derrick Luckassen ;psv;b;4
+259;Jorrit Hendrix;psv;c;4
+260;Marco van Ginkel ;psv;c;4
+261;Pablo Rosario;psv;c;4
+262;Ramon Pascal Lundqvist;psv;c;4
+263;Bart Ramselaar;psv;c;4
+266;Gaston Pereiro;psv;d;4
+267;Hirving Lozano;psv;d;4
+268;Jurgen Locadia;psv;d;4
+269;Steven Bergwijn ;psv;d;4
+270;Sam Lammers;psv;d;4
+275;Philip Cocu ;psv;Coach ;
+276;Hiddes Jurjus;rod;a;3
+277;Filip Kurto;rod;a;3
+278;Daryl Werker;rod;b;2
+279;Ard van Peppen;rod;b;3
+280;Henk Dijkhuizen ;rod;b;2
+281;Christian Kum ;rod;b;3
+282;Frediric Ananou;rod;b;2
+283;Simon Gustafson;rod;c;3
+284;Mitchel Paulissen;rod;c;2
+285;Tom van Hyfte;rod;c;3
+286;Nathan Rutjes;rod;c;2
+287;Adil Auassar;rod;c;3
+288;Tsiy Ndenge;rod;c;2
+289;Ognjen Gnjatic;rod;c;2
+290;Mohamed El Makrini ;rod;c;2
+292;Gyliano van Velzen ;rod;d;3
+293;Mikhail Rosheuvel;rod;d;3
+294;Mario Engels ;rod;d;2
+295;Jorn Vancamp;rod;d;2
+296;Dani Schadin;rod;d;2
+297;Celestin Djim;rod;d;2
+300;Robert Molenaar;rod;Coach ;
+301;Roy Kortsmit;spa;a;3
+302;Michael Verrips;spa;a;2
+303;Jeffrey  Chabot;spa;b;2
+304;Michel Breuer;spa;b;3
+305;Rick Ketting;spa;b;2
+306;Sherel Floranus;spa;b;2
+307;Bart Vriends;spa;b;3
+308;Janne Saksela;spa;b;2
+309;Franco Rambock;spa;c;2
+310;Stijn Spierings;spa;c;2
+311;Kenneth Dougall;spa;c;3
+312;Paco van Moorsel;spa;c;3
+313;Deroy Duarte;spa;c;2
+314;Ryan Sanusi;spa;c;2
+315;George Dobson;spa;c;2
+316;Ragnar Ache;spa;d;2
+317;Loris Brogno;spa;d;3
+318;Ilias Alhaft;spa;d;2
+319;Thomas Verhaar;spa;d;2
+320;Graig Goodwin;spa;d;3
+321;Dalibor Volas;spa;d;2
+322;Mathias  Pogba;spa;d;3
+325;Alex Pastoors;;Coach;
+326;Jorn Brondeel;twe;a;3
+327;Joël Drommel;twe;a;3
+328;Hidde ter Avest;twe;b;3
+329;Joachim Anderson;twe;b;3
+330;Jeroen van der Lely;twe;b;2
+331;Peet Bijen;twe;b;3
+332;Stefan Thesker;twe;b;3
+333;Dejan Trajkovski;twe;b;3
+334;Richard Jensen;twe;b;2
+335;Jos Hooiveld;twe;b;3
+336;Danny Holla;twe;c;3
+337;Frederik Jensen;twe;c;3
+338;Jelle van der Heyden;twe;c;3
+339;Haris Vuckic;twe;c;2
+340;Alexander Laukart;twe;c;2
+341;Tom Boere;twe;d;2
+342;Dylan George;twe;d;3
+343;Marko Kwasina;twe;d;2
+344;Nikola Gjorgjev;twe;d;2
+345;Isaac Buckley-Ricketts;twe;d;3
+346;Jari Oosterwijk;twe;d;2
+347;Oussama Assaidi;twe;d;3
+350;René Hake;;;
+351;David Jensen ;utr;a;3
+352;Nick Marsman ;utr;a;3
+353;Mark van der Maarel;utr;b;3
+354;Ramon Leeuwin;utr;b;3
+355;Sean Klaiber;utr;b;3
+356;Robin van der Meer;utr;b;2
+357;Giovanni Troupée;utr;b;3
+358;Dario Dumic;utr;b;2
+359;Willem Janssen;utr;b;3
+360;Edson Braafheid;utr;b;2
+361;Urby Emanuelson;utr;c;3
+362;Sander van der Streek;utr;c;3
+363;Yassin Ayoub;utr;c;3
+364;Anouar Kali;utr;c;3
+365;Rico Strieder;utr;c;3
+366;Zakaria Labyad;utr;c;3
+367;Chris David;utr;c;3
+368;Simon Makienok;utr;d;2
+369;Cyriel Dessers;utr;d;2
+370;Bilal Ould-Chikh;utr;d;2
+371;Lukas Görtler;utr;d;2
+372;Patrick Joosten ;utr;d;3
+373;Gyrano Kerk ;utr;d;3
+375;Erik ten Hag ;utr;Coach;
+376;Eloy Room;vit;a;4
+377;Remko Pasveer;vit;a;3
+378;Fankaty Dabo;vit;b;3
+379;Gyram Kashia;vit;b;4
+380;Matt Miazga;vit;b;3
+381;Alexander Bütnner;vit;b;3
+382;Arnold Kruiswijk;vit;b;3
+383;Maikel van der Werff;vit;b;3
+384;Julian Lelieveld;vit;b;3
+385;Lassana Faye;vit;b;3
+386;Navarone Foor;vit;c;3
+387;Julian Calor;vit;c;2
+388;Thulani Serero;vit;c;3
+389;Mohammed Osman;vit;c;3
+390;Thomas Bruns;vit;c;3
+391;Charlie Colkett;vit;c;2
+392;Mason Mount;vit;c;3
+393;Tim Matavz;vit;d;3
+394;Arshak Kryan;vit;d;4
+395;Bryan Linssen;vit;d;3
+396;Milot Rashica;vit;d;3
+397;Mtichell van Bergen ;vit;d;3
+398;Luc Castaignos;vit;d;3
+400;Henk Fräser;vit;Coach;
+401;Lars Unnerstall;vvv;;2
+403;Moreno Rutten;vvv;;2
+404;Jerold Promes;vvv;;2
+405;Roel Janssen;vvv;;2
+406;Leroy Labylle;vvv;;2
+407;Roy Gielen ;vvv;;2
+408;Tristan Dekker;vvv;;2
+409;Jeffrey Rijkers;vvv;;2
+410;Danny Post;vvv;;2
+411;Vito van Crooy;vvv;;2
+412;Clint Leemans;vvv;;2
+413;Terry Antonis;vvv;;2
+414;Nils Röseler;vvv;;2
+416;Ralf Seuntjens;vvv;;2
+417;Johnatan Opoku;vvv;;2
+418;Lennart Thy;vvv;;2
+419;Rarik Tisosudali;vvv;;2
+420;Torino Hunte;vvv;;2
+421;Juul Respen;vvv;;2
+422;Lugman Bezzat;vvv;;2
+423;;vvv;;
+424;;vvv;;
+425;Maurice Steijn;vvv;;
+426;Timon Wellenreuther;wil;a;3
+427;Mattijs Branderhorst;wil;a;2
+428;Freek Heerkens;wil;b;2
+429;Jordens Peters;wil;b;3
+430;Fernando Lewis;wil;b;2
+431;Kostas Tsimikas;wil;b;2
+432;Thomas Kok;wil;b;3
+433;Darryl Lachman;wil;b;3
+434;Dylan Ryan;wil;b;2
+435;Victor van den Bogert;wil;b;2
+436;Pedro Chirivella;wil;c;3
+437;Elmo Lieftink;wil;c;2
+438;Bartek Urbankski;wil;c;2
+439;Daniël Crowley;wil;c;2
+440;Tom Haye;wil;c;3
+441;Bartholomew Obeche;wil;d;3
+442;Jordy Croux;wil;d;2
+443;Asumah Abubakar;wil;d;3
+444;Andreas Calcan;wil;d;2
+445;Fran Sol;wil;d;3
+446;Karim Coulibaly;wil;d;2
+450;Erwin van der Looi;wil;Coach;
