@@ -33,7 +33,7 @@
         pages << [sign_up_path, 'Meedoen', :disabled]
         pages << [my_superteam_path, 'Mijn Superteam', :important] if logged_in?
         pages << [login_path, 'Login', :important] unless logged_in?
-        pages << [announcements_path, 'Mededelingen']
+        pages << [announcements_path, 'Mededelingen'] unless logged_in?
         pages << [players_list_path, 'Spelerslijst']
         pages << [rules_path, 'Spelregels']
         pages <<[contact_path, 'Contact']
