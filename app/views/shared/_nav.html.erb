@@ -1,7 +1,7 @@
 <div class="nav">
   <ul>
-    <% pages.each do |path, title, important| %>
-      <li><%= link_to_unless_current title, path, class: (important ? 'important' : '') %></li>
+    <% pages.each do |path, title, klass| %>
+      <li><%= link_to_unless_current title, path, class: klass %></li>
     <% end %>
   </ul>
 </div>

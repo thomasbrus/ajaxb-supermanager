@@ -42,6 +42,11 @@
         border-bottom-style: solid;
       }
 
+      a.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+        text-decoration: line-through;
+      }
     }
 
     li:first-child {
