@@ -40,5 +40,5 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # Set hostname
-  config.action_mailer.default_url_options = { host: 'supermanager.dev' }
+  # config.action_mailer.default_url_options = { host: 'supermanager.dev' }
 end

@@ -1,0 +1,12 @@
+<h2>Stand uploaden</h2>
+
+<%= form_tag(url_for(action: :update), method: :put, multipart: true) do %>
+  <fieldset>
+    <%= label_tag "Selecteer een bestand (.csv)" %>
+    <%= file_field_tag :ranking, required: true, accept: '.csv' %>
+  </fieldset>
+
+  <button type="submit" class="cta" name="submit">
+    <span>Tussenstand publiceren</span>
+  </button>
+<% end %>

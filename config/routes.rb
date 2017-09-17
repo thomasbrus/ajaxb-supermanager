@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :login_requests
   resources :messages
 
+  resource :ranking, only: [:show, :edit, :update]
+
   get "/export_contestants" => "contestants#export"
 
   get "/sign_up" => "contestants#new", as: :sign_up
