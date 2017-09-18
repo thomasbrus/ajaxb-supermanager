@@ -5,7 +5,7 @@ class ContestantRanking < ActiveRecord::Base
   validates :total_score, presence: true
 
   def self.parse(contents)
-    csv = CSV.parse(contents, col_sep: ';', external_encoding: "ISO8859-1", internal_encoding: "utf-8")
+    csv = CSV.parse(contents, col_sep: ';')
 
     csv = csv.drop(3)
     csv = csv.take_while { |row| !row[0].nil? }

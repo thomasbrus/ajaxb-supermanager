@@ -8,7 +8,7 @@ class PlayerRanking < ActiveRecord::Base
   validates :score, presence: true
 
   def self.parse(contents)
-    csv = CSV.parse(contents, col_sep: ';', external_encoding: "ISO8859-1", internal_encoding: "utf-8")
+    csv = CSV.parse(contents, col_sep: ';')
 
     csv = csv.drop_while { |row| !(row[0] =~ /score per speler/i) }
     csv = csv.drop(2)
