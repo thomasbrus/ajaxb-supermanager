@@ -21,7 +21,7 @@
           <% if logged_in? %>
             Welkom, <%= @current_contestant.name_with_team %>. <%= link_to 'Log uit', logout_path, method: :delete %>.
           <% else %>
-            Welkom! <%= link_to 'Log in', login_path %> om uw superteam te bekijken.
+            Welkom! <%= link_to 'Doe ook mee', sign_up_path %> of <%= link_to 'log in', login_path %>.
           <% end %>
           <% if is_admin? && !current_page?(contestants_path) %>
             Bekijk <%= link_to 'alle aanmeldingen', contestants_path %>.
@@ -30,10 +30,10 @@
       </div>
       <%
         pages = [[root_path, 'Home']]
-        pages << [ranking_path, 'Tussenstand', :important]
-        pages << [my_superteam_path, 'Mijn Superteam'] if logged_in?
+        pages << [sign_up_path, 'Meedoen', true] unless logged_in?
         pages << [login_path, 'Login'] unless logged_in?
-        pages << [announcements_path, 'Mededelingen'] unless logged_in?
+        pages << [my_superteam_path, 'Mijn Superteam'] if logged_in?
+        pages << [announcements_path, 'Mededelingen']
         pages << [players_list_path, 'Spelerslijst']
         pages << [rules_path, 'Spelregels']
         pages <<[contact_path, 'Contact']
