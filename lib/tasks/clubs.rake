@@ -6,7 +6,7 @@ namespace :clubs do
     ActiveRecord::Base.transaction do
       Club.destroy_all
 
-      # Set up clubs (season 2017 - 2018)
+      # Set up clubs (season 2018 - 2019)
       Club.create!(name: 'ADO Den Haag', shorthand: 'ado')
       Club.create!(name: 'Ajax', shorthand: 'aja')
       Club.create!(name: 'AZ', shorthand: 'az')
