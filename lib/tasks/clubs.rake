@@ -8,7 +8,7 @@ namespace :clubs do
 
       # Set up clubs (season 2018 - 2019)
       Club.create!(name: 'ADO Den Haag', shorthand: 'ado')
-      Club.create!(name: 'Ajax', shorthand: 'aja')
+      Club.create!(name: 'Ajax', shorthand: 'ajax')
       Club.create!(name: 'AZ', shorthand: 'az')
       Club.create!(name: 'Emmen', shorthand: 'emmen')
       Club.create!(name: 'Excelsior', shorthand: 'exc')
