@@ -23,7 +23,6 @@ class LoginRequestsController < ApplicationController
 
   def verify
     @login_request = LoginRequest.find_by_validation_key(params[:validation_key])
-    @login_request.try(:destroy)
 
     if @login_request.nil? or @login_request.expires_at < Time.now
       redirect_to root_path, alert: "De loginlink is verlopen of bestaat niet meer. Probeer opnieuw in te loggen."
