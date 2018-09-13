@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'puma', '~> 2.15.3'
 gem 'sentry-raven', '~> 1.2.2'
+gem 'postmark-rails'
 
 group :production do
   gem 'pg'
