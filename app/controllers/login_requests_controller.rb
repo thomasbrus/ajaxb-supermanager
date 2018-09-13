@@ -16,8 +16,7 @@ class LoginRequestsController < ApplicationController
       render action: "new"
     else
       LoginRequestMailer.login_link(@contestant, @contestant.login_requests.create).deliver
-      flash[:email] = @contestant.email
-      redirect_to login_link_confirmation_path and return
+      redirect_to login_link_confirmation_path(email: @contestant.email) and return
     end
   end
 

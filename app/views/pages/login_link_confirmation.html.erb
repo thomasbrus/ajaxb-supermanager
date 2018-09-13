@@ -1,4 +1,10 @@
-<h2>Bijna klaar!</h2>
-<p>Er is een email verzonden naar <strong><%= flash[:email] %></strong>. Daarin in vind u een link waarmee u wordt ingelogd op de Supermanager. </p>
+<h2>Bijna klaar: check uw email (en spamfolder)</h2>
+<p>Er is een email verzonden naar <strong><%= params[:email] %></strong>. Daarin in vind u een link waarmee u wordt ingelogd op de Supermanager. </p>
 
-<p>Heeft u na vijf minuten nog geen email ontvangen? <%= link_to 'Neem dan contact op', contact_path %> met de beheerder, of <%= link_to 'probeer het opnieuw', login_path %> met een ander e-mailadres.</p>
+<p>Heeft u na vijf minuten nog geen email ontvangen?</p>
+
+<ul>
+  <li>Check uw spamfolder;</li>
+  <li><%= link_to 'Probeer het opnieuw', login_path %>;</li>
+  <li>Of <%= link_to 'neem dan contact op', contact_path %> met de beheerder</li>
+</ul>
