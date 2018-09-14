@@ -1,12 +1,12 @@
 class AdminMailer < ActionMailer::Base
   layout false
-  default from: "Ajax-B Supermanager <ajaxb.supermanager@gmail.com>"
+  default from: "info@thomasbrus.nl"
 
   def contact(message)
     subject = "Bericht van #{message.email} via de Supermanager"
     receipents = {
-      1 => "Thomas Brus <thomas.brus@me.com>",
-      2 => "N.Huntink <nhuntink@planet.nl>"
+      1 => "thomas.brus@me.com",
+      2 => "nhuntink@planet.nl"
     }
     @content = message.content
     mail(
