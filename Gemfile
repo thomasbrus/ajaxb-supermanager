@@ -7,7 +7,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-gem 'puma', '~> 2.15.3'
+gem 'puma', '~> 4.1.0'
 gem 'sentry-raven', '~> 1.2.2'
 gem 'postmark-rails'
 
