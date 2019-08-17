@@ -12,7 +12,7 @@ gem 'sentry-raven', '~> 1.2.2'
 gem 'postmark-rails'
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.18'
   gem 'rails_12factor'
 end
 

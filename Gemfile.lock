@@ -77,7 +77,7 @@ GEM
     multipart-post (2.1.1)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
-    pg (1.1.4)
+    pg (0.21.0)
     postmark (1.15.0)
       json
     postmark-rails (0.19.0)
@@ -166,7 +166,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   jquery-rails
-  pg
+  pg (~> 0.18)
   postmark-rails
   pry-rails
   puma (~> 2.15.3)
