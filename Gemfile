@@ -10,7 +10,6 @@ gem 'jquery-rails'
 gem 'puma', '~> 2.15.3'
 gem 'sentry-raven', '~> 1.2.2'
 gem 'postmark-rails'
-gem 'sqlite3', '~> 1.3.6' 
 
 group :production do
   gem 'pg'
@@ -18,6 +17,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'sqlite3', '~> 1.3.6' 
   gem 'pry-rails'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
