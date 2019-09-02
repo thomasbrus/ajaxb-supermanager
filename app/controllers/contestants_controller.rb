@@ -3,7 +3,7 @@ class ContestantsController < ApplicationController
   before_filter :admin_rights_required, only: [:index]
 
   def index
-    @contestants = Contestant.sorted_alphabetically.has_superteam
+    @contestants = Contestant.sorted_alphabetically
   end
 
   def new
