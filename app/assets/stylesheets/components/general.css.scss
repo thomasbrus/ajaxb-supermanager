@@ -1,34 +1,44 @@
-p, ul, ol, dl, table, form {
+p,
+ul,
+ol,
+dl,
+table,
+form {
   display: block;
   color: #000;
   margin: 0;
-  padding: 5px 0 15px 0;  
+  padding: 5px 0 15px 0;
   overflow: hidden;
 }
 a > img {
-  border: none; 
+  border: none;
 }
-.left, .right, .clear {
+.left,
+.right,
+.clear {
   display: block !important;
 }
 .left {
   float: left !important;
 }
 .right {
-  float: right !important;  
+  float: right !important;
 }
 .clear {
-  clear: both;  
+  clear: both;
 }
 .error {
   color: #b00d0e;
-  border-bottom: 1px #b00d0e dotted;  
+  border-bottom: 1px #b00d0e dotted;
 }
 .important {
   color: #b05e0e;
-  border-bottom: 1px #b05e0e dotted;    
+  border-bottom: 1px #b05e0e dotted;
+}
+.disabled {
+  color: gray;
 }
 .no-list {
   padding-left: 20px;
-  list-style: none; 
+  list-style: none;
 }
