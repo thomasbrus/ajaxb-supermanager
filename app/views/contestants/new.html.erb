@@ -1,3 +1,5 @@
+<%- content_for(:title, "Opgaveformulier") %>
+
 <h2>Opgaveformulier</h2>
 <%= form_for @contestant do |f| %>
   <% if @contestant.errors.any? %>

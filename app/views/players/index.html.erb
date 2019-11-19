@@ -1,3 +1,5 @@
+<%- content_for(:title, "#{@club.name} - Spelerslijst") %>
+
 <h2><%= link_to 'Spelerslijst', players_list_path %> &raquo; <%= @club.name %></h2>
 <h3>Coach</h3>
 <%= image_tag "shirts/#{@club.shorthand.downcase}.png", class: 'shirt' %>

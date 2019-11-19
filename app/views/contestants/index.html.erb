@@ -1,3 +1,5 @@
+<%- content_for(:title, "Aanmeldingen") %>
+
 <h2>Aanmeldingen (<%= @contestants.count %>)</h2>
 <% if @contestants.count > 0 %>
   <%= render 'list', contestants: @contestants %>

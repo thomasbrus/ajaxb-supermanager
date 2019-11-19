@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Supermanager</title>
+  <title><%= [yield(:title).presence, "Ajax-B Supermanager"].compact.join(' - ') %></title>
   <%= stylesheet_link_tag "application", media: :all %>
   <%= favicon_link_tag asset_path('favicon.png') %>
   <%= render 'shared/sentry' if Rails.env.production? %>
