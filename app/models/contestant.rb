@@ -22,6 +22,10 @@ class Contestant < ActiveRecord::Base
     team.present? ? "#{name} (#{team.name})" : name
   end
 
+  def initials
+    name.split(/\s+/).map(&:first).join.upcase
+  end
+
   def self.as_csv
     CSV.generate(col_sep: ';') do |csv|
       sorted.find_each do |contestant|

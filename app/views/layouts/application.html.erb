@@ -4,6 +4,7 @@
   <title><%= [yield(:title).presence, "Ajax-B Supermanager"].compact.join(' - ') %></title>
   <%= stylesheet_link_tag "application", media: :all %>
   <%= favicon_link_tag asset_path('favicon.png') %>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" %>
   <%= render 'shared/sentry' if Rails.env.production? %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -11,23 +12,24 @@
 </head>
 <body>
   <div id="container">
-    <div class="top"></div>
     <div id="main">
       <div class="header">
         <%= link_to :root, class: "image" do %>
-          <%= image_tag 'logos/ajaxb.png', alt: 'Ajax B logo' %>
+          <%= image_tag 'logos/ajaxb.png', alt: 'Ajax B logo', width: 80 %>
         <% end %>
-        <h1>Supermanager Ajax Breedenbroek 2019 - 2020</h1>
-        <p>
-          <% if logged_in? %>
-            Welkom, <%= @current_contestant.name_with_team %>. <%= link_to 'Log uit', logout_path, method: :delete %>.
-          <% else %>
-            Welkom! <%= link_to 'Doe ook mee', sign_up_path %> of <%= link_to 'log in', login_path %>.
-          <% end %>
-          <% if is_admin? && !current_page?(contestants_path) %>
-            Bekijk <%= link_to 'alle aanmeldingen', contestants_path %>.
-          <% end %>
-          </p>
+        <div>
+          <h1>Supermanager Ajax Breedenbroek 2019 - 2020</h1>
+          <p>
+            <% if logged_in? %>
+              Welkom, <%= @current_contestant.name_with_team %>. <%= link_to 'Log uit', logout_path, method: :delete %>.
+            <% else %>
+              Welkom! <%= link_to 'Doe ook mee', sign_up_path %> of <%= link_to 'log in', login_path %>.
+            <% end %>
+            <% if is_admin? && !current_page?(contestants_path) %>
+              Bekijk <%= link_to 'alle aanmeldingen', contestants_path %>.
+            <% end %>
+            </p>
+          </div>
       </div>
       <%
         pages = [[root_path, 'Home']]
@@ -45,7 +47,6 @@
         <%= yield %>
       </div>
     </div>
-    <div class="bottom"></div>
   </div>
 </body>
 </html>

@@ -5,7 +5,7 @@
 #supermanager {
   width: 721px;
   height: 521px;
-  background: image-url('supermanager.jpg') no-repeat -20px -20px;
+  background: image-url("supermanager.jpg") no-repeat -20px -20px;
   margin-bottom: 10px;
   position: relative;
 }
@@ -42,12 +42,12 @@
   top: 300px;
   width: 221px;
   height: 41px;
-  background: image-url('submit.jpg') no-repeat;
+  background: image-url("submit.jpg") no-repeat;
   cursor: pointer;
 }
 
 #box_submit:hover {
-  background: image-url('submit_hover.jpg') no-repeat;
+  background: image-url("submit_hover.jpg") no-repeat;
 }
 
 #supermanager a:hover {
@@ -57,7 +57,7 @@
   display: block;
   text-align: center;
   float: left;
-  background: image-url('shirts/no_sponsor.png') no-repeat center -15px;
+  background: image-url("shirts/no_sponsor.png") no-repeat center -15px;
   height: 100px;
   margin: 0;
   padding: 0 0 5px 0;
@@ -67,7 +67,7 @@
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 13px;
   font-weight: bold;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   text-decoration: none;
   line-height: 16px;
@@ -91,12 +91,14 @@
 #box_formation ul.four-cols > li {
   width: 25%;
 }
-#box_coach > p, #box_bonusplayer > p, #box_budget > p {
+#box_coach > p,
+#box_bonusplayer > p,
+#box_budget > p {
   display: block;
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 13px;
   font-weight: bold;
-  color: #79B10E;
+  color: #79b10e;
   line-height: 40px;
   text-align: center;
   width: 100%;
@@ -105,7 +107,7 @@
   padding: 0;
 }
 #box_budget > p {
-  background: image-url('budget.png') no-repeat 50px center;
+  background: image-url("budget.png") no-repeat 50px center;
   padding: 0 0 0 10px !important;
 }
 #supermanager .box > p.debt {
@@ -126,9 +128,12 @@
   clear: both;
 }
 #form_players > p.loading {
-  background: image-url('loader.gif') no-repeat 20px center;
+  background: image-url("loader.gif") no-repeat 20px center;
 }
-#form_players > p > label, #form_players > p > select, #form_players > p > span, #form_players > p > input {
+#form_players > p > label,
+#form_players > p > select,
+#form_players > p > span,
+#form_players > p > input {
   display: block;
   padding: 5px;
   float: left;
@@ -145,24 +150,12 @@
 }
 #form_players > p > span > a {
   line-height: 24px;
-  color: #79B10E;
+  color: #79b10e;
   text-decoration: none;
   font-weight: bold;
 }
 #form_players > p > span > a:hover {
   text-decoration: underline;
-}
-
-/* ANNOUNCEMENTS --> */
-div.announcement {
-  padding: 10px;
-  margin: 15px 0 5px 0;
-  background-color: #F6F6F6;
-  border: 1px #ACACAC dotted;
-}
-div.announcement .meta {
-  color: #333;
-  font-size: 12px;
 }
 
 #status {
@@ -173,17 +166,18 @@ div.announcement .meta {
 }
 #status.busy {
   border: 1px #0e73b0 solid;
-  background: image-url('loader.gif') #f5fcff no-repeat 20px 12px;
+  background: image-url("loader.gif") #f5fcff no-repeat 20px 12px;
 }
 #status.success {
   border: 1px #1ab00e solid;
-  background: image-url('accept.png') #fafafa no-repeat 20px 12px;
+  background: image-url("accept.png") #fafafa no-repeat 20px 12px;
 }
 #status.error {
   border: 1px #b00d0e solid;
-  background: image-url('delete.png') #fff5f5 no-repeat 20px 12px;
+  background: image-url("delete.png") #fff5f5 no-repeat 20px 12px;
 }
-#status > p, #status > ul {
+#status > p,
+#status > ul {
   font-weight: bold;
   color: #383838;
 }

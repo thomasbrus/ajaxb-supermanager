@@ -2,18 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.announcement .meta {
+  color: #333;
+  font-size: 12px;
+}
+
 #announcements {
   clear: both;
   padding: 10px 0;
 }
 
 div.announcement {
-  padding: 10px;
   margin-bottom: 20px;
-  background-color: #F6F6F6;
-  border: 1px #ACACAC dotted;
 }
+
 div.announcement > em {
   color: #333;
   font-size: 12px;
+}
+
+.announcement__header {
+  display: flex;
+  border: 1px #eee solid;
+  padding: 10px;
+  background: linear-gradient(to bottom, #fafafa, #eee);
+  border-radius: 1px;
+  margin: 0 -5px;
+}
+
+.announcement__avatar {
+  background: #eee;
+  border-radius: 100px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }

@@ -15,37 +15,22 @@
  */
 
 body {
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 12px;
-  background-image: image-url('grass.jpg');
+  font-family: "Source Sans Pro", Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  background-image: image-url("grass.jpg");
   margin: 20px;
   padding: 0;
+  line-height: 1.5;
 }
 
 #container {
-  width: 840px;
-  margin: 0 auto;
-  padding: 0;
-
-  & > .top, #main, & > .bottom {
-    height: 40px;
-    padding: 0 40px;
-    background: no-repeat top center;
-  }
-
-  & > .top {
-    background-image: image-url('top.png');
-  }
-
-  & > .bottom {
-    background-image: image-url('bottom.png');
-  }
-
-  #main {
-    height: 100%;
-    background-image: image-url('main.png');
-    background-repeat: repeat-y;
-  }
+  width: 900px;
+  margin: 40px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-
+#main {
+  overflow: hidden;
+}

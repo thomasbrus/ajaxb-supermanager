@@ -1,7 +1,7 @@
 <%- content_for(:title, "Welkom") %>
 
 <div id="welcome" class="left" style="width:60%;">
-  <h2>Welkom bij de Supermanager</h2>
+  <h2>Welkom bij de Supermanager!</h2>
   <p>
     Dit seizoen voor de 21ste keer ons Superteam. We hopen, dat jullie ook dit keer weer willen deelnemen.
   </p>
@@ -16,6 +16,8 @@
 
 <div id="announcements">
   <% if @announcements.count > 0 %>
+    <h3 class="mb-3">Laatste nieuws</h3>
+
     <%= render 'announcements/list', announcements: @announcements %>
     <div style="margin-top: 20px;">
       <%= link_to 'Lees alle mededelingen', announcements_path %>

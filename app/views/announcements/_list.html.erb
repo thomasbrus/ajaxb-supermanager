@@ -1,11 +1,23 @@
 <% announcements.each do |announcement| %>
   <div class="announcement">
-    <h3><%= announcement.title %></h3>
-    <%= simple_format(announcement.content) %>
-    <em>Door <%= announcement.author.name %> op <%=  announcement.created_at %></em>
-    <% if is_admin? %>
-      / <%= link_to "(Bewerken)", edit_announcement_path(announcement) %>
-      / <%= link_to "(Verwijder)", announcement_path(announcement), method: :delete %>
-    <% end %>
+    <header class="announcement__header">
+      <main class="flex-grow">
+        <h3 class="announcement__title"><%= announcement.title %></h3>
+        <div class="announcement__author">Door <%= announcement.author.name %></div>
+      </main>
+      <div class="announcement__avatar">
+        <%= announcement.author.initials %>
+      </div>
+    </header>
+    <main class="announcement__content">
+      <%= simple_format(announcement.content) %>
+    </main>
+    <footer>
+      <em>Door <%= announcement.author.name %> op <%=  announcement.created_at %></em>
+      <% if is_admin? %>
+        / <%= link_to "(Bewerken)", edit_announcement_path(announcement) %>
+        / <%= link_to "(Verwijder)", announcement_path(announcement), method: :delete %>
+      <% end %>
+    </footer>
   </div>
 <% end %>

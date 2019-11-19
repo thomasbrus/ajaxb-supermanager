@@ -6,7 +6,7 @@ form {
     background-color: #fff5f5;
     padding: 10px;
     margin: 5px 5px 15px 5px;
-    
+
     h3 {
       color: #b00e0e;
       margin: 5px;
@@ -27,21 +27,23 @@ form {
     margin: 5px 5px 20px;
     padding: 10px 25px;
     border: 1px dotted #999;
-    overflow: hidden; 
-    
+    overflow: hidden;
+
     & > legend {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
       margin: 0 0 15px 0;
       padding: 5px;
     }
 
-
-    label, input, select, span {
+    label,
+    input,
+    select,
+    span {
       display: block;
       float: left;
-      padding: 2px;
-      margin: 10px 0;       
+      padding: 5px;
+      margin: 10px 0;
     }
 
     label {
@@ -51,6 +53,9 @@ form {
 
     input {
       width: 40%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px #ccc solid;
     }
 
     #contestant_team_name {
