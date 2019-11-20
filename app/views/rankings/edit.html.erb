@@ -1,4 +1,6 @@
-<h2>Stand uploaden</h2>
+<%- content_for(:title, "Tussenstand uploaden") %>
+
+<h2>Tussenstand uploaden</h2>
 
 <%= form_tag(url_for(action: :update), method: :put, multipart: true) do %>
   <fieldset>
