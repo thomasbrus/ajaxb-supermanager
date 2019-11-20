@@ -58,6 +58,10 @@ form {
       border: 1px #ccc solid;
     }
 
+    input[disabled] {
+      background: #eee;
+    }
+
     textarea {
       padding: 10px;
       border-radius: 3px;
