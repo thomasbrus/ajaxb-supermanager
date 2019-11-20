@@ -58,14 +58,20 @@ form {
       border: 1px #ccc solid;
     }
 
+    textarea {
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px #ccc solid;
+    }
+
     #contestant_team_name {
-      margin-left: 265px;
+      margin-left: 305px;
       width: 290px;
       clear: both;
     }
 
     span {
-      padding: 0;
+      padding: 5px 0;
 
       select {
         padding: 0;

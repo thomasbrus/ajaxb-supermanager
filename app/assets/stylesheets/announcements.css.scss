@@ -13,7 +13,8 @@ div.announcement .meta {
 }
 
 div.announcement {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  background: #fafafa;
 }
 
 div.announcement > em {
@@ -25,9 +26,7 @@ div.announcement > em {
   display: flex;
   border: 1px #eee solid;
   padding: 10px;
-  background: linear-gradient(to bottom, #fafafa, #eee);
-  border-radius: 1px;
-  margin: 0 -5px;
+  background: white;
 }
 
 .announcement__avatar {
@@ -39,4 +38,9 @@ div.announcement > em {
   width: 40px;
   height: 40px;
   margin-right: 10px;
+}
+
+.announcement__content {
+  padding: 10px;
+  padding-bottom: 0;
 }

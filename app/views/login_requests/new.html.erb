@@ -15,11 +15,13 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field flex items-center">
     <%= label_tag :email, t('activerecord.attributes.contestant.email') %>
-    <%= text_field_tag :email, @email %>
+    <%= text_field_tag :email, @email, style: "padding: 10px; border-radius: 3px; border: 1px #ccc solid; width: 300px;" %>
   </div>
   <div class="action">
-    <%= f.submit "Verzend link" %>
+    <%= f.button type: 'submit', class: 'cta' do %>
+<span>Verzend link</span>
+    <% end %>
   </div>
 <% end %>

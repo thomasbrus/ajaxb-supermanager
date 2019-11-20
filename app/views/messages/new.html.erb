@@ -20,13 +20,13 @@
         <%= f.label :name, "Naam" %>
       </dt>
       <dd>
-        <%= f.text_field :name, style: "width: 300px;" %>
+        <%= f.text_field :name, style: "width: 400px;" %>
       </dd>
       <dt>
         <%= f.label :email, "E-mailadres", style: "width: auto;" %>
       </dt>
       <dd>
-        <%= f.text_field :email, style: "width: 300px;" %>
+        <%= f.text_field :email, style: "width: 400px;" %>
       </dd>
       <dt>
         <%= f.label :receipent, "Ontvanger" %>
@@ -41,11 +41,11 @@
         <%= f.label :content, "Bericht" %>
       </dt>
       <dd>
-        <%= f.text_area :content, size: "40x6" %>
+        <%= f.text_area :content, size: "40x10", style: "width: 400px;" %>
       </dd>
     </dl>
   </fieldset>
-  <p style="margin-left: calc(40% - 120px); padding: 0 0 0 10px;">
+  <p style="margin-left: calc(40% - 150px); padding: 0 0 0 10px;">
     <button type="submit" class="cta" name="submit">
       <span>Bericht verzenden</span>
     </button>
