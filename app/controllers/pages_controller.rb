@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_filter :login_required, only: [:home, :rules, :thank_you, :login_link_confirmation]
+  skip_before_action :login_required, only: [:home, :rules, :thank_you, :login_link_confirmation]
 
   def home
     @sponsors = Sponsor.all

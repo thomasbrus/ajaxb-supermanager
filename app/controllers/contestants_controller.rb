@@ -1,6 +1,6 @@
 class ContestantsController < ApplicationController
-  skip_before_filter :login_required, only: [:new, :create]
-  before_filter :admin_rights_required, only: [:index]
+  skip_before_action :login_required, only: [:new, :create]
+  before_action :admin_rights_required, only: [:index]
 
   def index
     @contestants = Contestant.sorted_alphabetically

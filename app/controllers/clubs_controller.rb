@@ -1,5 +1,5 @@
 class ClubsController < ApplicationController
-  skip_before_filter :login_required, only: [:index]
+  skip_before_action :login_required, only: [:index]
 
   def index
     @clubs = Club.order('name ASC')

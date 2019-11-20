@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :fetch_contestant
-  before_filter :login_required
+  before_action :fetch_contestant
+  before_action :login_required
 
   def login(contestant)
     cookies.signed[:contestant_id] = { value: contestant.id, expires: 1.month.from_now }

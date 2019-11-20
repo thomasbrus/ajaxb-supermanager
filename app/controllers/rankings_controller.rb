@@ -1,6 +1,6 @@
 class RankingsController < ApplicationController
-  skip_before_filter :login_required, only: [:show]
-  before_filter :admin_rights_required, except: [:show]
+  skip_before_action :login_required, only: [:show]
+  before_action :admin_rights_required, except: [:show]
 
   def show
     @date = Date.today.beginning_of_week(:sunday)

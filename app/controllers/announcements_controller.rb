@@ -1,6 +1,6 @@
 class AnnouncementsController < ApplicationController
-  skip_before_filter :login_required, only: [:index]
-  before_filter :admin_rights_required, except: [:index]
+  skip_before_action :login_required, only: [:index]
+  before_action :admin_rights_required, except: [:index]
 
   def index
     @announcements = Announcement.order('created_at DESC')

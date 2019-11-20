@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-  skip_before_filter :login_required, only: [:index]
+  skip_before_action :login_required, only: [:index]
 
   def index
     player_types = { a: 'Goalkeeper', b: 'Defender', c: 'Midfielder', d: 'Forward' }
@@ -20,7 +20,7 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       format.json { render json: json }
-      format.html { 
+      format.html {
         @club = Club.find(params[:club_id])
         @players = @club.players
       }

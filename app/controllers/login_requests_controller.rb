@@ -1,5 +1,5 @@
 class LoginRequestsController < ApplicationController
-  skip_before_filter :login_required, only: [:new, :create, :verify]
+  skip_before_action :login_required, only: [:new, :create, :verify]
 
   def new
     @login_request = LoginRequest.new
