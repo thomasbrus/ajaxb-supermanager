@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     cookies.signed[:contestant_id].present?
+  rescue JSON::ParserError
+    cookies.delete(:contestant_id)
   end
 
   def is_admin?
