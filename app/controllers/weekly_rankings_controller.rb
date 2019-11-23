@@ -1,5 +1,5 @@
 class WeeklyRankingsController < ApplicationController
-  skip_before_action :login_required, only: [:show]
+  skip_before_action :login_required
   before_action :admin_rights_required, except: [:index, :show]
 
   def index
