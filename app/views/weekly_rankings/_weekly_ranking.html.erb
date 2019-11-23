@@ -1,9 +1,15 @@
 <div class="rankings">
   <table class="contestant_ranking">
     <thead>
-      <th>#</th>
-      <th>Deelnemer</th>
-      <th>Score</th>
+      <tr>
+        <th colspan="6" class="text-center bg-gray-900 text-white">Deelnemersklassement</th>
+      </tr>
+      <tr>
+        <th>Nr.</th>
+        <th>Naam</th>
+        <th>Totaal</th>
+        <th>Week</th>
+      </tr>
     </thead>
 
     <tbody>
@@ -12,6 +18,7 @@
           <td><%= ranking.position %></td>
           <td><%= ranking.contestant_name %></td>
           <td><%= ranking.total_score %></td>
+          <td><%= ranking.weekly_score %></td>
         </tr>
       <% end %>
 
@@ -21,9 +28,14 @@
 
   <table class="team_ranking">
     <thead>
-      <th>#</th>
-      <th>Ploeg</th>
-      <th>Score</th>
+      <tr>
+        <th colspan="6" class="text-center bg-gray-900 text-white">Ploegenklassement</th>
+      </tr>
+      <tr>
+        <th>Nr.</th>
+        <th>Naam</th>
+        <th>Totaal</th>
+      </tr>
     </thead>
 
     <tbody>
@@ -40,12 +52,17 @@
   </table>
   <table class="player_ranking">
     <thead>
-      <th>#</th>
-      <th>Speler</th>
-      <th>Club</th>
-      <th>Positie</th>
-      <th>Waarde</th>
-      <th>Score</th>
+      <tr>
+          <th colspan="6" class="text-center bg-gray-900 text-white">Score per speler</th>
+      </tr>
+      <tr>
+        <th>Nr.</th>
+        <th>Speler</th>
+        <th>Club</th>
+        <th>Positie</th>
+        <th>Waarde</th>
+        <th>Score</th>
+      </tr>
     </thead>
 
     <tbody>
