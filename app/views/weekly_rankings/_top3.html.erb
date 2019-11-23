@@ -1,0 +1,23 @@
+<h3><%= link_to 'Tussenstand', weekly_rankings_path %></h3>
+
+<table class="w-full">
+  <thead>
+    <tr>
+      <th>Nr.</th>
+      <th>Naam</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% weekly_ranking.contestant_rankings.order(:position).take(3).each_with_index do |ranking, index| %>
+      <tr class="<%= cycle('odd', 'even') %> <%= "highlight" if index.zero? %>">
+        <td><%= ranking.position %></td>
+        <td><%= ranking.contestant_name %></td>
+        <td><%= ranking.total_score %></td>
+      </tr>
+    <% end %>
+
+    <% reset_cycle %>
+  </tbody>
+</table>

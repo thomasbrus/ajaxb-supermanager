@@ -1,18 +1,22 @@
 <%- content_for(:title, "Welkom") %>
 
-<div id="welcome" class="left" style="width:60%;">
-  <h2>Welkom bij de Supermanager!</h2>
-  <p>
-    Dit seizoen voor de 21ste keer ons Superteam. We hopen, dat jullie ook dit keer weer willen deelnemen.
-  </p>
-  <p>
-    Stimuleer ook anderen, zodat we weer veel deelnemers krijgen.
-    Als iedereen er één deelnemer bij zoekt, zou het een mooi aantal worden.
-    Het prijzenschema wordt gewijzigd. Iedere maand een 1ste, 2de en 3de prijs.
-  </p>
-</div>
+<div class="overflow-hidden">
+  <div id="welcome" class="left" style="width:60%;">
+    <h2>Welkom bij de Supermanager!</h2>
+    <p>
+      Dit seizoen voor de 21ste keer ons Superteam. We hopen, dat jullie ook dit keer weer willen deelnemen.
+    </p>
+    <p>
+      Stimuleer ook anderen, zodat we weer veel deelnemers krijgen.
+      Als iedereen er één deelnemer bij zoekt, zou het een mooi aantal worden.
+      Het prijzenschema wordt gewijzigd. Iedere maand een 1ste, 2de en 3de prijs.
+    </p>
+  </div>
 
-<%= render 'sponsors/list', sponsors: @sponsors %>
+  <aside id="sidebar" class="right" style="width:35%;">
+    <%= render('weekly_rankings/top3', weekly_ranking: WeeklyRanking.current) if WeeklyRanking.current.present? %>
+  </aside>
+</div>
 
 <div id="announcements">
   <% if @announcements.count > 0 %>
@@ -26,4 +30,10 @@
       <% end %>
     </div>
   <% end %>
+</div>
+
+<h3 class="mb-3 mt-3">Sponsor</h3>
+
+<div id="sponsor">
+  <%= render 'sponsors/list', sponsors: @sponsors %>
 </div>
