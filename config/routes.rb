@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  constraints(:host => /supermanager.thomasbrus.nl/) do
+    match "/(*path)" => redirect {|params, req| "http://www.ajaxb-supermaanger.nl/#{params[:path]}"}, via: [:get, :post]
+  end
+
   resources :clubs do
     resources :players
   end
