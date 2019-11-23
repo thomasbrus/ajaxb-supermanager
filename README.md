@@ -1,7 +1,7 @@
 # Ajax-B Supermanager
 
-Join here: <http://supermanager.thomasbrus.nl/sign_up>
+Join here: <http://www.ajaxb-supermanager.nl/sign_up>
 
 ## Wiki
 
- - [Seizoensvoorbereiding](https://github.com/thomasbrus/ajaxb-supermanager/wiki/Seizoensvoorbereiding)
+- [Seizoensvoorbereiding](https://github.com/thomasbrus/ajaxb-supermanager/wiki/Seizoensvoorbereiding)
