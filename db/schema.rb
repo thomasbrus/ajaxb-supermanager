@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170916132400) do
+ActiveRecord::Schema.define(version: 20191123131451) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
@@ -34,15 +36,18 @@ ActiveRecord::Schema.define(version: 20170916132400) do
     t.integer  "club_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["club_id"], name: "index_coaches_on_club_id", using: :btree
   end
-
-  add_index "coaches", ["club_id"], name: "index_coaches_on_club_id"
 
   create_table "contestant_rankings", force: :cascade do |t|
     t.string   "contestant_name"
     t.integer  "total_score"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "weekly_ranking_id"
+    t.integer  "position"
+    t.integer  "weekly_score"
+    t.index ["weekly_ranking_id"], name: "index_contestant_rankings_on_weekly_ranking_id", using: :btree
   end
 
   create_table "contestants", force: :cascade do |t|
@@ -60,9 +65,8 @@ ActiveRecord::Schema.define(version: 20170916132400) do
     t.integer  "contestant_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.index ["contestant_id"], name: "index_login_requests_on_contestant_id", using: :btree
   end
-
-  add_index "login_requests", ["contestant_id"], name: "index_login_requests_on_contestant_id"
 
   create_table "player_rankings", force: :cascade do |t|
     t.string   "player_name"
@@ -70,8 +74,11 @@ ActiveRecord::Schema.define(version: 20170916132400) do
     t.string   "player_position"
     t.integer  "player_value"
     t.integer  "score"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "weekly_ranking_id"
+    t.integer  "position"
+    t.index ["weekly_ranking_id"], name: "index_player_rankings_on_weekly_ranking_id", using: :btree
   end
 
   create_table "players", force: :cascade do |t|
@@ -82,6 +89,12 @@ ActiveRecord::Schema.define(version: 20170916132400) do
     t.integer  "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "players_superteams", id: false, force: :cascade do |t|
+    t.integer "player_id"
+    t.integer "superteam_id"
+    t.index ["player_id", "superteam_id"], name: "index_players_superteams_on_player_id_and_superteam_id", using: :btree
   end
 
   create_table "sponsors", force: :cascade do |t|
@@ -109,15 +122,17 @@ ActiveRecord::Schema.define(version: 20170916132400) do
     t.integer  "forward_c_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["contestant_id"], name: "index_superteams_on_contestant_id", using: :btree
   end
-
-  add_index "superteams", ["contestant_id"], name: "index_superteams_on_contestant_id"
 
   create_table "team_rankings", force: :cascade do |t|
     t.string   "team_name"
     t.integer  "score"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "weekly_ranking_id"
+    t.integer  "position"
+    t.index ["weekly_ranking_id"], name: "index_team_rankings_on_weekly_ranking_id", using: :btree
   end
 
   create_table "teams", force: :cascade do |t|
@@ -126,4 +141,11 @@ ActiveRecord::Schema.define(version: 20170916132400) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "weekly_rankings", force: :cascade do |t|
+    t.date "date"
+  end
+
+  add_foreign_key "contestant_rankings", "weekly_rankings"
+  add_foreign_key "player_rankings", "weekly_rankings"
+  add_foreign_key "team_rankings", "weekly_rankings"
 end

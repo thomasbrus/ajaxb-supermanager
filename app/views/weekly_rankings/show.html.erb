@@ -1,0 +1,9 @@
+<%- content_for(:title, "Tussenstand #{l(@weekly_ranking.date, format: "%A %d %B")}") %>
+
+<h2 class="flex justify-between">
+  <span>Tussenstand <%= l(@weekly_ranking.date, format: "%A %d %B") %></span>
+  <%= render 'nav' %>
+</h2>
+
+<%= render 'admin_links' %>
+<%= render 'weekly_ranking' %>

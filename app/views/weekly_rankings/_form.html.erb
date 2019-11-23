@@ -1,0 +1,18 @@
+<%= form_for(@weekly_ranking, multipart: true) do |f| %>
+  <fieldset>
+    <%= f.label :date, "Datum" %>
+    <%= f.text_field :date, required: true %>
+    <%= f.label :file, "Selecteer een bestand (.xlsx)" %>
+    <%= f.file_field :file, required: @weekly_ranking.new_record?, accept: '.xlsx' %>
+  </fieldset>
+
+  <button type="submit" class="cta" name="submit">
+    <span>
+      <% if @weekly_ranking.new_record? %>
+        Tussenstand publiceren
+      <% else %>
+        Tussenstand bijwerken
+      <% end %>
+    </span>
+  </button>
+<% end %>

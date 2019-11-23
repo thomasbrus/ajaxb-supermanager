@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :login_requests
   resources :messages
 
-  resource :ranking, only: [:show, :edit, :update]
+  resources :weekly_rankings, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   get "/export_contestants" => "contestants#export"
 

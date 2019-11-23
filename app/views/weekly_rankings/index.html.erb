@@ -1,0 +1,18 @@
+<%- content_for(:title, "Tussenstand") %>
+
+<% if @weekly_ranking.present? %>
+  <h2 class="flex justify-between">
+    <span>Tussenstand <%= l(@weekly_ranking.date, format: "%A %d %B") %></span>
+    <%= render 'nav' %>
+  </h2>
+<% else %>
+  <h2>Tussenstand</h2>
+<% end %>
+
+<%= render 'admin_links' %>
+
+<% if @weekly_ranking.present? %>
+  <%= render 'weekly_ranking' %>
+<% else %>
+  <p>Er is op dit moment nog geen stand beschikbaar.</p>
+<% end %>

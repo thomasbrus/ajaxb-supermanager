@@ -1,0 +1,13 @@
+<nav>
+  <% if @weekly_ranking.previous? %>
+    <%= link_to '« vorige', @weekly_ranking.previous %>
+  <% else %>
+    <span class="text-gray-500">« vorige</span>
+  <% end %>
+
+  <% if @weekly_ranking.next? %>
+    <%= link_to 'volgende »', @weekly_ranking.next %>
+  <% else %>
+    <span class="text-gray-500">volgende »</span>
+  <% end %>
+</nav>
