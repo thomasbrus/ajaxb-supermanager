@@ -1,7 +1,17 @@
 <%= form_for(@weekly_ranking, multipart: true) do |f| %>
+  <% if @weekly_ranking.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @weekly_ranking.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <fieldset>
     <%= f.label :date, "Datum" %>
-    <%= f.text_field :date, required: true %>
+    <%= f.text_field :date, required: false %>
     <%= f.label :file, "Selecteer een bestand (.xlsx)" %>
     <%= f.file_field :file, required: @weekly_ranking.new_record?, accept: '.xlsx' %>
   </fieldset>

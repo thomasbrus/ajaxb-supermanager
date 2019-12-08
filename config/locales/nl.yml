@@ -1,57 +1,57 @@
 nl:
   date:
     abbr_day_names:
-    - zon
-    - maa
-    - din
-    - woe
-    - don
-    - vri
-    - zat
+      - zon
+      - maa
+      - din
+      - woe
+      - don
+      - vri
+      - zat
     abbr_month_names:
-    - 
-    - jan
-    - feb
-    - mar
-    - apr
-    - mei
-    - jun
-    - jul
-    - aug
-    - sep
-    - okt
-    - nov
-    - dec
+      -
+      - jan
+      - feb
+      - mar
+      - apr
+      - mei
+      - jun
+      - jul
+      - aug
+      - sep
+      - okt
+      - nov
+      - dec
     day_names:
-    - zondag
-    - maandag
-    - dinsdag
-    - woensdag
-    - donderdag
-    - vrijdag
-    - zaterdag
+      - zondag
+      - maandag
+      - dinsdag
+      - woensdag
+      - donderdag
+      - vrijdag
+      - zaterdag
     formats:
-      default: ! '%d/%m/%Y'
-      long: ! '%e %B %Y'
-      short: ! '%e %b'
+      default: ! "%d/%m/%Y"
+      long: ! "%e %B %Y"
+      short: ! "%e %b"
     month_names:
-    - 
-    - januari
-    - februari
-    - maart
-    - april
-    - mei
-    - juni
-    - juli
-    - augustus
-    - september
-    - oktober
-    - november
-    - december
+      -
+      - januari
+      - februari
+      - maart
+      - april
+      - mei
+      - juni
+      - juli
+      - augustus
+      - september
+      - oktober
+      - november
+      - december
     order:
-    - :day
-    - :month
-    - :year
+      - :day
+      - :month
+      - :year
   datetime:
     distance_in_words:
       about_x_hours:
@@ -78,16 +78,16 @@ nl:
         other: meer dan %{count} jaar
       x_days:
         one: 1 dag
-        other: ! '%{count} dagen'
+        other: ! "%{count} dagen"
       x_minutes:
         one: 1 minuut
-        other: ! '%{count} minuten'
+        other: ! "%{count} minuten"
       x_months:
         one: 1 maand
-        other: ! '%{count} maanden'
+        other: ! "%{count} maanden"
       x_seconds:
         one: 1 seconde
-        other: ! '%{count} seconden'
+        other: ! "%{count} seconden"
     prompts:
       day: dag
       hour: uur
@@ -96,7 +96,7 @@ nl:
       second: seconde
       year: jaar
   errors: &errors
-    format: ! '%{attribute} %{message}'
+    format: ! "%{attribute} %{message}"
     messages:
       accepted: moet worden geaccepteerd
       blank: moet opgegeven zijn
@@ -114,56 +114,56 @@ nl:
       not_a_number: is geen getal
       not_an_integer: moet een geheel getal zijn
       odd: moet oneven zijn
-      record_invalid: ! 'Validatie mislukt: %{errors}'
+      record_invalid: ! "Validatie mislukt: %{errors}"
       taken: is al in gebruik
       too_long: is te lang (maximaal %{count} tekens)
       too_short: is te kort (minimaal %{count} tekens)
       wrong_length: heeft onjuiste lengte (moet %{count} tekens lang zijn)
     template:
-      body: ! 'Controleer de volgende velden:'
+      body: ! "Controleer de volgende velden:"
       header:
-        one: ! '%{model} niet opgeslagen: 1 fout gevonden'
-        other: ! '%{model} niet opgeslagen: %{count} fouten gevonden'
+        one: ! "%{model} niet opgeslagen: 1 fout gevonden"
+        other: ! "%{model} niet opgeslagen: %{count} fouten gevonden"
   helpers:
     select:
       prompt: Selecteer
     submit:
-      create: ! '%{model} toevoegen'
-      submit: ! '%{model} opslaan'
-      update: ! '%{model} bewaren'
+      create: ! "%{model} toevoegen"
+      submit: ! "%{model} opslaan"
+      update: ! "%{model} bewaren"
   number:
     currency:
       format:
         delimiter: .
-        format: ! '%u%n'
+        format: ! "%u%n"
         precision: 2
-        separator: ! ','
+        separator: ! ","
         significant: false
         strip_insignificant_zeros: false
         unit: €
     format:
       delimiter: .
       precision: 2
-      separator: ! ','
+      separator: ! ","
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: ! '%n %u'
+        format: ! "%n %u"
         units:
           billion: miljard
           million: miljoen
           quadrillion: biljard
           thousand: duizend
           trillion: biljoen
-          unit: ''
+          unit: ""
       format:
-        delimiter: ''
+        delimiter: ""
         precision: 3
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: ! '%n %u'
+        format: ! "%n %u"
         units:
           byte:
             one: Byte
@@ -174,22 +174,22 @@ nl:
           tb: TB
     percentage:
       format:
-        delimiter: ''
+        delimiter: ""
     precision:
       format:
-        delimiter: ''
+        delimiter: ""
   support:
     array:
-      last_word_connector: ! ' en '
-      two_words_connector: ! ' en '
-      words_connector: ! ', '
+      last_word_connector: ! " en "
+      two_words_connector: ! " en "
+      words_connector: ! ", "
   time:
-    am: ! '''s ochtends'
+    am: ! "'s ochtends"
     formats:
-      default: ! '%a %d %b %Y %H:%M:%S %Z'
-      long: ! '%d %B %Y %H:%M'
-      short: ! '%d %b %H:%M'
-    pm: ! '''s middags'
+      default: ! "%a %d %b %Y %H:%M:%S %Z"
+      long: ! "%d %B %Y %H:%M"
+      short: ! "%d %b %H:%M"
+    pm: ! "'s middags"
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     errors:
@@ -200,11 +200,14 @@ nl:
     models:
       contestant: Contestant
       announcement: Announcement
+      weekly_ranking: Tussenstand
     attributes:
       contestant:
-        name: "Naam"
-        email: "E-mailadres"
+        name: Naam
+        email: E-mailadres
       announcement:
-        content: "Inhoud"
-        title: "Titel"
-        author: "Auteur"
+        content: Inhoud
+        title: Titel
+        author: Auteur
+      weekly_ranking:
+        date: Datum

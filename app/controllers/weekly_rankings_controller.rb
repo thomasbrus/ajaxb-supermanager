@@ -26,6 +26,8 @@ class WeeklyRankingsController < ApplicationController
     end
 
     redirect_to weekly_rankings_path, notice: 'De stand is bijgewerkt.'
+  rescue ActiveRecord::RecordInvalid
+    render :new, status: :unprocessable_entity
   end
 
   def edit
