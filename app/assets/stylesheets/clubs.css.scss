@@ -5,11 +5,11 @@
 .players_list {
   overflow: hidden;
   padding: 0;
-  margin: 0;
+  margin: -10px;
 
   li {
     display: block;
-    padding: 0 0 5px 0;
+    padding: 10px;
     float: left;
     width: 20%;
   }
