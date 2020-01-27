@@ -3,10 +3,6 @@
     <%= link_to 'Nieuwe stand uploaden', url_for(action: :new) %>
 
     <% if @weekly_ranking.present? %>
-      <%= link_to 'Stand bewerken', edit_weekly_ranking_path(@weekly_ranking), class: 'text-blue-500 ml-2' %>
-    <% end %>
-
-    <% if @weekly_ranking.present? %>
       <%= link_to 'Stand verwijderen', weekly_ranking_path(@weekly_ranking), method: :delete, class: 'text-red-500 ml-2', data: { confirm: 'Weet je zeker dat je de tussenstand wilt verwijderen?' } %>
     <% end %>
   </p>
