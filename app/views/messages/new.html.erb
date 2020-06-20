@@ -29,13 +29,19 @@
         <%= f.text_field :email, style: "width: 400px;" %>
       </dd>
       <dt>
-        <%= f.label :receipent, "Ontvanger" %>
+        <%= f.label :recipient, "Ontvanger" %>
       </dt>
       <dd>
-        <%= f.select :receipent, [
+        <%= f.select :recipient, [
           ["Nico Huntink (Algemeen contact)", 2],
           ["Thomas Brus (Technisch contact)", 1]
         ] %>
+      </dd>
+      <dt>
+        <%= f.label :spam_check, "4 + 7 =" %>
+      </dt>
+      <dd>
+        <%= f.text_field :spam_check, style: "width: 400px;" %>
       </dd>
       <dt>
         <%= f.label :content, "Bericht" %>
@@ -43,6 +49,7 @@
       <dd>
         <%= f.text_area :content, size: "40x10", style: "width: 400px;" %>
       </dd>
+
     </dl>
   </fieldset>
   <p style="margin-left: calc(40% - 150px); padding: 0 0 0 10px;">
