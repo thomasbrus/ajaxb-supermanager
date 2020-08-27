@@ -6,7 +6,7 @@ class AdminMailer < ActionMailer::Base
     subject = "Bericht van #{message.email} via de Supermanager"
     recipients = {
       1 => "thomas.brus@me.com",
-      2 => "nhuntink@planet.nl"
+      2 => "nhuntink@caiway.com"
     }
     @content = message.content
     mail(
