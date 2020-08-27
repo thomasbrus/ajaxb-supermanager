@@ -5,4 +5,4 @@ Sponsor.create!(name: 'Café Koenders', url: 'http://koenders-zalencentrum.nl', 
 
 # Contestants
 Contestant.create!(name: 'Thomas Brus', email: 'thomas.brus@me.com', is_admin: true)
-Contestant.create!(name: 'Nico Huntink', email: 'nhuntink@caiway.com', is_admin: true)
+Contestant.create!(name: 'Nico Huntink', email: 'nhuntink@caiway.nl', is_admin: true)
