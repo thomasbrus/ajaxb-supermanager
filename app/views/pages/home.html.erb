@@ -14,7 +14,11 @@
   </div>
 
   <aside id="sidebar" class="right" style="width:35%;">
-    <%= render('weekly_rankings/top3', weekly_ranking: WeeklyRanking.current) if WeeklyRanking.current.present? %>
+    <% if WeeklyRanking.current.present? %>
+      <%= render('weekly_rankings/top3', weekly_ranking: WeeklyRanking.current) %>
+    <% else %>
+      <%= render('weekly_rankings/empty') %>
+    <% end %>
   </aside>
 </div>
 
