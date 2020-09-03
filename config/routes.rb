@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/coaches" => "coaches#index"
 
   post "/update_superteam" => "superteams#update"
+  post "/validate_superteam" => "superteams#validate"
   get "/my_superteam" => "superteams#edit"
   get "/superteam" => "superteams#show"
 

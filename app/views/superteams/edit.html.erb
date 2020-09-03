@@ -3,7 +3,10 @@
 <script type="text/javascript">
 $(document).ready(function() {
   enableSubmit();
-  clickSubmit(); // To run validations
+
+  <% unless flash[:notice] =~ /Superteam is opgeslagen/  %>
+    validateSuperTeam();
+  <% end %>
 
   Supermanager.initialize();
 

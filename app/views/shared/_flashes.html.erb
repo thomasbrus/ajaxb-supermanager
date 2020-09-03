@@ -1,5 +1,5 @@
 <% if flash[:alert] || flash[:notice] %>
-  <div class="flashes">
+  <div class="flashes" style="margin-bottom: -10px">
     <% [:alert, :notice].each do |key| %>
       <% if flash[key] %>
         <%= content_tag :div, flash[key], class: key %>

@@ -3,47 +3,7 @@ class SuperteamsController < ApplicationController
   end
 
   def update
-    @errors = []
-    positions = %w(player-a-1 player-b-1 player-b-2 player-b-3 player-b-4 player-c-1 player-c-2 player-c-3 player-d-1 player-d-2 player-d-3 coach bonusplayer)
-
-    if (params.keys & positions) != positions
-      @errors << 'Je hebt niet alle posities ingevuld'
-    else
-      total_amount = 0
-      taken_clubs = []
-      taken_players = []
-
-      bonusplayer = Player.find(params[:bonusplayer][:player])
-
-      if bonusplayer.value > 2
-        @errors << 'De bonusspeler is te duur, hij mag maximaal 2 miljoen kosten.'
-      end
-
-      params.each do |key, value|
-        next if key == "coach" or !positions.include?(key)
-        total_amount += value[:amount].to_i unless key == "bonusplayer"
-        taken_clubs << value[:club]
-        taken_players << value[:player]
-      end
-
-      if total_amount > 36
-        @errors << 'Je hebt het budget overschreden.'
-      end
-
-      if taken_players.uniq.length < taken_players.length
-        @errors << 'Je mag een speler maar &eacute;&eacute;n keer opstellen.'
-        @errors << 'De volgende speler(s) zijn vaker opgesteld:'
-        @errors << taken_players.keep_if { |id| taken_players.count(id) > 1 }.uniq.map { |player_id|
-          Player.find(player_id).name
-        }.join(', ')
-      elsif taken_clubs.uniq.length < taken_clubs.length
-        @errors << 'Je mag per club maar &eacute;&eacute;n speler gebruiken.'
-        @errors << 'De volgende club(s) zijn vaker gebruikt:'
-        @errors << taken_clubs.keep_if { |id| taken_clubs.count(id) > 1 }.uniq.map { |club_shorthand|
-          Club.where('lower(shorthand) = ?', club_shorthand.downcase).first.name
-        }.join(', ')
-      end
-    end
+    collect_errors
 
     # Save superteam if any positions are provided
     if (params.keys & positions).any?
@@ -82,8 +42,21 @@ class SuperteamsController < ApplicationController
     end
   end
 
+  def validate
+    collect_errors
+
+    superteam = @current_contestant.superteam || Superteam.new
+    @errors += superteam.errors.full_messages unless @errors.empty? && superteam.valid?
+
+    if @errors.any?
+      render json: { status: 'error', message: @errors }
+    else
+      render json: { status: 'success' }
+    end
+  end
+
   def show
-    superteam = @current_contestant.superteam
+    !superteam = @current_contestant.superteam
 
     if superteam.nil?
       render json: {} and return
@@ -130,5 +103,54 @@ class SuperteamsController < ApplicationController
     end
 
     render json: json
+  end
+
+  private
+
+  def collect_errors
+    @errors = []
+
+    if (params.keys & positions) != positions
+      @errors << 'Je hebt niet alle posities ingevuld'
+    else
+      total_amount = 0
+      taken_clubs = []
+      taken_players = []
+
+      begin
+        bonusplayer = Player.find(params[:bonusplayer][:player])
+        @errors << 'De bonusspeler is te duur, hij mag maximaal 2 miljoen kosten.' if bonusplayer.value > 2
+      rescue ActiveRecord::RecordNotFound
+      end
+
+      params.each do |key, value|
+        next if key == "coach" or !positions.include?(key)
+        total_amount += value[:amount].to_i unless key == "bonusplayer"
+        taken_clubs << value[:club]
+        taken_players << value[:player]
+      end
+
+      if total_amount > 36
+        @errors << 'Je hebt het budget overschreden.'
+      end
+
+      if taken_players.uniq.length < taken_players.length
+        @errors << 'Je mag een speler maar &eacute;&eacute;n keer opstellen.'
+        @errors << 'De volgende speler(s) zijn vaker opgesteld:'
+        @errors << taken_players.keep_if { |id| taken_players.count(id) > 1 }.uniq.map { |player_id|
+          Player.find(player_id).name
+        }.join(', ')
+      elsif taken_clubs.uniq.length < taken_clubs.length
+        @errors << 'Je mag per club maar &eacute;&eacute;n speler gebruiken.'
+        @errors << 'De volgende club(s) zijn vaker gebruikt:'
+        @errors << taken_clubs.keep_if { |id| taken_clubs.count(id) > 1 }.uniq.map { |club_shorthand|
+          Club.where('lower(shorthand) = ?', club_shorthand.downcase).first.name
+        }.join(', ')
+      end
+    end
+  end
+
+  def positions
+    %w(player-a-1 player-b-1 player-b-2 player-b-3 player-b-4 player-c-1 player-c-2 player-c-3 player-d-1 player-d-2 player-d-3 coach bonusplayer)
   end
 end
