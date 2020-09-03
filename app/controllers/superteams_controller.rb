@@ -5,6 +5,7 @@ class SuperteamsController < ApplicationController
   def update
     @errors = []
     positions = %w(player-a-1 player-b-1 player-b-2 player-b-3 player-b-4 player-c-1 player-c-2 player-c-3 player-d-1 player-d-2 player-d-3 coach bonusplayer)
+
     if (params.keys & positions) != positions
       @errors << 'Je hebt niet alle posities ingevuld'
     else
@@ -44,30 +45,33 @@ class SuperteamsController < ApplicationController
       end
     end
 
-    if @errors.empty?
-      superteam =  @current_contestant.superteam || Superteam.new
+    # Save superteam if any positions are provided
+    if (params.keys & positions).any?
+      superteam = @current_contestant.superteam || Superteam.new
 
-      superteam.coach_id = params[:coach][:coach]
-      superteam.bonus_player_id = params[:bonusplayer][:player]
+      superteam.coach_id = params.dig(:coach, :coach)
+      superteam.bonus_player_id = params.dig(:bonusplayer, :player)
 
-      superteam.goalkeeper_id = params['player-a-1'][:player]
+      superteam.goalkeeper_id = params.dig('player-a-1', :player)
 
-      superteam.defender_a_id = params['player-b-1'][:player]
-      superteam.defender_b_id = params['player-b-2'][:player]
-      superteam.defender_c_id = params['player-b-3'][:player]
-      superteam.defender_d_id = params['player-b-4'][:player]
+      superteam.defender_a_id = params.dig('player-b-1', :player)
+      superteam.defender_b_id = params.dig('player-b-2', :player)
+      superteam.defender_c_id = params.dig('player-b-3', :player)
+      superteam.defender_d_id = params.dig('player-b-4', :player)
 
-      superteam.midfielder_a_id = params['player-c-1'][:player]
-      superteam.midfielder_b_id = params['player-c-2'][:player]
-      superteam.midfielder_c_id = params['player-c-3'][:player]
+      superteam.midfielder_a_id = params.dig('player-c-1', :player)
+      superteam.midfielder_b_id = params.dig('player-c-2', :player)
+      superteam.midfielder_c_id = params.dig('player-c-3', :player)
 
-      superteam.forward_a_id = params['player-d-1'][:player]
-      superteam.forward_b_id = params['player-d-2'][:player]
-      superteam.forward_c_id = params['player-d-3'][:player]
+      superteam.forward_a_id = params.dig('player-d-1', :player)
+      superteam.forward_b_id = params.dig('player-d-2', :player)
+      superteam.forward_c_id = params.dig('player-d-3', :player)
 
       superteam.contestant_id = @current_contestant.id
 
-      @errors << superteam.errors.inspect unless superteam.save
+      @errors += superteam.errors.full_messages unless @errors.empty? && superteam.valid?
+
+      superteam.save(validate: false)
     end
 
     if @errors.any?

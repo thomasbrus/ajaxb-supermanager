@@ -4,7 +4,7 @@ var enableSubmit = function() {
     disableSubmit();
 
     if ($('#status').length === 0) {
-      $('.content').prepend('<div id="status"></status>');
+      $('#supermanager').before('<div id="status"></status>');
     }
 
     $('#status').attr('class', 'busy').html('<p>De opstelling wordt gecontroleerd..</p>').hide().slideDown('slow', function() {
@@ -24,6 +24,10 @@ var enableSubmit = function() {
     });
   });
 };
+
+var clickSubmit = function() {
+  $('#box_submit').click();
+}
 
 var disableSubmit = function() {
   $('#box_submit').unbind('mouseleave').unbind('click').bind('mouseenter', function() {
