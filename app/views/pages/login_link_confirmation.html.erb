@@ -1,12 +1,13 @@
 <%- content_for(:title, "Check uw email") %>
 
 <h2>Bijna klaar: check uw email (en spamfolder)</h2>
-<p>Er is een email verzonden naar <strong><%= params[:email] %></strong>. Daarin in vind u een link waarmee u wordt ingelogd op de Supermanager. </p>
+<p>Er is een email verzonden naar <strong><%= params[:email] %></strong>. Daarin in vindt u een link waarmee u wordt ingelogd op de Supermanager. </p>
 
-<p>Heeft u na vijf minuten nog geen email ontvangen?</p>
+<div class="p-2 px-3 mb-3" style="background: #e9f7d0">Check uw spamfolder indien u niets ontvangen heeft.</div>
+
+<div>Heeft u na vijf minuten nog geen email ontvangen?</div>
 
 <ul>
-  <li>Check uw spamfolder;</li>
   <li><%= link_to 'Probeer het opnieuw', login_path %>;</li>
   <li>Of <%= link_to 'neem dan contact op', contact_path %> met de beheerder</li>
 </ul>
