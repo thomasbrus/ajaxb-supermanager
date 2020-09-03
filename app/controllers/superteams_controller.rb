@@ -1,5 +1,6 @@
 class SuperteamsController < ApplicationController
   def edit
+    render 'closed'
   end
 
   def update
