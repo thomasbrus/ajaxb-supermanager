@@ -11,7 +11,7 @@
 
   <fieldset>
     <%= f.label :date, "Datum" %>
-    <%= f.text_field :date, required: false %>
+    <%= f.date_field :date, required: false %>
     <%= f.label :file, "Selecteer een bestand (.xlsx)" %>
     <%= f.file_field :file, required: @weekly_ranking.new_record?, accept: '.xlsx' %>
   </fieldset>
