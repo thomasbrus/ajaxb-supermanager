@@ -9,7 +9,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'puma', '~> 4.3.5'
 gem 'sentry-raven', '~> 1.2.2'
-gem 'postmark-rails'
 gem 'webpacker', '~> 4.x'
 gem 'creek', '~> 2.4.4'
 
