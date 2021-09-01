@@ -12,7 +12,7 @@ var Supermanager = (function() {
 
   return {
     loadPlayers: function(club, position, amount, selected) {
-      $.getJSON('/players', { club: club || 'ado', position: position || 'a', amount: amount || 5}, function(players) {
+      $.getJSON('/players', { club: club || 'ajax', position: position || 'a', amount: amount || 5}, function(players) {
         HTMLHelper.populateSelect('#player', players);
         Supermanager.stopLoading($('#player'));
         if (selected) { $('#player').val(selected); }
