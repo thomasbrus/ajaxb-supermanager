@@ -4,7 +4,7 @@
 $(document).ready(function() {
   enableSubmit();
 
-  <% unless flash[:notice] =~ /Superteam is opgeslagen/ || true  %>
+  <% unless flash[:notice] =~ /Superteam is opgeslagen/  %>
     validateSuperTeam();
   <% end %>
 
@@ -29,12 +29,9 @@ $(document).ready(function() {
 </script>
 
 <h2>Superteam samenstellen</h2>
-
-<div class="p-2 px-3" style="background: #fdd4c5">De deadline is verstreken en het is niet meer mogelijk om de opstelling aan te passen.</div>
-
 <p style="line-height: 1.7;">Lees nog eens <%= link_to 'de spelregels', rules_path %> door om te zien hoe u uw superteam samenstelt. <strong>Tip</strong>: U kunt na het invullen van een geldig superteam nog steeds wijzigingen maken (mits de deadline nog niet verstreken is). De deadline is zaterdag 11 september om 18:00 uur.</p>
 
-<div id="supermanager" class="disabled">
+<div id="supermanager">
   <div id="box_formation" class="box">
     <ul class="three-cols">
       <li id="player-d-1"><a href="#">Linksbuiten</a></li>
@@ -65,6 +62,6 @@ $(document).ready(function() {
   <div id="box_budget" class="box">
     <p>&euro;36.000.000</p>
   </div>
-  <div id="box_submit" class="box disabled">
+  <div id="box_submit" class="box">
   </div>
 </div>
