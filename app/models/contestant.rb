@@ -2,6 +2,9 @@ require 'csv'
 
 class Contestant < ActiveRecord::Base
   attr_accessor :team_name
+  attr_accessor :spam_check
+
+  validates :spam_check, numericality: { equal_to: 12 }
 
   validates_presence_of :email, :name
   validates_uniqueness_of :email

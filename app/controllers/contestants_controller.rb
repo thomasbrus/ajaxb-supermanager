@@ -31,6 +31,6 @@ class ContestantsController < ApplicationController
   end
 
   private def contestant_params
-    params.require(:contestant).permit(:email, :name, :team_name)
+    params.require(:contestant).permit(:email, :name, :team_name, :spam_check)
   end
 end

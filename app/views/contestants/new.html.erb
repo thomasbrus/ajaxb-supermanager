@@ -24,6 +24,8 @@
       <%= t('activerecord.attributes.contestant.email') %> (<em>uniek per deelnemer</em>)
     <% end %>
     <%= f.text_field :email %>
+    <%= f.label :spam_check, "4 ＋ 8 =" %>
+    <%= f.text_field :spam_check %>
     <%= f.label :team do %>
       Ploeg (<em>niet verplicht:</em> <%= link_to 'zie spelregels', rules_path(anchor: 'team_poule') %>)
     <% end %>
