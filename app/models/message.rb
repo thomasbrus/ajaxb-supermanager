@@ -10,5 +10,5 @@ class Message
 
   validates_presence_of :name, :email, :recipient, :content
   validates_length_of :content, maximum: 700
-  validates :spam_check, numericality: { equal_to: 13 }
+  validates :spam_check, numericality: { equal_to: 12 }
 end
