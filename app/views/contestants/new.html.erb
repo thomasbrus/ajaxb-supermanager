@@ -1,6 +1,9 @@
 <%- content_for(:title, "Opgaveformulier") %>
 
 <h2>Opgaveformulier</h2>
+
+<div class="p-2 px-3" style="background: #fdd4c5">Het is niet meer mogelijk om je op te geven voor dit seizoen.</div>
+
 <%= form_for @contestant do |f| %>
   <% if @contestant.errors.any? %>
     <div id="error_explanation">
@@ -19,18 +22,18 @@
   <fieldset>
     <legend>Contactgegevens</legend>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, disabled: true %>
     <%= f.label :email do %>
       <%= t('activerecord.attributes.contestant.email') %> (<em>uniek per deelnemer</em>)
     <% end %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, disabled: true %>
     <%= f.label :spam_check, "4 ＋ 8 =" %>
-    <%= f.text_field :spam_check %>
+    <%= f.text_field :spam_check, disabled: true %>
     <%= f.label :team do %>
       Ploeg (<em>niet verplicht:</em> <%= link_to 'zie spelregels', rules_path(anchor: 'team_poule') %>)
     <% end %>
-    <span>Bestaande: <%= f.collection_select :team_id, Team.all, :id, :name, prompt: true %> óf een nieuwe ploeg:</span>
-    <%= f.text_field :team_name %>
+    <span>Bestaande: <%= f.collection_select :team_id, Team.all, :id, :name, { prompt: true }, { disabled: true } %> óf een nieuwe ploeg:</span>
+    <%= f.text_field :team_name, disabled: true %>
   </fieldset>
 
   <h3>Betaling</h3>
@@ -39,6 +42,6 @@
   </p>
 
   <p>
-    <button type="submit" class="cta" name="submit"><span>Registratie voltooien &amp; superteam samenstellen »</span></button>
+    <button type="submit" class="cta" name="submit" disabled><span>Registratie voltooien &amp; superteam samenstellen »</span></button>
   </p>
 <% end %>

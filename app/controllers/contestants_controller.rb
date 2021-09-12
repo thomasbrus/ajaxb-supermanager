@@ -11,6 +11,8 @@ class ContestantsController < ApplicationController
   end
 
   def create
+    render(text: "Not allowed", status: :method_not_allowed) and return
+
     @contestant = Contestant.new(contestant_params)
     @contestant.email = @contestant.email.downcase
 
