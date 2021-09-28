@@ -26,7 +26,8 @@ class WeeklyRankingsController < ApplicationController
     end
 
     redirect_to weekly_rankings_path, notice: 'De stand is bijgewerkt.'
-  rescue ActiveRecord::RecordInvalid
+  rescue ActiveRecord::RecordInvalid => e
+    flash.now[:alert] = 'De stand kon niet worden bijgewerkt.'
     render :new, status: :unprocessable_entity
   end
 

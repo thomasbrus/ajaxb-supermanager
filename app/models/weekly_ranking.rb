@@ -31,36 +31,36 @@ class WeeklyRanking < ActiveRecord::Base
 
   def parse!(rows)
     # Change these values at the start of new season
-    contestants_left_range = 3..57
-    contestants_right_range = 3..36
-    teams_right_right_range = 40..55
-    players_bottom_range = 60..69
+    contestants_left_range = 3..37
+    contestants_right_range = 3..37
+    teams_right_right_range = 40..52
+    players_bottom_range = 56..65
 
-    # Contestants (left)
+    # Contestants (left column)
     rows.to_a[contestants_left_range].each do |row|
       contestant_row = ContestantRow.new(*row.values.take(4))
       self.contestant_rankings.create!(contestant_row.to_h)
     end
 
-    # Contestants (right)
+    # Contestants (right column)
     rows.to_a[contestants_right_range].each do |row|
       contestant_row = ContestantRow.new(*row.values.drop(8).take(4))
       self.contestant_rankings.create!(contestant_row.to_h)
     end
 
-    # Teams (right)
+    # Teams (right column)
     rows.to_a[teams_right_right_range].each do |row|
       team_row = TeamRow.new(*row.values.drop(8).take(3))
       self.team_rankings.create!(team_row.to_h)
     end
 
-    # Players (bottom left)
+    # Players (bottom left columns)
     rows.to_a[players_bottom_range].each do |row|
       player_row = PlayerRow.new(*row.values.take(6))
       self.player_rankings.create!(player_row.to_h)
     end
 
-    # Players (bottom right)
+    # Players (bottom right columns)
     rows.to_a[players_bottom_range].each do |row|
       player_row = PlayerRow.new(*row.values.drop(8).take(6))
       self.player_rankings.create!(player_row.to_h)
