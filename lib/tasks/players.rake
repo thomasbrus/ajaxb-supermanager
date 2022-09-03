@@ -8,7 +8,7 @@ namespace :players do
     file = Rails.root.join('db', 'data', 'players.csv')
 
     ActiveRecord::Base.transaction do
-      CSV.foreach(file, col_sep: ';') do |code, name, club, position, value|
+      CSV.foreach(file, col_sep: ',') do |code, name, club, position, value|
         if name.blank? or club.blank? or position.blank?
           $logger.warn("Skipping line: #{code};#{name};#{club};#{position};#{value}")
           next
