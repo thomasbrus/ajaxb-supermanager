@@ -9,9 +9,9 @@
   margin-bottom: 10px;
   position: relative;
 }
-#supermanager.disabled {
-  pointer-events: none;
-}
+// #supermanager.disabled {
+//   pointer-events: none;
+// }
 #supermanager .box {
   position: absolute;
   /*background-color: rgba(255,128,0,0.5);*/
@@ -48,10 +48,10 @@
   background: image-url("submit.jpg") no-repeat;
   cursor: pointer;
 }
-#box_submit.disabled {
-  filter: grayscale(1);
-  pointer-events: none;
-}
+// #box_submit.disabled {
+//   filter: grayscale(1);
+//   pointer-events: none;
+// }
 #box_submit:hover {
   background: image-url("submit_hover.jpg") no-repeat;
 }
