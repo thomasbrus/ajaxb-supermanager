@@ -31,10 +31,10 @@ class WeeklyRanking < ActiveRecord::Base
 
   def parse!(rows)
     # Change these values at the start of new season
-    contestants_left_range = 3..37
-    contestants_right_range = 3..37
-    teams_right_right_range = 40..52
-    players_bottom_range = 56..65
+    contestants_left_range = 3..52
+    contestants_right_range = 3..42
+    teams_right_right_range = 45..59
+    players_bottom_range = 63..72
 
     # Contestants (left column)
     rows.to_a[contestants_left_range].each do |row|
