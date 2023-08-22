@@ -45,25 +45,6 @@
   background: url("boxy-sw.png");
 }
 
-/* IE6-8 hacks for the border. IE7+8 should support this natively but fails in conjuction with modal blackout bg. */
-/* NB: these must be absolute paths or URLs to your images */
-.boxy-wrapper .boxy-top-left {
-  #filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='boxy-nw.png');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='boxy-nw.png')";
-}
-.boxy-wrapper .boxy-top-right {
-  #filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='boxy-ne.png');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='boxy-ne.png')";
-}
-.boxy-wrapper .boxy-bottom-right {
-  #filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='boxy-se.png');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='boxy-se.png')";
-}
-.boxy-wrapper .boxy-bottom-left {
-  #filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='boxy-sw.png');
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='boxy-sw.png')";
-}
-
 .boxy-wrapper .boxy-top,
 .boxy-wrapper .boxy-bottom {
   height: 10px;
