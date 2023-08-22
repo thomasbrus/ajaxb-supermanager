@@ -4,7 +4,6 @@ ruby '3.1.4'
 
 gem 'rails'
 gem 'sassc-rails'
-gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'puma'
