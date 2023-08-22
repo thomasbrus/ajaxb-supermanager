@@ -12,31 +12,28 @@
 
 ActiveRecord::Schema.define(version: 20191123131451) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "announcements", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "author_id"
   end
 
   create_table "clubs", force: :cascade do |t|
     t.string   "name"
     t.string   "shorthand"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "coaches", force: :cascade do |t|
     t.integer  "code"
     t.string   "name"
     t.integer  "club_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["club_id"], name: "index_coaches_on_club_id", using: :btree
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["club_id"], name: "index_coaches_on_club_id"
   end
 
   create_table "contestant_rankings", force: :cascade do |t|
@@ -47,14 +44,14 @@ ActiveRecord::Schema.define(version: 20191123131451) do
     t.integer  "weekly_ranking_id"
     t.integer  "position"
     t.integer  "weekly_score"
-    t.index ["weekly_ranking_id"], name: "index_contestant_rankings_on_weekly_ranking_id", using: :btree
+    t.index ["weekly_ranking_id"], name: "index_contestant_rankings_on_weekly_ranking_id"
   end
 
   create_table "contestants", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "team_id"
     t.boolean  "is_admin",   default: false
   end
@@ -63,9 +60,9 @@ ActiveRecord::Schema.define(version: 20191123131451) do
     t.datetime "expires_at"
     t.string   "validation_key"
     t.integer  "contestant_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["contestant_id"], name: "index_login_requests_on_contestant_id", using: :btree
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["contestant_id"], name: "index_login_requests_on_contestant_id"
   end
 
   create_table "player_rankings", force: :cascade do |t|
@@ -78,7 +75,7 @@ ActiveRecord::Schema.define(version: 20191123131451) do
     t.datetime "updated_at",        null: false
     t.integer  "weekly_ranking_id"
     t.integer  "position"
-    t.index ["weekly_ranking_id"], name: "index_player_rankings_on_weekly_ranking_id", using: :btree
+    t.index ["weekly_ranking_id"], name: "index_player_rankings_on_weekly_ranking_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -87,22 +84,16 @@ ActiveRecord::Schema.define(version: 20191123131451) do
     t.integer  "club_id"
     t.string   "type"
     t.integer  "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "players_superteams", id: false, force: :cascade do |t|
-    t.integer "player_id"
-    t.integer "superteam_id"
-    t.index ["player_id", "superteam_id"], name: "index_players_superteams_on_player_id_and_superteam_id", using: :btree
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sponsors", force: :cascade do |t|
     t.string   "name"
     t.string   "logo"
     t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "superteams", force: :cascade do |t|
@@ -120,9 +111,9 @@ ActiveRecord::Schema.define(version: 20191123131451) do
     t.integer  "forward_a_id"
     t.integer  "forward_b_id"
     t.integer  "forward_c_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["contestant_id"], name: "index_superteams_on_contestant_id", using: :btree
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["contestant_id"], name: "index_superteams_on_contestant_id"
   end
 
   create_table "team_rankings", force: :cascade do |t|
@@ -132,20 +123,17 @@ ActiveRecord::Schema.define(version: 20191123131451) do
     t.datetime "updated_at",        null: false
     t.integer  "weekly_ranking_id"
     t.integer  "position"
-    t.index ["weekly_ranking_id"], name: "index_team_rankings_on_weekly_ranking_id", using: :btree
+    t.index ["weekly_ranking_id"], name: "index_team_rankings_on_weekly_ranking_id"
   end
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "weekly_rankings", force: :cascade do |t|
     t.date "date"
   end
 
-  add_foreign_key "contestant_rankings", "weekly_rankings"
-  add_foreign_key "player_rankings", "weekly_rankings"
-  add_foreign_key "team_rankings", "weekly_rankings"
 end
