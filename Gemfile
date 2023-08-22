@@ -8,7 +8,6 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'puma'
 gem 'sentry-raven'
-gem 'webpacker'
 gem 'creek'
 
 group :production do
@@ -22,3 +21,5 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console'
 end
+
+gem "tailwindcss-rails", "~> 2.0"
