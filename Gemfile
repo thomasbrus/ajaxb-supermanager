@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '3.1.4'
 
 gem 'rails'
-gem 'sass-rails'
+gem 'sassc-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
