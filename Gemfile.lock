@@ -83,6 +83,9 @@ GEM
       xpath (~> 3.2)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
+    creek (2.6.3)
+      nokogiri (>= 1.10.0)
+      rubyzip (>= 1.0.0)
     dartsass-rails (0.5.0)
       railties (>= 6.0.0)
       sass-embedded (~> 1.63)
@@ -91,6 +94,10 @@ GEM
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
+    faraday (2.7.10)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
     globalid (1.2.0)
       activesupport (>= 6.1)
     google-protobuf (3.24.2-x86_64-darwin)
@@ -177,6 +184,7 @@ GEM
     reline (0.3.8)
       io-console (~> 0.5)
     rexml (3.2.6)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sass-embedded (1.66.1-x86_64-darwin)
       google-protobuf (~> 3.23)
@@ -184,6 +192,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sentry-raven (3.1.2)
+      faraday (>= 1.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -228,6 +238,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
+  creek (~> 2.6)
   dartsass-rails (~> 0.5.0)
   debug
   importmap-rails
@@ -236,6 +247,7 @@ DEPENDENCIES
   rails (~> 7.0.7, >= 7.0.7.1)
   redis (~> 4.0)
   selenium-webdriver
+  sentry-raven (~> 3.1)
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails

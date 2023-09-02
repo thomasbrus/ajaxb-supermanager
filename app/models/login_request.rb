@@ -1,5 +1,5 @@
 class LoginRequest < ApplicationRecord
-  belongs_to :contestant
+  belongs_to :contestant, optional: true
   before_create :set_validation_key, :set_expires_at
 
   private def set_validation_key

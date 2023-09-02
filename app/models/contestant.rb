@@ -9,7 +9,7 @@ class Contestant < ApplicationRecord
   validates_presence_of :email, :name
   validates_uniqueness_of :email
 
-  belongs_to :team
+  belongs_to :team, optional: true
 
   has_one :superteam
   has_many :login_requests, dependent: :destroy
