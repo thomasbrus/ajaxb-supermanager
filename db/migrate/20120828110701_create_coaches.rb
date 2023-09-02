@@ -1,4 +1,4 @@
-class CreateCoaches < ActiveRecord::Migration
+class CreateCoaches < ActiveRecord::Migration[7.0]
   def change
     create_table :coaches do |t|
       t.integer :code
@@ -7,6 +7,5 @@ class CreateCoaches < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :coaches, :club_id
   end
 end

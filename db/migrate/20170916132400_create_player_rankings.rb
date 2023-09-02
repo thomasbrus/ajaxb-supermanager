@@ -1,4 +1,4 @@
-class CreatePlayerRankings < ActiveRecord::Migration
+class CreatePlayerRankings < ActiveRecord::Migration[7.0]
   def change
     create_table :player_rankings do |t|
       t.string :player_name

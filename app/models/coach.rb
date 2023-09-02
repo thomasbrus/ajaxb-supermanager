@@ -1,4 +1,4 @@
-class Coach < ActiveRecord::Base
+class Coach < ApplicationRecord
   belongs_to :club
   has_many :superteams
   validates_presence_of :code, :name

@@ -1,4 +1,4 @@
-class WeeklyRanking < ActiveRecord::Base
+class WeeklyRanking < ApplicationRecord
   validates :date, presence: true
 
   has_many :contestant_rankings, dependent: :destroy

@@ -1,4 +1,4 @@
-class CreateContestantRankings < ActiveRecord::Migration
+class CreateContestantRankings < ActiveRecord::Migration[7.0]
   def change
     create_table :contestant_rankings do |t|
       t.string :contestant_name

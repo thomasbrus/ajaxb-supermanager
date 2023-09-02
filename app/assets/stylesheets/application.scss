@@ -1,0 +1,51 @@
+ @use 'announcements';
+ @use 'clubs';
+ @use 'contestants';
+ @use 'login_requests';
+ @use 'pages';
+ @use 'players';
+ @use 'rankings';
+ @use 'superteams';
+ @use 'utilities';
+ @use 'components/buttons';
+ @use 'components/content';
+ @use 'components/flashes';
+ @use 'components/forms';
+ @use 'components/general';
+ @use 'components/header';
+ @use 'components/headings';
+ @use 'components/links';
+ @use 'components/lists';
+ @use 'components/nav';
+ @use 'components/tables';
+ @use 'vendor/boxy';
+
+body {
+  font-family: "Source Sans Pro", Verdana, Geneva, sans-serif;
+  font-size: 16px;
+  background-image: url("grass.jpg");
+  margin: 40px 20px 80px 20px;
+  padding: 0;
+  line-height: 1.5;
+}
+
+#container {
+  width: 900px;
+  margin: 40px auto;
+}
+
+#main {
+  overflow: hidden;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#footer {
+  text-align: center;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}

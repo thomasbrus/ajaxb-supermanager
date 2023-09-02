@@ -1,6 +1,6 @@
 require 'csv'
 
-class Contestant < ActiveRecord::Base
+class Contestant < ApplicationRecord
   attr_accessor :team_name
   attr_accessor :spam_check
 
@@ -15,7 +15,7 @@ class Contestant < ActiveRecord::Base
   has_many :login_requests, dependent: :destroy
 
   scope :sorted, -> { order(created_at: :asc) }
-  scope :sorted_alphabetically, ->{ order(name: :asc) }
+  scope :sorted_alphabetically, -> { order(name: :asc) }
 
   def self.has_superteam
     all.reject { |contestant| contestant.superteam.nil? }
@@ -40,7 +40,7 @@ class Contestant < ActiveRecord::Base
         csv.add_row([contestant.name.strip, contestant.email.strip, contestant.team.try(:name)])
 
         # Code  Naam  Club  Pos
-        csv.add_row(%w(Code Naam Club Pos))
+        csv.add_row(%w[Code Naam Club Pos])
 
         # 1 Jeroen Zoet PSV a
         csv.add_row(superteam.goalkeeper.to_csv)
@@ -76,22 +76,21 @@ class Contestant < ActiveRecord::Base
         csv.add_row(superteam.forward_c.to_csv)
 
         # Bonus
-        csv.add_row(%w(Bonus))
+        csv.add_row(%w[Bonus])
 
         # 9 Aaron Meijers ado b
         csv.add_row(superteam.bonus_player.to_csv)
 
         # Coach
-        csv.add_row(%w(Coach))
+        csv.add_row(%w[Coach])
 
         # 25 Zelkjo Petrovic ado coach
         csv.add_row(superteam.coach.to_csv)
 
         # ...
-        csv.add_row(%w())
-        csv.add_row(%w())
+        csv.add_row(%w[])
+        csv.add_row(%w[])
       end
     end
   end
-
 end

@@ -1,4 +1,4 @@
-class DropSuperteams < ActiveRecord::Migration
+class DropSuperteams < ActiveRecord::Migration[7.0]
   def up
     drop_table :superteams
   end
@@ -21,6 +21,5 @@ class DropSuperteams < ActiveRecord::Migration
       t.belongs_to :forward_c
       t.timestamps
     end
-    add_index :superteams, :contestant_id
   end
 end

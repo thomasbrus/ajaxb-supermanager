@@ -1,4 +1,4 @@
-class LoginRequest < ActiveRecord::Base
+class LoginRequest < ApplicationRecord
   belongs_to :contestant
   before_create :set_validation_key, :set_expires_at
 

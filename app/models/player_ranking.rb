@@ -1,6 +1,6 @@
 require 'csv'
 
-class PlayerRanking < ActiveRecord::Base
+class PlayerRanking < ApplicationRecord
   validates :position, presence: true
   validates :player_name, presence: true
   validates :player_club, presence: true

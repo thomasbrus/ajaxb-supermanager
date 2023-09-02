@@ -1,4 +1,4 @@
-class CreateLoginRequests < ActiveRecord::Migration
+class CreateLoginRequests < ActiveRecord::Migration[7.0]
   def change
     create_table :login_requests do |t|
       t.datetime :expires_at
@@ -7,6 +7,5 @@ class CreateLoginRequests < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :login_requests, :contestant_id
   end
 end

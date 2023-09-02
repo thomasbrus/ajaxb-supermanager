@@ -1,4 +1,4 @@
-class Player < ActiveRecord::Base
+class Player < ApplicationRecord
   belongs_to :club
   validates_presence_of :club, :code, :name, :type, :value
   validates_uniqueness_of :code
@@ -11,4 +11,3 @@ class Player < ActiveRecord::Base
     [code, name, club.shorthand, position]
   end
 end
-
