@@ -1,35 +1,23 @@
 <%- content_for(:title, "Mijn superteam") %>
 
 <script type="text/javascript">
-$(document).ready(function() {
-  enableSubmit();
-
-  <% unless flash[:notice] =~ /Superteam is opgeslagen/  %>
-    validateSuperTeam();
-  <% end %>
-
-  Supermanager.initialize();
-
-  $('#box_formation ul > li > a').click(function() {
-    Supermanager.showModal($(this), $(this).text());
-  });
-
-  $('#box_coach > p > a').click(function() {
-    Supermanager.showModal($(this), 'Kies een coach', 'coach');
-  });
-
-  $('#box_bonusplayer > p > a').click(function() {
-    Supermanager.showModal($(this), 'Kies een bonusspeler', 'bonusplayer');
-  });
-
-  $('.box a').click(function() {
-    return false;
-  });
-});
+function lookupShirtUrl(club) {
+  switch(club) {
+    <% Club.find_each do |club| %>
+    case '<%= club.shorthand %>':
+      return '<%= image_url("shirts/#{club.shorthand}.png") %>';
+      break;
+    <% end %>
+    default:
+      return '<%= image_url('shirts/no_sponsor.png') %>';
+  };
+}
 </script>
 
+<%= javascript_import_module_tag "superteam_init" %>
+
 <h2>Superteam samenstellen</h2>
-<p style="line-height: 1.7;">Lees nog eens <%= link_to 'de spelregels', rules_path %> door om te zien hoe u uw superteam samenstelt. <strong>Tip</strong>: U kunt na het invullen van een geldig superteam nog steeds wijzigingen maken (mits de deadline nog niet verstreken is). De deadline is zaterdag 11 september om 18:00 uur.</p>
+<p style="line-height: 1.7;">Lees nog eens <%= link_to 'de spelregels', rules_path %> door om te zien hoe u uw superteam samenstelt. <strong>Tip</strong>: U kunt na het invullen van een geldig superteam nog steeds wijzigingen maken (mits de deadline nog niet verstreken is). De deadline is zondag 16 september om 18:00 uur.</p>
 
 <div id="supermanager">
   <div id="box_formation" class="box">

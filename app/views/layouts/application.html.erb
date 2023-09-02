@@ -31,6 +31,9 @@
             <% if is_admin? && !current_page?(contestants_path) %>
               Bekijk <%= link_to 'alle aanmeldingen', contestants_path %>.
             <% end %>
+            <% if is_admin? %>
+              Plaats <%= link_to 'mededeling', new_announcement_path %>.
+            <% end %>
             </p>
           </div>
       </div>
