@@ -2,8 +2,10 @@
 
 <h2>Inloglink voor <%= @login_request.contestant.name_with_email %></h2>
 
-<pre><%= verify_login_request_url(@login_request.validation_key) %></pre>
+<p>Stuur deze link naar de deelnemer om in te loggen op zijn/haar account:</p>
 
-<p>
+<pre class="p-4 bg-gray-100 mt-0"><%= verify_login_request_url(@login_request.validation_key) %></pre>
+
+<p class="mt-4">
   <%= link_to 'Ga terug', new_admin_login_request_url, class: 'link' %>
 </p>
