@@ -25,6 +25,10 @@ class Contestant < ApplicationRecord
     team.present? ? "#{name} (#{team.name})" : name
   end
 
+  def name_with_email
+    "#{name} (#{email})"
+  end
+
   def initials
     name.split(/\s+/).map(&:first).join.upcase
   end

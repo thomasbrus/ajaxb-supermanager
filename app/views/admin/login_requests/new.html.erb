@@ -1,0 +1,26 @@
+<%- content_for(:title, "Nieuwe inloglink") %>
+
+<h2>Nieuwe inloglink maken voor deelnemer</h2>
+
+<%= form_for [:admin, @login_request] do |f| %>
+  <% if @login_request.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @login_request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend>Gegevens</legend>
+    <%= f.label :contestant_id, 'Deelnemer' %>
+    <%= f.select :contestant_id, Contestant.order(:name).map { [_1.name_with_email, _1.id] }, include_blank: 'Maak keuze' %>
+  </fieldset>
+  <p>
+    <%= f.button type: 'submit', class: 'cta' do %>
+      <span>Genereer inloglink</span>
+    <% end %>
+  </p>
+<% end %>

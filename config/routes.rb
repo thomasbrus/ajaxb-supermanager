@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   get '/sign_up' => 'contestants#new', :as => :sign_up
   get '/thank_you' => 'pages#thank_you', :as => :thank_you
 
+  namespace :admin do
+    resources :login_requests, only: %i[new create show]
+  end
+
   get '/login' => 'login_requests#new', :as => :login
   get '/login/verify/:validation_key' => 'login_requests#verify', :as => :verify_login_request
   get '/login_link_confirmation' => 'pages#login_link_confirmation'

@@ -33,9 +33,10 @@
             <% end %>
             <% if is_admin? %>
               Plaats <%= link_to 'mededeling', new_announcement_path %>.
+              <%= link_to 'Maak inloglink', new_admin_login_request_path %>.
             <% end %>
-            </p>
-          </div>
+          </p>
+        </div>
       </div>
       <%
         pages = [[root_path, 'Home']]

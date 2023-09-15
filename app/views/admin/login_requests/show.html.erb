@@ -1,0 +1,9 @@
+<%- content_for(:title, "Inloglink voor #{@login_request.contestant.name_with_email}") %>
+
+<h2>Inloglink voor <%= @login_request.contestant.name_with_email %></h2>
+
+<pre><%= verify_login_request_url(@login_request.validation_key) %></pre>
+
+<p>
+  <%= link_to 'Ga terug', new_admin_login_request_url, class: 'link' %>
+</p>

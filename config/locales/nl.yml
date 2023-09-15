@@ -119,6 +119,7 @@ nl:
       too_long: is te lang (maximaal %{count} tekens)
       too_short: is te kort (minimaal %{count} tekens)
       wrong_length: heeft onjuiste lengte (moet %{count} tekens lang zijn)
+      required: moet opgegeven zijn
     template:
       body: ! "Controleer de volgende velden:"
       header:
@@ -198,8 +199,8 @@ nl:
     errors:
       <<: *errors
     models:
-      contestant: Contestant
-      announcement: Announcement
+      contestant: Deelnemer
+      announcement: Mededeling
       weekly_ranking: Tussenstand
     attributes:
       contestant:
